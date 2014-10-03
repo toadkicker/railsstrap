@@ -1,5 +1,5 @@
 {
-  "name": "railsstrap",
+  "name": "bootstrap",
   "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
   "version": "3.2.0",
   "keywords": [
@@ -14,9 +14,9 @@
   ],
   "homepage": "http://getbootstrap.com",
   "main": [
-    "less/railsstrap.less",
-    "dist/css/railsstrap.css",
-    "dist/js/railsstrap.js",
+    "less/bootstrap.less",
+    "dist/css/bootstrap.css",
+    "dist/js/bootstrap.js",
     "dist/fonts/glyphicons-halflings-regular.eot",
     "dist/fonts/glyphicons-halflings-regular.svg",
     "dist/fonts/glyphicons-halflings-regular.ttf",

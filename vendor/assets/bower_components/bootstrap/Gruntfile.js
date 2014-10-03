@@ -156,7 +156,7 @@ module.exports = function (grunt) {
           sourceMapFilename: 'dist/css/<%= pkg.name %>.css.map'
         },
         files: {
-          'dist/css/<%= pkg.name %>.css': 'less/railsstrap.less'
+          'dist/css/<%= pkg.name %>.css': 'less/bootstrap.less'
         }
       },
       compileTheme: {
@@ -214,8 +214,8 @@ module.exports = function (grunt) {
         csslintrc: 'less/.csslintrc'
       },
       src: [
-        'dist/css/railsstrap.css',
-        'dist/css/railsstrap-theme.css'
+        'dist/css/bootstrap.css',
+        'dist/css/bootstrap-theme.css'
       ],
       examples: [
         'docs/examples/**/*.css'

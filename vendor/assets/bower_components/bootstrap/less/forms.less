@@ -13,7 +13,7 @@ fieldset {
   border: 0;
   // Chrome and Firefox set a `min-width: min-content;` on fieldsets,
   // so we reset that to ensure it behaves more like a standard block element.
-  // See https://github.com/twbs/railsstrap/issues/12359.
+  // See https://github.com/twbs/bootstrap/issues/12359.
   min-width: 0;
 }
 
@@ -31,7 +31,7 @@ legend {
 
 label {
   display: inline-block;
-  max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/railsstrap/issues/13141)
+  max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
   margin-bottom: 5px;
   font-weight: bold;
 }
@@ -158,7 +158,7 @@ output {
 // This overrides the extra rounded corners on search inputs in iOS so that our
 // `.form-control` class can properly style them. Note that this cannot simply
 // be added to `.form-control` as it's not specific enough. For details, see
-// https://github.com/twbs/railsstrap/issues/11586.
+// https://github.com/twbs/bootstrap/issues/11586.
 
 input[type="search"] {
   -webkit-appearance: none;
@@ -435,7 +435,7 @@ input[type="checkbox"] {
 
     // Remove default margin on radios/checkboxes that were used for stacking, and
     // then undo the floating of radios and checkboxes to match (which also avoids
-    // a bug in WebKit: https://github.com/twbs/railsstrap/issues/1969).
+    // a bug in WebKit: https://github.com/twbs/bootstrap/issues/1969).
     .radio,
     .checkbox {
       display: inline-block;

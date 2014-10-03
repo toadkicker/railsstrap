@@ -1,5 +1,5 @@
 {
-  "name": "railsstrap",
+  "name": "bootstrap",
   "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
   "version": "3.2.0",
   "keywords": [
@@ -16,18 +16,18 @@
   "scripts": {
     "test": "grunt test"
   },
-  "style": "dist/css/railsstrap.css",
-  "less": "less/railsstrap.less",
+  "style": "dist/css/bootstrap.css",
+  "less": "less/bootstrap.less",
   "repository": {
     "type": "git",
-    "url": "https://github.com/twbs/railsstrap.git"
+    "url": "https://github.com/twbs/bootstrap.git"
   },
   "bugs": {
-    "url": "https://github.com/twbs/railsstrap/issues"
+    "url": "https://github.com/twbs/bootstrap/issues"
   },
   "license": {
     "type": "MIT",
-    "url": "https://github.com/twbs/railsstrap/blob/master/LICENSE"
+    "url": "https://github.com/twbs/bootstrap/blob/master/LICENSE"
   },
   "devDependencies": {
     "btoa": "~1.1.2",
@@ -63,7 +63,7 @@
     "node": "~0.10.1"
   },
   "jspm": {
-    "main": "js/railsstrap",
+    "main": "js/bootstrap",
     "directories": {
       "example": "examples",
       "lib": "dist"
