@@ -1,2 +1,2 @@
-require 'engine'
-require 'constants'
+require 'railsstrap/engine'
+require 'railsstrap/constants'

@@ -1,13 +1,13 @@
 require 'rails'
 require 'json'
 
-require '../../app/helpers/railsstrap/breadcrumbs.rb'
-require '../../app/helpers/railsstrap/breadcrumbs_helper.rb'
-require '../../app/helpers/railsstrap/flash_block_helper.rb'
-require '../../app/helpers/railsstrap/modal_helper.rb'
-require '../../app/helpers/railsstrap/navbar_helper.rb'
-require '../../app/helpers/railsstrap/bootstrap_flash_helper.rb'
-require '../../app/helpers/railsstrap/form_errors_helper.rb'
+require_relative '../../app/helpers/railsstrap/breadcrumbs.rb'
+require_relative '../../app/helpers/railsstrap/breadcrumbs_helper.rb'
+require_relative '../../app/helpers/railsstrap/flash_block_helper.rb'
+require_relative '../../app/helpers/railsstrap/modal_helper.rb'
+require_relative '../../app/helpers/railsstrap/navbar_helper.rb'
+require_relative '../../app/helpers/railsstrap/bootstrap_flash_helper.rb'
+require_relative '../../app/helpers/railsstrap/form_errors_helper.rb'
 
 module Railsstrap
   class Engine < ::Rails::Engine
