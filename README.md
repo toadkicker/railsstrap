@@ -16,7 +16,7 @@ Then run the installer
 ```
 bundle install
 bundle exec rails g railsstrap:install
-``
+```
 
 This will insert the appropriate entries into your application.js and application.css files. It will also provide you with the ability to customize Bootstrap to your liking.
 
