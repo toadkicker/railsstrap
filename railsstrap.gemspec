@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.description = %q{Make rails and bootstrap sing with awesome helpers, additional components, and more.}
 
   s.rubyforge_project = 'railsstrap'
-  s.files = Dir['lib/**/*'] + Dir['vendor/**/*'] + Dir['app/**/*'] + %w(Rakefile README.md)
+  s.files = Dir['lib/**/*'] + Dir['vendor/**/*'] + Dir['app/**/*'] + %w(Rakefile README.md .bowerrc)
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = %w(lib app)
