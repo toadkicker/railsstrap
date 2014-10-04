@@ -11,5 +11,7 @@ __*We only accept bug reports and pull requests in GitHub*__. Join the team!
 
 * Feature requests should be accompanied by a patch, that includes tests.
 * We won't accept any feature requests that come without a patch.
+* We use git flow and semantic versions. All pull requests must go to the develop branch or they will be closed.
+* Closed bug reporting issues must contain a link to the commit that fixes them, or be labeled as wont-fix.
 
 Thanks for the your contributions!
