@@ -5,7 +5,7 @@ module Railsstrap
     class InstallGenerator < ::Rails::Generators::Base
 
       source_root File.expand_path("../templates", __FILE__)
-      desc "This generator installs Bootstrap to Asset Pipeline"
+      desc 'This generator installs Bootstrap to Asset Pipeline'
       argument :stylesheets_type, :type => :string, :default => 'less', :banner => '*less or static'
       class_option :'no-coffeescript', :type => :boolean, :default => false, :desc => 'Skips coffeescript replacement into app generators'
 
@@ -15,7 +15,7 @@ module Railsstrap
         css_manifest = 'app/assets/stylesheets/application.css'
 
         if File.exist?(js_manifest)
-          insert_into_file js_manifest, "//= require railsstrap/dist/js/railsstrap\n", :after => "jquery_ujs\n"
+          insert_into_file js_manifest, "//= require bootstrap/dist/js/bootstrap\n", :after => "jquery_ujs\n"
         else
           copy_file "application.js", js_manifest
         end
@@ -30,16 +30,16 @@ module Railsstrap
             insert_into_file css_manifest, style_require_block, :after => "require_self\n"
           end
         else
-          copy_file "application.css", "app/assets/stylesheets/application.css"
+          copy_file 'application.css', 'app/assets/stylesheets/application.css'
         end
 
       end
 
       def add_bootstrap
         if use_coffeescript?
-          copy_file "railsstrap.coffee", "app/assets/javascripts/railsstrap.js.coffee"
+          copy_file "bootstrap.coffee", "app/assets/javascripts/bootstrap.js.coffee"
         else
-          copy_file "railsstrap.js", "app/assets/javascripts/railsstrap.js"
+          copy_file "bootstrap.js", "app/assets/javascripts/bootstrap.js"
         end
         if use_less?
           copy_file "bootstrap_and_overrides.less", "app/assets/stylesheets/bootstrap_and_overrides.css.less"
@@ -59,7 +59,7 @@ module Railsstrap
 
       def cleanup_legacy
         # Remove old requires (if any) that included railsstrap/railsstrap directly:
-        gsub_file("app/assets/stylesheets/application.css", %r|\s*\*=\s*railsstrap/railsstrap\s*\n|, "")
+        gsub_file("app/assets/stylesheets/application.css", %r|\s*\*=\s*bootstrap/bootstrap\s*\n|, "")
         if File.exist?('app/assets/stylesheets/bootstrap_override.css.less')
           puts <<-EOM
           Warning:
