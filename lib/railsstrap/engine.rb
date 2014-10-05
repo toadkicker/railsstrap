@@ -3,7 +3,6 @@ require 'json'
 
 require_relative '../../app/helpers/railsstrap/breadcrumbs.rb'
 require_relative '../../app/helpers/railsstrap/breadcrumbs_helper.rb'
-require_relative '../../app/helpers/railsstrap/flash_block_helper.rb'
 require_relative '../../app/helpers/railsstrap/modal_helper.rb'
 require_relative '../../app/helpers/railsstrap/navbar_helper.rb'
 require_relative '../../app/helpers/railsstrap/bootstrap_flash_helper.rb'
@@ -11,6 +10,7 @@ require_relative '../../app/helpers/railsstrap/form_errors_helper.rb'
 
 module Railsstrap
   class Engine < ::Rails::Engine
+
     initializer 'railsstrap.setup',
       :group => :all do |app|
           bowerrc = File.read(File.join(config.root, '.bowerrc'))
@@ -22,8 +22,7 @@ module Railsstrap
         ActionController::Base.send :include, Railsstrap::Breadcrumbs
       end
 
-      [Railsstrap::FlashBlockHelper,
-       Railsstrap::BootstrapFlashHelper,
+      [Railsstrap::BootstrapFlashHelper,
        Railsstrap::FormErrorsHelper,
        Railsstrap::ModalHelper,
        Railsstrap::GlyphHelper,
