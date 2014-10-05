@@ -7,8 +7,8 @@ module Railsstrap
       source_root File.expand_path('../templates', __FILE__)
       argument :controller_path,    :type => :string
       argument :model_name,         :type => :string, :required => false
-      argument :layout,             :type => :string, :default => "application",
-                                    :banner => "Specify application layout"
+      argument :layout,             :type => :string, :default => 'application',
+                                    :banner => 'Specify application layout'
 
       class_option :excluded_columns, :type => :array, :required => false
 
@@ -82,7 +82,7 @@ module Railsstrap
       end
 
       def retrieve_columns
-        if defined?(ActiveRecord) == "constant" && ActiveRecord.class == Module 
+        if defined?(ActiveRecord) == 'constant' && ActiveRecord.class == Module
           rescue_block ActiveRecord::StatementInvalid do
             @model_name.constantize.columns
           end
