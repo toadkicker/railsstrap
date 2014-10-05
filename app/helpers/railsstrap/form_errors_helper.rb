@@ -1,7 +1,8 @@
 module Railsstrap
   module FormErrorsHelper
-    require 'active_support/core_ext'
     include ActionView::Helpers::FormTagHelper
+    attr_reader :template
+    attr_reader :object
 
     def error_span(attribute, options = {})
       options[:span_class] ||= 'help-block'
