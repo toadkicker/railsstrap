@@ -1,56 +1,56 @@
 module Railsstrap
   module Breadcrumbs
-  def self.included(base)
-    base.extend(ClassMethods)
-  end
+    def self.included(base)
+      base.extend(ClassMethods)
+    end
 
-  module ClassMethods
+    module ClassMethods
+      def add_breadcrumb(name, url = '', options = {})
+        options.merge! :klass => self.name
+        before_filter options do |controller|
+          controller.send :add_breadcrumb, name, url, options
+        end
+      end
+    end
+
+    protected
+
     def add_breadcrumb(name, url = '', options = {})
-      options.merge! :klass => self.name
-      before_filter options do |controller|
-        controller.send :add_breadcrumb, name, url, options
-      end
-    end
-  end
+      @breadcrumbs ||= []
 
-  protected
+      class_name = options.delete(:klass) || self.class.name
 
-  def add_breadcrumb(name, url = '', options = {})
-    @breadcrumbs ||= []
+      if name.is_a? Symbol
+        if url.blank?
+          url_helper = :"#{name}_path"
+          url = url_helper if respond_to?(url_helper)
+        end
 
-    class_name = options.delete(:klass) || self.class.name
-
-    if name.is_a? Symbol
-      if url.blank?
-        url_helper = :"#{name}_path"
-        url = url_helper if respond_to?(url_helper)
+        name = translate_breadcrumb name, class_name
       end
 
-      name = translate_breadcrumb name, class_name
+      unless name.is_a? String
+        url = polymorphic_path name if url.blank?
+        name = name.to_s
+      end
+
+      url = eval(url.to_s) if url.is_a?(Symbol) && url =~ /_path|_url|@/
+
+      @breadcrumbs << {:name => name, :url => url, :options => options}
     end
 
-    unless name.is_a? String
-      url = polymorphic_path name if url.blank?
-      name = name.to_s
+    def translate_breadcrumb(name, class_name)
+      scope = [:breadcrumbs]
+      namespace = class_name.underscore.split('/')
+      namespace.last.sub!('_controller', '')
+      scope += namespace
+
+      I18n.t name, :scope => scope
     end
 
-    url = eval(url.to_s) if url.is_a?(Symbol) && url =~ /_path|_url|@/
-
-    @breadcrumbs << {:name => name, :url => url, :options => options}
-  end
-
-  def translate_breadcrumb(name, class_name)
-    scope = [:breadcrumbs]
-    namespace = class_name.underscore.split('/')
-    namespace.last.sub!('_controller', '')
-    scope += namespace
-
-    I18n.t name, :scope => scope
-  end
-
-  def render_breadcrumbs(divider = '/')
-    s = render :partial => 'railsstrap/breadcrumbs', :locals => {:divider => divider}
-    s.first
-  end
+    def render_breadcrumbs(divider = '/')
+      s = render :partial => 'railsstrap/breadcrumbs', :locals => {:divider => divider}
+      s.first
+    end
   end
 end
