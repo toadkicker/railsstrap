@@ -1,4 +1,4 @@
-# Bootstrap 3.2.1 for Rails 4 Asset Pipeline
+# Bootstrap 3.2.0 + FontAwesome 4.2.0 for Rails v3.1 & v4 Asset Pipeline
 
 [![Bower version](https://badge.fury.io/bo/bootstrap.svg)](http://badge.fury.io/bo/bootstrap)
 [![Gem Version](https://badge.fury.io/rb/railsstrap.svg)](http://badge.fury.io/rb/railsstrap)
