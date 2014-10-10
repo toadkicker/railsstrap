@@ -15,6 +15,7 @@ module Railsstrap
       :group => :all do |app|
           bowerrc = File.read(File.join(config.root, '.bowerrc'))
           app.config.assets.paths << File.join(bowerrc['directory'])
+          app.config.assets.precompile += %w( .svg .eot .woff .ttf )
         end
 
     initializer 'railsstrap.setup_helpers' do |app|
