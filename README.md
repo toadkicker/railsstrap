@@ -9,6 +9,11 @@ Bootstrap is a toolkit from Twitter designed to kickstart development of webapps
 
 railsstrap integrates Bootstrap CSS toolkit for Rails Asset Pipeline (Rails 4, 3.1, 3.2 are supported). It was born and extended from twitter-bootstrap-rails, but several non-bootstrap helpers and UI improvements from the Bootstrap community.
 
+## Why is your gem different?
+
+Railsstrap is more than just another gem providing bootstrap and fontawesome for Rails apps. It includes Bootstrap additions that include exotic placements, animations, and other component enhancements not included in the official bootstrap release. It also includes many HTML helpers and additional javascript components. All of this is exposed to UI developers to customize to their liking using either LESS and Coffeescript, or plain CSS and Javascript.
+
+
 ## Example Application
 An example application is available at [toadkicker/teststrap](https://github.com/toadkicker/teststrap). You can view it running on heroku [here.](http://teststrap.herokuapp.com/) Contributions welcome.
 
