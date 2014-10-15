@@ -1,6 +1,9 @@
 ## Change Log
 
-### upcoming (2014/10/15 12:04 +00:00)
+### upcoming (2014/10/15 15:54 +00:00)
+- [40c4c8b](https://github.com/toadkicker/railsstrap/commit/40c4c8bb12f594cdf69ef77abb5ac7efa8cee398) added changelg (@toadkicker)
+
+### 3.2.0.2 (2014/10/05 08:25 +00:00)
 - [ed205e9](https://github.com/toadkicker/railsstrap/commit/ed205e9d941c1c770806476c2b6401d5e862483d) added coveralls (@toadkicker)
 - [0f5964d](https://github.com/toadkicker/railsstrap/commit/0f5964d827f9d257ee32d031cc01877a18f3c9e6) added coveralls (@toadkicker)
 - [2f27437](https://github.com/toadkicker/railsstrap/commit/2f27437363c608ad59f88fbe1ce5fea400bf3c2e) Merge remote-tracking branch 'origin/develop' into develop (@toadkicker)
@@ -18,7 +21,6 @@
 - [760126c](https://github.com/toadkicker/railsstrap/commit/760126cbc2294671da933f2e7282d7fe9ccdf5f6) set version in dev to next version (@toadkicker)
 - [80b3e13](https://github.com/toadkicker/railsstrap/commit/80b3e13ff6785221100b8fd5b06a0d5bbecaffaf) fixes undef object in /new actions (@toadkicker)
 - [2c2e0e5](https://github.com/toadkicker/railsstrap/commit/2c2e0e55b5893899c83b73323f9ad4d253760a9f) merge develop (@toadkicker)
-- [40c4c8b](https://github.com/toadkicker/railsstrap/commit/40c4c8bb12f594cdf69ef77abb5ac7efa8cee398) added changelg (@toadkicker)
 
 ### v3.2.0.1 (2014/10/03 19:50 +00:00)
 - [e2cf3f8](https://github.com/toadkicker/railsstrap/commit/e2cf3f8c5e9dbae23a41e8ed02a6694530a7928c) add bootstrap_additions (@toadkicker)
