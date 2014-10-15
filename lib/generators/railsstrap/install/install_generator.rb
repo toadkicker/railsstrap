@@ -14,13 +14,13 @@ module Railsstrap
         js_manifest = 'app/assets/javascripts/application.js'
         css_manifest = 'app/assets/stylesheets/application.css'
         asset_initializer = 'config/initializers/assets.rb'
-        config_asset_insert_line = "Rails.application.config.assets.precompile\s+=\s%w(\sfontawesome/fonts/fontawesome-webfont.eot\sfontawesome/fonts/fontawesome-webfont.woff\sfontawesome/fonts/fontawesome-webfont.ttf\sfontawesome/fonts/fontawesome-webfont.svg\s)"
+        config_asset_insert_line = "Rails.application.config.assets.precompile\s+=\s%w(\sbootstrap/fonts/glyphicons-halflings-regular.eot\sbootstrap/fonts/glyphicons-halflings-regular.svg\sbootstrap/fonts/glyphicons-halflings-regular.ttf\sbootstrap/fonts/glyphicons-halflings-regular.woff\sfontawesome/fonts/fontawesome-webfont.eot\sfontawesome/fonts/fontawesome-webfont.woff\sfontawesome/fonts/fontawesome-webfont.ttf\sfontawesome/fonts/fontawesome-webfont.svg\s)"
 
         if File.exists?(asset_initializer) && Rails::VERSION::MAJOR >= 4 #Must be Rails 4
           content = File.read(asset_initializer)
           if content.match(config_asset_insert_line)
             #set up properly
-            puts "Ensure config/initializers/assets.rb contains this line: Rails.application.config.assets.precompile\s+=\s%w(\sfontawesome/fonts/fontawesome-webfont.eot\sfontawesome/fonts/fontawesome-webfont.woff\sfontawesome/fonts/fontawesome-webfont.ttf\sfontawesome/fonts/fontawesome-webfont.svg\s)"
+            puts "Ensure config/initializers/assets.rb contains this line:\n" + config_asset_insert_line
           else
             insert_into_file asset_initializer, config_asset_insert_line, :after => 'config.assets.precompile\n'
           end
