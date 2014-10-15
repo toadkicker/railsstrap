@@ -1,9 +1,9 @@
 /*
   =require bootstrap/dist/bootstrap.css
   =require bootstrap/dist/bootstrap-theme.css
-  If you want exotic placement features, asides, and more, uncomment this
-  =require dist/bootstrap-additions.css
-  Use Font Awesome icons (default)
-  To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
-  =require fontawesome/css/font-awesome.css
+  If you want exotic placement features, animations, and more, uncomment this
+  =require dist/railsstrap.css
+  To use Font Awesome
+  =require fontawesome/css/font-awesome.(min).css
+  To use Gylphicons, you don't have to do anything. Bootstrap includes it by default.
 */

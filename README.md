@@ -12,6 +12,21 @@ railsstrap integrates Bootstrap and FontAwesome for Rails Asset Pipeline (Rails 
 Railsstrap is more than just another gem providing bootstrap and fontawesome for Rails apps. It includes Bootstrap additions that include exotic placements, animations, and other component enhancements not included in the official bootstrap release. It also includes many HTML helpers and additional javascript components. All of this is exposed to UI developers to customize to their liking using either LESS and Coffeescript, or plain CSS and Javascript.
 
 
+##Bootstrap additions
+
+###Custom Components (in development)
+* Asides - A modal that slides in from the left or right. Used often in mobile apps for off-screen sidebars or overlays.
+* Callouts - Similar to an alert, it is used for drawing attention to content.
+* Datepicker - A styled HTML5 datepicker.
+* Modal enhancements - animations and real centering placement.
+* Popover enhancements - animations and custom placements for popover arrows and locations.
+* Timepicker - A styled HTML5 time picker.
+* Tooltip - animations and custom placements for tooltip arrows and locations.
+
+###Animations
+
+Railsstrap comes with over 75 CSS animations. See the wiki or the [vendor/assets/stylesheets/animate](https://github.com/toadkicker/railsstrap/tree/develop/vendor/assets/stylesheets/animate) folder for more info.
+
 ## Example Application
 An example application is available at [toadkicker/teststrap](https://github.com/toadkicker/teststrap). You can view it running on heroku [here.](http://teststrap.herokuapp.com/) Contributions welcome.
 
@@ -41,6 +56,12 @@ For Rails 3 applications, add it to config/environments/production.rb. For Rails
 
 
 Most of the info you'll need is in the wiki, and if it isn't please contribute!
+
+##Building the gem
+
+The gem is organized by ruby specific tasks, and front-end specific tasks. `bundle exec rake` will attempt to run the suite of build commands, but you need a few dependencies that are outside of bundler/rubygems's domain.
+
+For compiling stylesheets and javascripts, the gem uses Gruntjs. You'll need node/npm installed to compile them manually. *You do not need to use grunt if you are just referencing specific less/js/coffee files in your rails app*
 
 ## Many thanks to the twitter-bootstrap-rails contributors, who made this fork possible:
 <ul>

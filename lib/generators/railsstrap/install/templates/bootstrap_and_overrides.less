@@ -1,21 +1,23 @@
 @import "bootstrap/less/bootstrap";
-//If you want exotic placement features, asides, and more, uncomment this
-//@import "bootstrap-additions";
+//If you want exotic placement features, animations, and more, import this
+//@import "railsstrap";
 
 // Font Awesome
 @import "fontawesome/less/font-awesome";
 
-// Glyphicons - requires less-rails gem
-//@import "railsstrap/less/glyphicons.less";
+// Glyphicons - included by default in bootstrap.
+// You may need to customize config/initializers/assets.rb (Rails 4), or config/environments/[env].rb to add font paths in.
+// In either case of FontAwesome or Glyphicons, the railsstrap:install task should insert the appropriate entries for you.
 
 // Your custom LESS stylesheets goes here
 //
 // Since railsstrap was imported above you have access to its mixins which
 // you may use and inherit here, ex:
-// @import "bootstrap/less/mixins/alerts.less
+// @import "bootstrap/less/mixins/alerts.less;
 //
 // If you'd like to override railsstrap's own variables, you can do so here as well
 // See http://bootstrap.github.com/bootstrap/customize.html#variables for their names and documentation
 //
 // Example:
+// @import (reference) 'bootstrap/less/variables.less';
 // @link-color: #ff0000;
