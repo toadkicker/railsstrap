@@ -6,6 +6,7 @@ Bundler::GemHelper.install_tasks
 
 desc 'Bundle the gem'
 task :bundle  => [:bundle_install] do
+  sh 'grunt less_imports && grunt less:dist'
   sh 'gem build *.gemspec'
   sh 'gem install *.gem'
   sh 'rm *.gem'

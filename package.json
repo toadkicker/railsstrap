@@ -1,0 +1,29 @@
+{
+  "name": "railsstrap",
+  "app": ".",
+  "version": "3.2.0",
+  "description": "Make your rails project awesome with railsstrap. Bootstrap 3.2+ Helpers, additional components, and more.",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/toadkicker/railsstrap.git"
+  },
+  "keywords": [
+    "bootstrap",
+    "fontawesome",
+    "rails"
+  ],
+  "author": "Todd Baur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/toadkicker/railsstrap/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-less-imports": "~1.0.0",
+    "grunt-contrib-less": "~0.11.4"
+  }
+}
