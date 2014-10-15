@@ -71,7 +71,7 @@ module Railsstrap
 
     # Returns current url or path state (useful for buttons).
     # Example:
-    #   # Assume we'r currently at blog/categories/test
+    #   # Assume we're currently at blog/categories/test
     #   uri_state('/blog/categories/test', {})               # :active
     #   uri_state('/blog/categories', {})                    # :chosen
     #   uri_state('/blog/categories/test', {method: delete}) # :inactive
