@@ -1,13 +1,16 @@
-# Bootstrap 3.2.1 for Rails 4 Asset Pipeline
+# Bootstrap 3.2.0 + FontAwesome 4.2.0 for Rails v3.1 & v4 Asset Pipeline
 
 [![Bower version](https://badge.fury.io/bo/bootstrap.svg)](http://badge.fury.io/bo/bootstrap)
 [![Gem Version](https://badge.fury.io/rb/railsstrap.svg)](http://badge.fury.io/rb/railsstrap)
 [![Build Status](https://travis-ci.org/toadkicker/railsstrap.svg?branch=v3.2.0.1)](https://travis-ci.org/toadkicker/railsstrap)
 [![Coverage Status](https://img.shields.io/coveralls/toadkicker/railsstrap.svg)](https://coveralls.io/r/toadkicker/railsstrap?branch=develop)
 
-Bootstrap is a toolkit from Twitter designed to kickstart development of webapps and sites. It includes base CSS and HTML for typography, forms, buttons, tables, grids, navigation, and more.
+railsstrap integrates Bootstrap and FontAwesome for Rails Asset Pipeline (Rails 4, 3.1, 3.2 are supported). It was born and extended from twitter-bootstrap-rails.
 
-railsstrap integrates Bootstrap CSS toolkit for Rails Asset Pipeline (Rails 4, 3.1, 3.2 are supported). It was born and extended from twitter-bootstrap-rails, but several non-bootstrap helpers and UI improvements from the Bootstrap community.
+## Why is your gem different?
+
+Railsstrap is more than just another gem providing bootstrap and fontawesome for Rails apps. It includes Bootstrap additions that include exotic placements, animations, and other component enhancements not included in the official bootstrap release. It also includes many HTML helpers and additional javascript components. All of this is exposed to UI developers to customize to their liking using either LESS and Coffeescript, or plain CSS and Javascript.
+
 
 ## Example Application
 An example application is available at [toadkicker/teststrap](https://github.com/toadkicker/teststrap). You can view it running on heroku [here.](http://teststrap.herokuapp.com/) Contributions welcome.
@@ -24,7 +27,18 @@ bundle install
 bundle exec rails g railsstrap:install
 ```
 
-This will insert the appropriate entries into your application.js and application.css files. It will also provide you with the ability to customize Bootstrap to your liking.
+This will insert the appropriate entries into your application.js and application.css files. It will also provide you with the ability to customize Bootstrap and FontAwesome to your liking.
+
+####Hotfix note for v3.2.0.2 and lower:
+
+You will need to precompile your assets for FontAwesome support. To do this add this line:
+
+```
+Rails.application.config.assets.precompile += %w( fontawesome/fonts/fontawesome-webfont.eot fontawesome/fonts/fontawesome-webfont.woff fontawesome/fonts/fontawesome-webfont.ttf fontawesome/fonts/fontawesome-webfont.svg )
+```
+
+For Rails 3 applications, add it to config/environments/production.rb. For Rails 4, add it to config/initializers/assets.rb.
+
 
 Most of the info you'll need is in the wiki, and if it isn't please contribute!
 

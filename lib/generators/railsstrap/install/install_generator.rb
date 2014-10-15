@@ -13,6 +13,23 @@ module Railsstrap
 
         js_manifest = 'app/assets/javascripts/application.js'
         css_manifest = 'app/assets/stylesheets/application.css'
+        asset_initializer = 'config/initializers/assets.rb'
+        config_asset_insert_line = "Rails.application.config.assets.precompile\s+=\s%w(\sfontawesome/fonts/fontawesome-webfont.eot\sfontawesome/fonts/fontawesome-webfont.woff\sfontawesome/fonts/fontawesome-webfont.ttf\sfontawesome/fonts/fontawesome-webfont.svg\s)"
+
+        if File.exists?(asset_initializer) && Rails::VERSION::MAJOR >= 4 #Must be Rails 4
+          content = File.read(asset_initializer)
+          if content.match(config_asset_insert_line)
+            #set up properly
+            puts "Ensure config/initializers/assets.rb contains this line: Rails.application.config.assets.precompile\s+=\s%w(\sfontawesome/fonts/fontawesome-webfont.eot\sfontawesome/fonts/fontawesome-webfont.woff\sfontawesome/fonts/fontawesome-webfont.ttf\sfontawesome/fonts/fontawesome-webfont.svg\s)"
+          else
+            insert_into_file asset_initializer, config_asset_insert_line, :after => 'config.assets.precompile\n'
+          end
+        else #Assumes Rails 3.1 then...
+          rails_three_config = 'config/environments/production.rb'
+          if File.exists?(rails_three_config) && Rails::VERSION::MAJOR <= 4
+            insert_into_file rails_three_config, config_asset_insert_line, :after => 'config.assets.precompile\n'
+          end
+        end
 
         if File.exist?(js_manifest)
           insert_into_file js_manifest, "//= require bootstrap/dist/js/bootstrap\n", :after => "jquery_ujs\n"
@@ -23,6 +40,7 @@ module Railsstrap
         if File.exist?(css_manifest)
           # Add our own require:
           content = File.read(css_manifest)
+
           if content.match(/require_tree\s+\.\s*$/)
             # Good enough - that'll include our bootstrap_and_overrides.css.less
           else
