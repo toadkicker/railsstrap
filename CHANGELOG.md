@@ -1,6 +1,6 @@
 ## Change Log
 
-### upcoming (2014/10/28 17:03 +00:00)
+### v3.2.0.3 (2014/10/28 17:06 +00:00)
 - [40c4c8b](https://github.com/toadkicker/railsstrap/commit/40c4c8bb12f594cdf69ef77abb5ac7efa8cee398) added changelg (@toadkicker)
 - [fd1511c](https://github.com/toadkicker/railsstrap/commit/fd1511c407ea67a071c7210884900aab453ffd29) Update README.md (@toadkicker)
 - [5e3e4f9](https://github.com/toadkicker/railsstrap/commit/5e3e4f9086c178598bc7aae6fb5546a7a0082cdd) adds line in config to handle precompiling fontawesome (@toadkicker)
@@ -20,6 +20,7 @@
 - [e824ed7](https://github.com/toadkicker/railsstrap/commit/e824ed7d67264bd114278d9633967395f8b605ae) bump version to 3.2.0.3 (@toadkicker)
 - [f76bd55](https://github.com/toadkicker/railsstrap/commit/f76bd556ce87a4411816851f245a263b75d70504) fix semvers (@toadkicker)
 - [411367d](https://github.com/toadkicker/railsstrap/commit/411367de2468104cdd95a730b106d45043316fe4) Revert "fix semvers" (@toadkicker)
+- [5e3539a](https://github.com/toadkicker/railsstrap/commit/5e3539ab072336d3f93cd9468e2d60ffa81ea0e7) updated changelog (@toadkicker)
 
 ### 3.2.0.2 (2014/10/05 08:25 +00:00)
 - [ed205e9](https://github.com/toadkicker/railsstrap/commit/ed205e9d941c1c770806476c2b6401d5e862483d) added coveralls (@toadkicker)
