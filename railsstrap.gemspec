@@ -19,5 +19,11 @@ Gem::Specification.new do |s|
   s.require_paths = %w(lib app)
 
   s.add_dependency         'actionpack', '>= 3.1'
+  s.add_dependency         'less-rails', '>= 2.5.0'
+  if Gem::Platform::RUBY === 'jruby'
+    s.add_runtime_dependency 'therubyrhino'
+  else
+    s.add_runtime_dependency 'therubyracer'
+  end
   s.add_runtime_dependency 'rails', '>= 3.1'
 end
