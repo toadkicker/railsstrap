@@ -1,10 +1,11 @@
 ## Change Log
 
-### upcoming (2014/10/30 23:02 +00:00)
+### v3.3.0 (2014/10/30 23:06 +00:00)
 - [601c357](https://github.com/toadkicker/railsstrap/commit/601c357ef23fcb42a3b13cf78b4b6cce50614507) post-release changelog (@toadkicker)
 - [#22](https://github.com/toadkicker/railsstrap/pull/22) Merge pull request #22 from toadkicker/master (@toadkicker)
 - [a2915c2](https://github.com/toadkicker/railsstrap/commit/a2915c24714d6fdcbab367d9e1649d0ad33dc68e) bump version to 3.3.0 (@toadkicker)
 - [#23](https://github.com/toadkicker/railsstrap/pull/23) Merge pull request #23 from toadkicker/feature/v330 (@toadkicker)
+- [a4ac798](https://github.com/toadkicker/railsstrap/commit/a4ac7987da68044d2fb8000c40a418b96a53d643) updated changelog (@toadkicker)
 
 ### v3.2.0.3 (2014/10/28 17:06 +00:00)
 - [40c4c8b](https://github.com/toadkicker/railsstrap/commit/40c4c8bb12f594cdf69ef77abb5ac7efa8cee398) added changelg (@toadkicker)
