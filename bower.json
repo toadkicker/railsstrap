@@ -3,16 +3,15 @@
   "version": "3.2.0",
   "homepage": "https://github.com/seyhunak/railsstrap-railsstrap-rails",
   "authors": [
-    "Todd Baur <todd@toadkicker.com>",
-    "Seyhun Akyurek <seyhunak@gmail.com>"
+    "Todd Baur <todd@toadkicker.com>"
   ],
   "description": "Twitter Bootstrap for Rails 3.x - 4 Asset Pipeline",
   "keywords": [
     "railsstrap",
     "twbs",
+    "bootstrap",
     "fontawesome",
     "rails",
-    "railsstrap",
     "railsstrap"
   ],
   "license": "MIT",
@@ -25,7 +24,7 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.2.0",
+    "bootstrap": "~3.3.0",
     "fontawesome": "~4.2.0"
   }
 }
