@@ -44,7 +44,7 @@ module Railsstrap
           if content.match(/require_tree\s+\.\s*$/)
             # Good enough - that'll include our bootstrap_and_overrides.css.less
           else
-            style_require_block = " *= require bootstrap_and_overrides\n"
+            style_require_block = " *= require bootstrap_and_overrides\n*=require fontawesome"
             insert_into_file css_manifest, style_require_block, :after => "require_self\n"
           end
         else
