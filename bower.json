@@ -1,7 +1,7 @@
 {
   "name": "railsstrap",
   "version": "3.3.1",
-  "homepage": "https://github.com/seyhunak/railsstrap-railsstrap-rails",
+  "homepage": "https://github.com/toadkicker/railsstrap",
   "authors": [
     "Todd Baur <todd@toadkicker.com>"
   ],
@@ -12,7 +12,11 @@
     "bootstrap",
     "fontawesome",
     "rails",
-    "railsstrap"
+    "railsstrap",
+    "date picker",
+    "time picker",
+    "helpers",
+    "animation"
   ],
   "license": "MIT",
   "ignore": [
