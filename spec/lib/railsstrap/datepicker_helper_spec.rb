@@ -6,7 +6,7 @@ require 'spec_helper'
 include ActionView::Helpers
 include ActionView::Context
 
-require_relative '../../../app/helpers/railsstrap/datepicker_helper'
+require_relative '../../../app/helpers/railsstrap/date_picker_helper'
 include Railsstrap::DatePickerHelper
 
 describe Railsstrap::DatePickerHelper, :type => :helper do
@@ -33,8 +33,8 @@ describe Railsstrap::DatePickerHelper, :type => :helper do
 end
 
 DEFAULT_DATEPICKER = <<-HTML
-<div class="input-group date" data-date-language="en" data-datepicker="true">
-  <input class="form-control" id="date_picker" type="text"/>
+<div class="input-group date" data-date-language="en" data-datepicker="true" id="date_picker">
+  <input class="form-control" id="date_picker" name="date_picker" type="text"value=""/>
   <span class="input-group-addon">
     <i class="fa fa-calendar"></i>
   </span>
@@ -42,8 +42,8 @@ DEFAULT_DATEPICKER = <<-HTML
 HTML
 
 DATEPICKER_ID_CHANGED = <<-HTML
-<div class="input-group date" data-date-language="en" data-datepicker="true">
-  <input class="form-control" id="testing" type="text"/>
+<div class="input-group date" data-date-language="en" data-datepicker="true" id="testing">
+  <input class="form-control" id="date_picker" name="date_picker" type="text"value=""/>
   <span class="input-group-addon">
     <i class="fa fa-calendar"></i>
   </span>
@@ -51,9 +51,9 @@ DATEPICKER_ID_CHANGED = <<-HTML
 HTML
 
 DEFAULT_JS_DATEPICKER = <<-HTML
-<script>//<![CDATA[jQuery(function(){jQuery([data-datepicker=\"true\"]).datetimepicker({\"selector\":\"[data-datepicker=\\\"true\\\"]\",\"language\":\"en\",\"icons\":{\"time\":\"fafa-clock-o\",\"date\":\"fafa-calendar\",\"up\":\"fafa-chevron-up\",\"down\":\"fafa-chevron-down\"}});});//]]></script>
+<script>//<![CDATA[(function($){$('[data-datepicker=\"true\"]').datetimepicker({\"selector\":\"[data-datepicker=\\\"true\\\"]\",\"language\":\"en\",\"icons\":{\"time\":\"fafa-clock-o\",\"date\":\"fafa-calendar\",\"up\":\"fafa-chevron-up\",\"down\":\"fafa-chevron-down\"}});})(jQuery);//]]></script>
 HTML
 
 DEFAULT_JS_DATEPICKER_OPTIONS = <<-HTML
-<script>//<![CDATA[jQuery(function(){jQuery([data-datepicker=\"true\"]).datetimepicker({\"selector\":\"[data-datepicker=\\\"true\\\"]\",\"language\":\"ru\",\"icons\":{\"time\":\"fafa-clock-o\",\"date\":\"fafa-calendar\",\"up\":\"fafa-chevron-up\",\"down\":\"fafa-chevron-down\"}});});//]]></script>
+<script>//<![CDATA[(function($){$('[data-datepicker=\"true\"]').datetimepicker({\"selector\":\"[data-datepicker=\\\"true\\\"]\",\"language\":\"ru\",\"icons\":{\"time\":\"fafa-clock-o\",\"date\":\"fafa-calendar\",\"up\":\"fafa-chevron-up\",\"down\":\"fafa-chevron-down\"}});})(jQuery);//]]></script>
 HTML

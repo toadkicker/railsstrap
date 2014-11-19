@@ -1,14 +1,9 @@
 /*
   =require bootstrap/dist/bootstrap.css
   =require bootstrap/dist/bootstrap-theme.css
-  If you want exotic placement features, animations, and more, uncomment this:
+  If you want exotic placement features, animations, components, and more, uncomment this:
   =require dist/railsstrap.css
   To use Font Awesome
   =require fontawesome/css/font-awesome.(min).css
   To use Gylphicons, you don't have to do anything. Bootstrap includes it by default.
-
-  Date and Time Picker
-  To enable the date and time picker, uncomment this:
-  =require bootstrap-datepicker/less/datepicker3.css
-  Don't forget to include the javascript library as well.
 */

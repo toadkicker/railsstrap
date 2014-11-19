@@ -24,6 +24,7 @@
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-less-imports": "~1.0.0",
-    "grunt-contrib-less": "~0.11.4"
+    "grunt-contrib-less": "~0.11.4",
+    "load-grunt-tasks": "~1.0.0"
   }
 }

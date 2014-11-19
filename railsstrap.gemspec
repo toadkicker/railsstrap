@@ -25,5 +25,4 @@ Gem::Specification.new do |s|
   else
     s.add_runtime_dependency 'therubyracer'
   end
-  s.add_runtime_dependency 'rails', '>= 3.1'
 end

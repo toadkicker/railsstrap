@@ -7,7 +7,7 @@ require_relative '../../app/helpers/railsstrap/modal_helper.rb'
 require_relative '../../app/helpers/railsstrap/navbar_helper.rb'
 require_relative '../../app/helpers/railsstrap/bootstrap_flash_helper.rb'
 require_relative '../../app/helpers/railsstrap/form_errors_helper.rb'
-require_relative '../../app/helpers/railsstrap/datepicker_helper.rb'
+require_relative '../../app/helpers/railsstrap/date_picker_helper.rb'
 
 module Railsstrap
   class Engine < ::Rails::Engine
