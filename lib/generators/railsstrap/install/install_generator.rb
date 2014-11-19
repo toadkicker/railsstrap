@@ -14,7 +14,7 @@ module Railsstrap
         js_manifest = 'app/assets/javascripts/application.js'
         css_manifest = 'app/assets/stylesheets/application.css'
         asset_initializer = 'config/initializers/assets.rb'
-        config_asset_insert_line = "Rails.application.config.assets.precompile\s+=\s%w(\sbootstrap/fonts/glyphicons-halflings-regular.eot\sbootstrap/fonts/glyphicons-halflings-regular.svg\sbootstrap/fonts/glyphicons-halflings-regular.ttf\sbootstrap/fonts/glyphicons-halflings-regular.woff\sfontawesome/fonts/fontawesome-webfont.eot\sfontawesome/fonts/fontawesome-webfont.woff\sfontawesome/fonts/fontawesome-webfont.ttf\sfontawesome/fonts/fontawesome-webfont.svg\s)"
+        config_asset_insert_line = "Rails.application.config.assets.precompile\s+=\s%w(.svg .eot .woff .ttf)"
 
         if File.exists?(asset_initializer) && Rails::VERSION::MAJOR >= 4 #Must be Rails 4
           content = File.read(asset_initializer)
