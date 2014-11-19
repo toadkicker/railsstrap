@@ -24,7 +24,8 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.3.0",
+    "jquery": ">2.0",
+    "bootstrap": "~3.3.1",
     "fontawesome": "~4.2.0"
   }
 }
