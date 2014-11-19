@@ -7,6 +7,7 @@ require_relative '../../app/helpers/railsstrap/modal_helper.rb'
 require_relative '../../app/helpers/railsstrap/navbar_helper.rb'
 require_relative '../../app/helpers/railsstrap/bootstrap_flash_helper.rb'
 require_relative '../../app/helpers/railsstrap/form_errors_helper.rb'
+require_relative '../../app/helpers/railsstrap/datepicker_helper.rb'
 
 module Railsstrap
   class Engine < ::Rails::Engine
@@ -28,11 +29,13 @@ module Railsstrap
        Railsstrap::GlyphHelper,
        Railsstrap::IconHelper,
        Railsstrap::NavbarHelper,
-       Railsstrap::BadgeLabelHelper].each do |h|
+       Railsstrap::BadgeLabelHelper,
+       Railsstrap::DatePickerHelper].each do |h|
         app.config.to_prepare do
           ActionController::Base.send :helper, h
         end
       end
+
       ActionView::Helpers::FormBuilder.send :include, Railsstrap::FormErrorsHelper
     end
   end

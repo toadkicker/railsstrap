@@ -25,6 +25,7 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.0",
-    "fontawesome": "~4.2.0"
+    "fontawesome": "~4.2.0",
+    "bootstrap-datepicker": "~1.3.0"
   }
 }
