@@ -16,16 +16,15 @@ Railsstrap is more than just another gem providing bootstrap and fontawesome for
 
 ###Custom Components (in development)
 * Asides - A modal that slides in from the left or right. Used often in mobile apps for off-screen sidebars or overlays.
-* Callouts - Similar to an alert, it is used for drawing attention to content.
-* Datepicker - A styled HTML5 datepicker.
+* Callouts - Similar to an alert, it is used for drawing attention to content. - New in 3.3.0!
+* Date & Time picker - A styled HTML5 datepicker. - New in 3.3.1!
 * Modal enhancements - animations and real centering placement.
 * Popover enhancements - animations and custom placements for popover arrows and locations.
-* Timepicker - A styled HTML5 time picker.
 * Tooltip - animations and custom placements for tooltip arrows and locations.
 
 ###Animations
 
-Railsstrap comes with over 75 CSS animations. See the wiki or the [vendor/assets/stylesheets/animate](https://github.com/toadkicker/railsstrap/tree/develop/vendor/assets/stylesheets/animate) folder for more info.
+Railsstrap comes with over 75 CSS animations. See the wiki or the [vendor/assets/stylesheets/animate](https://github.com/toadkicker/railsstrap/tree/develop/vendor/assets/stylesheets/animate) folder for more info. Also the wiki has detailed instructions on using them.
 
 ## Example Application
 An example application is available at [toadkicker/teststrap](https://github.com/toadkicker/teststrap). You can view it running on heroku [here.](http://teststrap.herokuapp.com/) Contributions welcome.
@@ -48,11 +47,17 @@ This will insert the appropriate entries into your application.js and applicatio
 
 You will need to precompile your assets for FontAwesome support. To do this add this line:
 
+This is verbose:
 ```
 Rails.application.config.assets.precompile += %w( fontawesome/fonts/fontawesome-webfont.eot fontawesome/fonts/fontawesome-webfont.woff fontawesome/fonts/fontawesome-webfont.ttf fontawesome/fonts/fontawesome-webfont.svg )
 ```
 
-For Rails 3 applications, add it to config/environments/production.rb. For Rails 4, add it to config/initializers/assets.rb.
+This is all you really need:
+```
+Rails.application.config.assets.precompile += %w(.svg .eot .woff .ttf)
+```
+
+For Rails 3 applications, add it to ```config/environments/production.rb```. For Rails 4, add it to ```config/initializers/assets.rb```.
 
 
 Most of the info you'll need is in the wiki, and if it isn't please contribute!
