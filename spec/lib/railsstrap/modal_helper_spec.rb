@@ -40,18 +40,15 @@ describe Railsstrap::ModalHelper, :type => :helper do
   end
 
   it 'renders a modal toggle button' do
-    expect(modal_toggle('Save', :href => "#modal").gsub(/\s/, '')).to eql MODAL_TOGGLE.gsub(/\s/, '')
+    expect(modal_toggle(:content => 'Save', :href => "#modal").gsub(/\s/, '')).to eql MODAL_TOGGLE.gsub(/\s/, '')
   end
 
   it 'renders a modal toggle button with options changed' do
-    expect(modal_toggle('Save', :href => "#modal", :data => {:foo => true, :toggle => 'modal'}).gsub(/\s/, '')).to eql MODAL_TOGGLE_OPTS.gsub(/\s/, '')
+    expect(modal_toggle(:content => 'Save', :href => "#modal", :data => {:foo => true, :toggle => 'modal'}).gsub(/\s/, '')).to eql MODAL_TOGGLE_OPTS.gsub(/\s/, '')
   end
 
   it 'renders a modal toggle button with a block given' do
-    def opts
-      { :href => "#modal", :data => {:foo => true, :toggle => 'modal'} }
-    end
-    expect(modal_toggle('Save', opts).gsub(/\s/, '')).to eql MODAL_TOGGLE_OPTS.gsub(/\s/, '')
+    expect(modal_toggle(:href => "#modal", :data => {:foo => true, :toggle => 'modal'}){ content_tag(:span, 'Blocks Rock', class: "i-added-you") }.gsub(/\s/, '')).to eql MODAL_TOGGLE_BLOCK.gsub(/\s/, '')
   end
 
   it 'renders a cancel button' do
@@ -101,6 +98,14 @@ HTML
 
 MODAL_TOGGLE_OPTS = <<-HTML
 <a class="btn btn-default" data-foo="true" data-toggle="modal" href="#modal">Save</a>
+HTML
+
+MODAL_TOGGLE_BLOCK = <<-HTML
+<a class="btn btn-default" data-foo="true" data-toggle="modal" href="#modal">
+  <span class="i-added-you">
+    Blocks Rock
+  </span>
+</a>
 HTML
 
 MODAL_CANCEL_BUTTON = <<-HTML

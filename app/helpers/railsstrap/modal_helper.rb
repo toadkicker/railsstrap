@@ -38,17 +38,11 @@ module Railsstrap
       content_tag :button, '&times;'.html_safe, :class => 'close', :data => {:dismiss => dismiss}, :'aria-hidden' => true
     end
 
-    def modal_toggle(content_or_options = nil, options, &block)
-      if block_given?
-        if content_or_options.is_a?(Hash)
-          default_options = { :class => 'btn btn-default', :data => { :toggle => 'modal'}, :href => options[:dialog] }.merge(content_or_options)
-          content_tag :a, nil, default_options, true, &block
-        end
-
-      else
-        default_options = { :class => 'btn btn-default', :data => { :toggle => 'modal'}, :href => options[:dialog] }.merge(options)
-        content_tag :a, content_or_options, default_options, true
-      end
+    def modal_toggle(options = nil, &block)
+      opts = { :content => 'Close', :class => 'btn btn-default', :data => { :toggle => 'modal'}, :href => options[:dialog] }.merge(options)
+      content = opts[:content]
+      opts.delete :content
+      block_given? ? content_tag(:a, content, opts, true, &block) : content_tag(:a, content, opts, true)
     end
 
     def modal_cancel_button(content, options)
@@ -57,7 +51,7 @@ module Railsstrap
       content_tag_string :a, content, default_opts.merge(options)
     end
 
-    private
+    protected
     def default_modal_options
       {:id => 'modal', :size => '', :show_close => true, :dismiss => true}
     end
