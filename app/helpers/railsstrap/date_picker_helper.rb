@@ -45,7 +45,6 @@ module Railsstrap
 
     def date_picker_icon(options = {})
       opts = default_dp_options.merge(options)
-      puts default_dp_options
       content_tag opts[:icon_wrapper_tag], class: opts[:icon_wrapper_class] {
         content_tag :i, '', class: opts[:icon]
       }
@@ -61,7 +60,7 @@ module Railsstrap
       javascript_tag "(function ($) { $('#{opts[:selector]}').datetimepicker(#{opts.to_json});})(jQuery);"
     end
 
-    private
+    protected
     def default_dp_options
       { id: 'date_picker',
         wrapper_tag: :div,
