@@ -40,10 +40,11 @@ module Railsstrap
 
     def modal_toggle(content_or_options = nil, options, &block)
       if block_given?
-        options = content_or_options if content_or_options.is_a?(Hash)
-        default_options = { :class => 'btn btn-default', :data => { :toggle => 'modal'}, :href => options[:dialog] }.merge(options)
+        if content_or_options.is_a?(Hash)
+          default_options = { :class => 'btn btn-default', :data => { :toggle => 'modal'}, :href => options[:dialog] }.merge(content_or_options)
+          content_tag :a, nil, default_options, true, &block
+        end
 
-        content_tag :a, nil, default_options, true, &block
       else
         default_options = { :class => 'btn btn-default', :data => { :toggle => 'modal'}, :href => options[:dialog] }.merge(options)
         content_tag :a, content_or_options, default_options, true

@@ -47,8 +47,15 @@ describe Railsstrap::ModalHelper, :type => :helper do
     expect(modal_toggle('Save', :href => "#modal", :data => {:foo => true, :toggle => 'modal'}).gsub(/\s/, '')).to eql MODAL_TOGGLE_OPTS.gsub(/\s/, '')
   end
 
+  it 'renders a modal toggle button with a block given' do
+    def opts
+      { :href => "#modal", :data => {:foo => true, :toggle => 'modal'} }
+    end
+    expect(modal_toggle('Save', opts).gsub(/\s/, '')).to eql MODAL_TOGGLE_OPTS.gsub(/\s/, '')
+  end
+
   it 'renders a cancel button' do
-    expect(modal_cancel_button("Cancel", :href => "#modal", :data => {:dismiss => 'modal'}).gsub(/\s/, '')).to eql MODAL_CANCEL_BUTTON.gsub(/\s/, '')
+    expect(modal_cancel_button('Cancel', :href => "#modal", :data => {:dismiss => 'modal'}).gsub(/\s/, '')).to eql MODAL_CANCEL_BUTTON.gsub(/\s/, '')
   end
 end
 
