@@ -37,14 +37,23 @@ module Railsstrap
   module DatePickerHelper
 
     def date_picker(options = {})
-      opts = default_options.merge(options)
-      input = text_field_tag opts[:input_name], '', class: opts[:input_class]
-      icon_wrapper = content_tag opts[:icon_wrapper_tag], class: opts[:icon_wrapper_class] do
-        content_tag :i, '', class: opts[:icon]
-      end
+      opts = default_dp_options.merge(options)
       content_tag(opts[:wrapper_tag], id: opts[:id], class: opts[:wrapper_class], data: opts[:data]) {
-        opts[:show_input] ? input + icon_wrapper : icon_wrapper
+        opts[:show_input] ? date_picker_input(opts) + date_picker_icon(opts) : date_picker_icon(opts)
       }
+    end
+
+    def date_picker_icon(options = {})
+      opts = default_dp_options.merge(options)
+      puts default_dp_options
+      content_tag opts[:icon_wrapper_tag], class: opts[:icon_wrapper_class] {
+        content_tag :i, '', class: opts[:icon]
+      }
+    end
+
+    def date_picker_input(options = {})
+      opts = default_dp_options.merge(options)
+      text_field_tag opts[:input_name], '', class: opts[:input_class]
     end
 
     def date_picker_javascript(options = {})
@@ -53,7 +62,7 @@ module Railsstrap
     end
 
     private
-    def default_options
+    def default_dp_options
       { id: 'date_picker',
         wrapper_tag: :div,
         show_input: true,

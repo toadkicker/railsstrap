@@ -8,16 +8,16 @@ include ActionView::Context
 
 require_relative '../../../app/helpers/railsstrap/date_picker_helper'
 include Railsstrap::DatePickerHelper
-
 describe Railsstrap::DatePickerHelper, :type => :helper do
 
   it 'should render a date_picker html block' do
     expect(date_picker.gsub(/\s/, ''))
-    .to eql(DEFAULT_DATEPICKER.gsub(/\s/, ''))
+        .to eql(DEFAULT_DATEPICKER.gsub(/\s/, ''))
   end
 
   it 'should override default options' do
-    expect(date_picker({id: "testing"}).gsub(/\s/, '')).to eql(DATEPICKER_ID_CHANGED.gsub(/\s/, ''))
+    expect(date_picker({id: 'testing'}).gsub(/\s/, ''))
+        .to eql(DATEPICKER_ID_CHANGED.gsub(/\s/, ''))
   end
 
   it 'should render a script tag' do
