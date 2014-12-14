@@ -1,13 +1,9 @@
 module Railsstrap
   module ModalHelper
 
-    def default_options
-      return {:id => 'modal', :size => '', :show_close => true, :dismiss => true}
-    end
-
     #modals have a header, a body, a footer for options.
     def modal_dialog(options = {}, &block)
-      opts = default_options.merge(options)
+      opts = default_modal_options.merge(options)
       content_tag :div, :id => options[:id], :class => "railsstrap-modal modal fade" do
         content_tag :div, :class => "modal-dialog #{opts['size']}" do
           content_tag :div, :class => "modal-content" do
@@ -59,6 +55,11 @@ module Railsstrap
       default_opts = { :class => "btn railsstrap-modal-cancel-button" }
 
       content_tag_string "a", content, default_opts.merge(options)
+    end
+
+    private
+    def default_modal_options
+      {:id => 'modal', :size => '', :show_close => true, :dismiss => true}
     end
 
   end
