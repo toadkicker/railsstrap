@@ -29,7 +29,7 @@ module Railsstrap
 
           text = content_tag(opts[:container_tag],
                              (opts[:show_close] ? close_button : '') +
-                             msg, :class => "alert #{opts[:animation]} alert-#{type} #{opts[:class]}")
+                             msg.html_safe, :class => "alert #{opts[:animation]} alert-#{type} #{opts[:class]}")
           flash_messages << text if msg
         end
       end
