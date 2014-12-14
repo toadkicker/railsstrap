@@ -50,6 +50,11 @@ describe Railsstrap::NavbarHelper, :type => :helper do
         .to eql(NAVBAR_WITH_BRAND_AND_LINK.gsub(/\s/, '').downcase)
     end
 
+    it "should be able to set the brand link url without a turbolink" do
+      expect(nav_bar(:brand => "Ninety Ten", :brand_link => "http://www.ninetyten.com", :no_turbolink => true).gsub(/\s/, '').downcase)
+          .to eql(NAVBAR_WITH_BRAND_AND_LINK_TBLINK.gsub(/\s/, '').downcase)
+    end
+
     it "should add the buttons etc for a responsive layout with no block passed" do
       expect(nav_bar(:responsive => true).gsub(/\s/, '').downcase).to eql(RESPONSIVE_NAVBAR.gsub(/\s/, '').downcase)
     end
@@ -143,6 +148,18 @@ describe Railsstrap::NavbarHelper, :type => :helper do
       expect(ele).to have_tag(:li, with: {class: 'dropdown'})
       expect(ele).to have_tag(:a, with: {class: 'dropdown-toggle'})
       expect(ele).to have_tag(:ul, with: {class: 'dropdown-menu'})
+    end
+  end
+
+  describe "drop_down_divider" do
+    it "should render <li class='divider-vertical'></li>" do
+      expect(drop_down_divider).to match '<li class="divider"></li>'
+    end
+  end
+
+  describe "drop_down_header" do
+    it "should render <li class='divider-vertical'></li>" do
+      expect(drop_down_header('Home')).to match '<li class="nav-header">Home</li>'
     end
   end
 
@@ -243,6 +260,16 @@ NAVBAR_WITH_BRAND_AND_LINK = <<-HTML
 <nav class="navbar navbar-default" role="navigation">
   <div class="container">
     <a class="navbar-brand" href="http://www.ninetyten.com">
+      Ninety Ten
+    </a>
+  </div>
+</nav>
+HTML
+
+NAVBAR_WITH_BRAND_AND_LINK_TBLINK = <<-HTML
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <a class="navbar-brand" data-no-turbolink="true" href="http://www.ninetyten.com">
       Ninety Ten
     </a>
   </div>
