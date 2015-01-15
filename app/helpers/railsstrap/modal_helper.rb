@@ -4,7 +4,7 @@ module Railsstrap
     #modals have a header, a body, a footer for options.
     def modal_dialog(options = {}, &block)
       opts = default_modal_options.merge(options)
-      content_tag :div, :id => opts[:id], :class => "railsstrap-modal modal #{opts['class']} fade" do
+      content_tag :div, :id => opts[:id], :class => "railsstrap-modal modal #{opts[:class]} fade" do
         content_tag :div, :class => "modal-dialog #{opts['size']}" do
           content_tag :div, :class => 'modal-content' do
             modal_header(opts[:header], &block) +

@@ -19,6 +19,11 @@ describe Railsstrap::ModalHelper, :type => :helper do
     expect(modal_dialog(options).gsub(/\s/, '')).to eql BASIC_MODAL.gsub(/\s/, '')
   end
 
+  it 'returns a centered modal' do
+    options[:class] = 'center'
+    expect(modal_dialog(options).gsub(/\s/, '')).to eql CENTERED_MODAL.gsub(/\s/, '')
+  end
+
   it 'returns a modal header with a close button if show_close is true' do
     expect(modal_header(header_with_close).gsub(/\s/, '')).to eql MODAL_HEADER_WITH_CLOSE.gsub(/\s/, '')
   end
@@ -58,6 +63,23 @@ end
 
 BASIC_MODAL = <<-HTML
 <div id="modal" class="railsstrap-modal modal fade">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Modal header</h4>
+      </div>
+      <div class="modal-body">This is the body</div>
+      <div class="modal-footer">
+        <button class="btn">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+HTML
+
+CENTERED_MODAL = <<-HTML
+<div id="modal" class="railsstrap-modal modal center fade">
   <div class="modal-dialog ">
     <div class="modal-content">
       <div class="modal-header">
