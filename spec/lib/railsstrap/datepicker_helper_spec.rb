@@ -33,8 +33,8 @@ describe Railsstrap::DatePickerHelper, :type => :helper do
 end
 
 DEFAULT_DATEPICKER = <<-HTML
-<div class="input-group date" data-date-language="en" data-datepicker="true" id="date_picker">
-  <input class="form-control" id="date_picker" name="date_picker" type="text"value=""/>
+<div id="date_picker" class="input-group date" data-datepicker="true" data-date-language="en">
+  <input type="text" name="date_picker" id="date_picker" value="" class="form-control" />
   <span class="input-group-addon">
     <i class="fa fa-calendar"></i>
   </span>
@@ -42,8 +42,8 @@ DEFAULT_DATEPICKER = <<-HTML
 HTML
 
 DATEPICKER_ID_CHANGED = <<-HTML
-<div class="input-group date" data-date-language="en" data-datepicker="true" id="testing">
-  <input class="form-control" id="date_picker" name="date_picker" type="text"value=""/>
+<div id="testing" class="input-group date" data-datepicker="true" data-date-language="en">
+  <input type="text" name="date_picker" id="date_picker" value="" class="form-control" />
   <span class="input-group-addon">
     <i class="fa fa-calendar"></i>
   </span>

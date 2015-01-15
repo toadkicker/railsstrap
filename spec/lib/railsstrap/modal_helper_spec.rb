@@ -57,11 +57,11 @@ describe Railsstrap::ModalHelper, :type => :helper do
 end
 
 BASIC_MODAL = <<-HTML
-<div class="railsstrap-modal modal fade" id=\"modal\">
+<div id="modal" class="railsstrap-modal modal fade">
   <div class="modal-dialog ">
     <div class="modal-content">
       <div class="modal-header">
-        <button aria-hidden="true" class="close" data-dismiss="modal">&times;</button>
+        <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title">Modal header</h4>
       </div>
       <div class="modal-body">This is the body</div>
@@ -87,7 +87,7 @@ HTML
 
 MODAL_HEADER_WITH_CLOSE = <<-HTML
 <div class="modal-header">
-  <button aria-hidden="true" class="close" data-dismiss="modal">&times;</button>
+  <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
   <h4 class="modal-title">Modal header</h4>
 </div>
 HTML
@@ -109,10 +109,10 @@ MODAL_TOGGLE_BLOCK = <<-HTML
 HTML
 
 MODAL_CANCEL_BUTTON = <<-HTML
-<a class="btn railsstrap-modal-cancel-button" data-dismiss="modal" href="#modal">Cancel</a>
+<a class="btn railsstrap-modal-cancel-button" href="#modal" data-dismiss="modal">Cancel</a>
 HTML
 
 CLOSE_BUTTON = <<-HTML
-<button aria-hidden="true" class="close" data-dismiss="modal">&times;</button>
+<button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 HTML
 
