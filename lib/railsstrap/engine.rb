@@ -23,7 +23,8 @@ module Railsstrap
         ActionController::Base.send :include, Railsstrap::Breadcrumbs
       end
 
-      [Railsstrap::BootstrapFlashHelper,
+      [Railsstrap::AsideHelper,
+       Railsstrap::BootstrapFlashHelper,
        Railsstrap::FormErrorsHelper,
        Railsstrap::ModalHelper,
        Railsstrap::GlyphHelper,

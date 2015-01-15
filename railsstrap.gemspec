@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.files = Dir['lib/**/*'] + Dir['vendor/**/*'] + Dir['app/**/*'] + %w(Rakefile README.md .bowerrc)
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split('\n')
   s.executables   = `git ls-files -- bin/*`.split('\n').map{ |f| File.basename(f) }
-  s.require_paths = %w(lib app)
+  s.require_paths = %w(lib app vendor)
 
   s.add_dependency         'actionpack', '>= 3.1'
   s.add_dependency         'less-rails', '>= 2.5.0', :path => ENV['LESS_RAILS_SOURCE'] if ENV['LESS_RAILS_SOURCE']
