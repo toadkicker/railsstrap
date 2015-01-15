@@ -19,9 +19,9 @@ describe Railsstrap::AsideHelper, :type => :helper do
     expect(aside_dialog(options).gsub(/\s/, '')).to eql BASIC_ASIDE.gsub(/\s/, '')
   end
 
-  it 'returns a centered aside' do
-    options[:class] = 'center'
-    expect(aside_dialog(options).gsub(/\s/, '')).to eql CENTERED_ASIDE.gsub(/\s/, '')
+  it 'returns a left aside' do
+    options[:class] = 'left'
+    expect(aside_dialog(options).gsub(/\s/, '')).to eql LEFT_ASIDE.gsub(/\s/, '')
   end
 
   it 'returns a aside header with a close button if show_close is true' do
@@ -62,7 +62,7 @@ describe Railsstrap::AsideHelper, :type => :helper do
 end
 
 BASIC_ASIDE = <<-HTML
-<div id="aside" class="railsstrap-aside aside fade">
+<div id="aside" class="railsstrap-aside aside" data-backdrop="false">
   <div class="aside-dialog ">
     <div class="aside-content">
       <div class="aside-header">
@@ -78,8 +78,8 @@ BASIC_ASIDE = <<-HTML
 </div>
 HTML
 
-CENTERED_ASIDE = <<-HTML
-<div id="aside" class="railsstrap-aside aside center fade">
+LEFT_ASIDE = <<-HTML
+<div id="aside" class="railsstrap-aside aside left" data-backdrop="false">
   <div class="aside-dialog ">
     <div class="aside-content">
       <div class="aside-header">
