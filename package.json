@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/toadkicker/railsstrap/issues"
   },
-  "devDependencies": {
+  "dependencies": {
     "grunt": "~0.4.5",
     "grunt-less-imports": "~1.0.0",
     "grunt-contrib-less": "~0.11.4",
