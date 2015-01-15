@@ -1,7 +1,7 @@
 {
   "name": "railsstrap",
   "app": ".",
-  "version": "3.2.0",
+  "version": "3.3.2",
   "description": "Make your rails project awesome with railsstrap. Bootstrap 3.2+ Helpers, additional components, and more.",
   "main": "Gruntfile.js",
   "scripts": {
