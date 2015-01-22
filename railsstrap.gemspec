@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = 'railsstrap'
   s.files = Dir['lib/**/*'] + Dir['vendor/**/*'] + Dir['app/**/*'] + %w(Rakefile README.md .bowerrc)
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split('\n')
+  s.test_files    = Dir['spec/**/*.rb']
   s.executables   = `git ls-files -- bin/*`.split('\n').map{ |f| File.basename(f) }
   s.require_paths = %w(lib app vendor)
 
