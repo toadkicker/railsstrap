@@ -14,13 +14,13 @@ Railsstrap is more than just another gem providing bootstrap and fontawesome for
 
 ##Bootstrap additions
 
-###Custom Components (in development)
-* Asides - A modal that slides in from the left or right. Used often in mobile apps for off-screen sidebars or overlays.
-* Callouts - Similar to an alert, it is used for drawing attention to content. - New in 3.3.0!
-* Date & Time picker - A styled HTML5 datepicker. - New in 3.3.1!
-* Modal enhancements - animations and real centering placement.
-* Popover enhancements - animations and custom placements for popover arrows and locations.
-* Tooltip - animations and custom placements for tooltip arrows and locations.
+###Custom Components
+* [Asides](https://github.com/toadkicker/railsstrap/wiki/Bootstrap-Additions#aside) - A modal that slides in from the left or right. Used often in mobile apps for off-screen sidebars or overlays. - New in 3.3.2!
+* [Callouts](https://github.com/toadkicker/railsstrap/wiki/Bootstrap-Additions#callout) - Similar to an alert, it is used for drawing attention to content. - New in 3.3.0!
+* [Date & Time picker](https://github.com/toadkicker/railsstrap/wiki/Bootstrap-Additions#datepicker--timepicker) - A styled HTML5 datepicker. - New in 3.3.1!
+* [Modal enhancements](https://github.com/toadkicker/railsstrap/wiki/Bootstrap-Additions#modal) - animations and real centering placement.
+* [Popover enhancements](https://github.com/toadkicker/railsstrap/wiki/Bootstrap-Additions#popover) - animations and custom placements for popover arrows and locations.
+* [Tooltip](https://github.com/toadkicker/railsstrap/wiki/Bootstrap-Additions#tooltip) - animations and custom placements for tooltip arrows and locations.
 
 ###Animations
 
@@ -32,7 +32,10 @@ An example application is available at [toadkicker/teststrap](https://github.com
 ## Quick install
 Open your Gemfile, and add the gem to your list of dependencies.
 
-```gem railsstrap```
+```
+gem less-rails
+gem railsstrap
+```
 
 Then run the installer
 
@@ -41,26 +44,9 @@ bundle install
 bundle exec rails g railsstrap:install
 ```
 
-This will insert the appropriate entries into your application.js and application.css files. It will also provide you with the ability to customize Bootstrap and FontAwesome to your liking.
+This will insert the appropriate entries into your application.js and application.css files, as well as configure rails asset pipeline. It will also provide you with the ability to customize Bootstrap and FontAwesome to your liking.
 
-####Hotfix note for v3.2.0.2 and lower:
-
-You will need to precompile your assets for FontAwesome support. To do this add this line:
-
-This is verbose:
-```
-Rails.application.config.assets.precompile += %w( fontawesome/fonts/fontawesome-webfont.eot fontawesome/fonts/fontawesome-webfont.woff fontawesome/fonts/fontawesome-webfont.ttf fontawesome/fonts/fontawesome-webfont.svg )
-```
-
-This is all you really need:
-```
-Rails.application.config.assets.precompile += %w(.svg .eot .woff .ttf)
-```
-
-For Rails 3 applications, add it to ```config/environments/production.rb```. For Rails 4, add it to ```config/initializers/assets.rb```.
-
-
-Most of the info you'll need is in the wiki, and if it isn't please contribute!
+Most of the info you'll need is in the [wiki](https://github.com/toadkicker/railsstrap/wiki/Installing), and if it isn't please contribute!
 
 ##Building the gem
 

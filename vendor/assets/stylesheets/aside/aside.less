@@ -5,6 +5,7 @@
 .aside {
 
   position: fixed;
+  visibility: hidden;
   top: 0;
   bottom: 0;
   z-index: @zindex-modal - 1;
@@ -21,12 +22,27 @@
 
   &.left {
     right: auto;
-    left: 0;
+    left: -350px;
+    &.in {
+      right: auto;
+      left: 0;
+      visibility: visible;
+      .animated;
+      .slideInLeft;
+    }
   }
   &.right {
-    right: 0;
+    right: -350px;
     left: auto;
+    &.in {
+      right: 0;
+      left: auto;
+      visibility: visible;
+      .animated;
+      .slideInRight;
+    }
   }
+
 
   .aside-dialog {
     .aside-header {

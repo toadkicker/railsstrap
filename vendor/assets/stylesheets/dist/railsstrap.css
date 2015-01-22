@@ -138,6 +138,7 @@
  */
 .aside {
   position: fixed;
+  visibility: hidden;
   top: 0;
   bottom: 0;
   z-index: 1039;
@@ -155,18 +156,40 @@
 }
 .aside.left {
   right: auto;
+  left: -350px;
+}
+.aside.left.in {
+  right: auto;
   left: 0;
+  visibility: visible;
+  -webkit-animation-duration: 0.6s;
+  animation-duration: 0.6s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
 }
 .aside.right {
+  right: -350px;
+  left: auto;
+}
+.aside.right.in {
   right: 0;
   left: auto;
+  visibility: visible;
+  -webkit-animation-duration: 0.6s;
+  animation-duration: 0.6s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
 }
 .aside .aside-dialog .aside-header {
   padding: 15px;
   border-bottom: 1px solid #e5e5e5;
   min-height: 16.42857143px;
   padding: 6px 15px;
-  background: #428bca;
+  background: #337ab7;
   color: white;
 }
 .aside .aside-dialog .aside-header .close {
@@ -196,10 +219,9 @@
   margin-left: 0;
 }
 .aside-backdrop {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
-  bottom: 0;
   left: 0;
   background-color: #000000;
 }
@@ -399,7 +421,7 @@
   content: '';
   display: inline-block;
   border-left: 7px solid transparent;
-  border-bottom: 7px solid #428bca;
+  border-bottom: 7px solid #337ab7;
   border-top-color: rgba(0, 0, 0, 0.2);
   position: absolute;
   bottom: 4px;
@@ -407,7 +429,7 @@
 }
 .bootstrap-datetimepicker-widget td.active,
 .bootstrap-datetimepicker-widget td.active:hover {
-  background-color: #428bca;
+  background-color: #337ab7;
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
@@ -433,7 +455,7 @@
   background: #eeeeee;
 }
 .bootstrap-datetimepicker-widget td span.active {
-  background-color: #428bca;
+  background-color: #337ab7;
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }

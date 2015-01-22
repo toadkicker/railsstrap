@@ -71,18 +71,33 @@ describe Railsstrap::BootstrapFlashHelper, :type => :helper do
       end
     end
 
+    context 'when html is set in the message' do
+      before { flash[:notice] = 'success flash <a href="#">Link</a>' }
+      it 'should output the html' do
+        expect(bootstrap_flash.gsub(/\s/, '').downcase)
+            .to eql(BASIC_SUCCESS_WITH_HTML.gsub(/\s/, '').downcase)
+      end
+    end
+
   end
 end
 
 BASIC_DANGER_FLASH = <<-HTML
 <div class="alert fade in alert-danger">
-  <button class="close" data-dismiss="alert" type="button">&times;</button>danger flash
+  <button type="button" class="close" data-dismiss="alert">&times;</button>danger flash
 </div>
 HTML
 
 BASIC_SUCCESS_FLASH = <<-HTML
 <div class="alert fade in alert-success">
-  <button class="close" data-dismiss="alert" type="button">&times;</button>success flash
+  <button type="button" class="close" data-dismiss="alert">&times;</button>success flash
+</div>
+HTML
+
+BASIC_SUCCESS_WITH_HTML = <<-HTML
+<div class="alert fade in alert-success">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>success flash
+  <a href="#">Link</a>
 </div>
 HTML
 
@@ -94,19 +109,19 @@ HTML
 
 BASIC_SUCCESS_FLASH_WITH_CLASS = <<-HTML
 <div class="alert fade in alert-success success-class">
-  <button class="close" data-dismiss="alert" type="button">&times;</button>success flash
+  <button type="button" class="close" data-dismiss="alert">&times;</button>success flash
 </div>
 HTML
 
 BASIC_SUCCESS_FLASH_WITH_ANIMATION = <<-HTML
 <div class="alert flip-x alert-success">
-  <button class="close" data-dismiss="alert" type="button">&times;</button>success flash
+  <button type="button" class="close" data-dismiss="alert">&times;</button>success flash
 </div>
 HTML
 
 BASIC_SUCCESS_FLASH_WITH_SPAN = <<-HTML
 <span class="alert fade in alert-success">
-  <button class="close" data-dismiss="alert" type="button">&times;</button>success flash
+  <button type="button" class="close" data-dismiss="alert">&times;</button>success flash
 </span>
 HTML
 

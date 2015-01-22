@@ -1,19 +1,15 @@
 module Railsstrap
   module ModalHelper
 
-    def default_options
-      return {:id => 'modal', :size => '', :show_close => true, :dismiss => true}
-    end
-
     #modals have a header, a body, a footer for options.
     def modal_dialog(options = {}, &block)
-      opts = default_options.merge(options)
-      content_tag :div, :id => options[:id], :class => "railsstrap-modal modal fade" do
+      opts = default_modal_options.merge(options)
+      content_tag :div, :id => opts[:id], :class => "railsstrap-modal modal #{opts[:class]} fade" do
         content_tag :div, :class => "modal-dialog #{opts['size']}" do
-          content_tag :div, :class => "modal-content" do
-            modal_header(options[:header], &block) +
-            modal_body(options[:body], &block) +
-            modal_footer(options[:footer], &block)
+          content_tag :div, :class => 'modal-content' do
+            modal_header(opts[:header], &block) +
+            modal_body(opts[:body], &block) +
+            modal_footer(opts[:footer], &block)
           end
         end
       end
@@ -39,26 +35,24 @@ module Railsstrap
     end
 
     def close_button(dismiss)
-      #It doesn't seem to like content_tag, so we do this instead.
-      raw("<button class=\"close\" data-dismiss=\"#{dismiss}\" aria-hidden=\"true\">&times;</button>")
+      content_tag :button, '&times;'.html_safe, :class => 'close', :data => {:dismiss => dismiss}, :'aria-hidden' => true
     end
 
-    def modal_toggle(content_or_options = nil, options, &block)
-      if block_given?
-        options = content_or_options if content_or_options.is_a?(Hash)
-        default_options = { :class => 'btn btn-default', "data-toggle" => "modal", "href" => options[:dialog] }.merge(options)
-
-        content_tag :a, nil, default_options, true, &block
-      else
-        default_options = { :class => 'btn btn-default', "data-toggle" => "modal", "href" => options[:dialog] }.merge(options)
-        content_tag :a, content_or_options, default_options, true
-      end
+    def modal_toggle(options = nil, &block)
+      opts = { :content => 'Close', :class => 'btn btn-default', :data => { :toggle => 'modal'}, :href => options[:dialog] }.merge(options)
+      content = opts[:content]
+      opts.delete :content
+      block_given? ? content_tag(:a, content, opts, true, &block) : content_tag(:a, content, opts, true)
     end
 
     def modal_cancel_button(content, options)
-      default_opts = { :class => "btn railsstrap-modal-cancel-button" }
+      default_opts = { :class => 'btn railsstrap-modal-cancel-button' }
+      content_tag_string :a, content, default_opts.merge(options)
+    end
 
-      content_tag_string "a", content, default_opts.merge(options)
+    protected
+    def default_modal_options
+      {:id => 'modal', :size => '', :show_close => true, :dismiss => true}
     end
 
   end

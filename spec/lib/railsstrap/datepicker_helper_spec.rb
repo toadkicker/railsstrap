@@ -8,16 +8,16 @@ include ActionView::Context
 
 require_relative '../../../app/helpers/railsstrap/date_picker_helper'
 include Railsstrap::DatePickerHelper
-
 describe Railsstrap::DatePickerHelper, :type => :helper do
 
   it 'should render a date_picker html block' do
     expect(date_picker.gsub(/\s/, ''))
-    .to eql(DEFAULT_DATEPICKER.gsub(/\s/, ''))
+        .to eql(DEFAULT_DATEPICKER.gsub(/\s/, ''))
   end
 
   it 'should override default options' do
-    expect(date_picker({id: "testing"}).gsub(/\s/, '')).to eql(DATEPICKER_ID_CHANGED.gsub(/\s/, ''))
+    expect(date_picker({id: 'testing'}).gsub(/\s/, ''))
+        .to eql(DATEPICKER_ID_CHANGED.gsub(/\s/, ''))
   end
 
   it 'should render a script tag' do
@@ -33,8 +33,8 @@ describe Railsstrap::DatePickerHelper, :type => :helper do
 end
 
 DEFAULT_DATEPICKER = <<-HTML
-<div class="input-group date" data-date-language="en" data-datepicker="true" id="date_picker">
-  <input class="form-control" id="date_picker" name="date_picker" type="text"value=""/>
+<div id="date_picker" class="input-group date" data-datepicker="true" data-date-language="en">
+  <input type="text" name="date_picker" id="date_picker" value="" class="form-control" />
   <span class="input-group-addon">
     <i class="fa fa-calendar"></i>
   </span>
@@ -42,8 +42,8 @@ DEFAULT_DATEPICKER = <<-HTML
 HTML
 
 DATEPICKER_ID_CHANGED = <<-HTML
-<div class="input-group date" data-date-language="en" data-datepicker="true" id="testing">
-  <input class="form-control" id="date_picker" name="date_picker" type="text"value=""/>
+<div id="testing" class="input-group date" data-datepicker="true" data-date-language="en">
+  <input type="text" name="date_picker" id="date_picker" value="" class="form-control" />
   <span class="input-group-addon">
     <i class="fa fa-calendar"></i>
   </span>
