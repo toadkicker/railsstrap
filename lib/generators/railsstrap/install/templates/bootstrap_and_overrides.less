@@ -1,26 +1,42 @@
-@import "bootstrap/less/bootstrap";
-//If you want exotic placement features, animations, and more, import this
-//@import "railsstrap";
+/*
+ Bootstrap
+ This line imports bootstrap, modified to use glyphicons from Cloudflare CDN.
+*/
+@import "bootstrap";
 
-// Glyphicons - included by default in bootstrap.
-// You may need to customize config/initializers/assets.rb (Rails 4), or config/environments/[env].rb to add font paths in.
-// In either case of FontAwesome or Glyphicons, the railsstrap:install task should insert the appropriate entries for you.
+/*
+ Glyphicons - included by default in bootstrap.
+ If for any reason you prefer to have them as part of the asset pipeline, uncomment this.
+ If you choose to use this, open config/initializers/assets.rb (rails 4) and add this line:
+ Rails.application.config.assets.precompile += %w( *.eot *.woff *.ttf *.svg )
+*/
 
-// Your custom LESS stylesheets goes here
-//
-// Since railsstrap was imported above you have access to its mixins which
-// you may use and inherit here, ex:
-// @import "bootstrap/less/mixins/alerts.less;
-//
-// If you'd like to override railsstrap's own variables, you can do so here as well
-// See http://bootstrap.github.com/bootstrap/customize.html#variables for their names and documentation
-//
-// Example:
-// @import (reference) 'bootstrap/less/variables.less';
-// @link-color: #ff0000;
-//
-// Date and Time Picker
-//
-// To enable the date and time picker, uncomment this line:
-// @import "datepicker/datepicker.less";
-// Don't forget to include the javascript library as well.
+// @import "glyphicons";
+
+/*
+  FontAwesome is hosted via CDN as well. If you prefer to have them included in the asset
+  pipeline, comment this out and see the next section.
+*/
+@import 'fontawesome';
+
+/*
+ Font Awesome
+ If for some reason you want fontawesome as part of the asset pipeline, comment out
+ the above refererence and uncomment the following lines. If you choose to use this, open
+ config/initializers/assets.rb (rails 4) and add this line:
+ Rails.application.config.assets.precompile += %w( *.eot *.woff *.ttf *.svg )
+*/
+
+//@import 'fontawesome-local';
+
+//If you want exotic placement features, animations, and more, import this:
+@import "railsstrap";
+
+/*
+ Date and Time Picker (https://github.com/toadkicker/railsstrap/wiki/Date-and-Time-Picker)
+ To enable the date and time picker, uncomment this line:
+ Don't forget to include the javascript library as well.
+*/
+
+//@import "datepicker/datepicker";
+
