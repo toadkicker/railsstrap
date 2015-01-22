@@ -1,6 +1,8 @@
 ## Change Log
 
-### 3.3.2 (2015/01/22 16:39 +00:00)
+### 3.3.2 (2015/01/22 16:42 +00:00)
+- [878b1b0](https://github.com/toadkicker/railsstrap/commit/878b1b001dd957d6e0c777c31b941261bd921d23) update bootstrap to 3.3.2 (@toadkicker)
+- [526e499](https://github.com/toadkicker/railsstrap/commit/526e499df7163f595ed3d93d95358a2b69f460c9) updated changelog. ship 3.3.2 (@toadkicker)
 - [#38](https://github.com/toadkicker/railsstrap/pull/38) Merge pull request #38 from toadkicker/support/fix35 (@toadkicker)
 - [9cc065b](https://github.com/toadkicker/railsstrap/commit/9cc065bc82569f8d3a27020f1cf3744d3c359732) This commit adds the ability to easily choose between hosting font awesome and glyphicon font files via cdn or via the asset pipeline by commenting or uncommenting entries in bootstrap_and_overrides.css.less (@toadkicker)
 - [fa861ba](https://github.com/toadkicker/railsstrap/commit/fa861ba8a641921fe482d94fe6ee9b874f52cd69) bumped versions to 3.3.2 (@toadkicker)
