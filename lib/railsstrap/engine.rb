@@ -13,10 +13,13 @@ module Railsstrap
   class Engine < ::Rails::Engine
 
     initializer 'railsstrap.setup',
-      :group => :all do |app|
-          bowerrc = File.read(File.join(config.root, '.bowerrc'))
-          app.config.assets.paths << File.join(bowerrc['directory'])
-        end
+                :after => 'railsstrap.before.load_config_initializers',
+                :group => :all do |app|
+      bowerrc = File.read(File.join(config.root, '.bowerrc'))
+      app.config.less.paths << File.join(bowerrc['directory'])
+      app.config.assets.paths << File.join(bowerrc['directory'])
+      app.config.app_generators.stylesheet_engine :less
+    end
 
     initializer 'railsstrap.setup_helpers' do |app|
       app.config.to_prepare do
