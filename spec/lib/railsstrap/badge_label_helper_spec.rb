@@ -22,21 +22,8 @@ describe Railsstrap::BadgeLabelHelper, :type => :helper do
   it 'should take a Number as its first parameter' do
     expect(badge(12).gsub(/\s/, '').downcase).to eql(BADGE_WITH_NUMBER_PARAM.gsub(/\s/, '').downcase)
   end
-
 end
 
-BASIC_BADGE = <<-HTML
-  <span class="badge">New!</span>
-HTML
-
-BADGE_WITH_CLASS = <<-HTML
-<span class="badge badge-warning">2</span>
-HTML
-
-BADGE_WITH_NUMBER_PARAM = <<-HTML
-<span class="badge">12</span>
-HTML
-
-LABEL_WITH_NUMBER_PARAM = <<-HTML
-<label class="badge">42</label>
-HTML
+BASIC_BADGE = '<span class="badge">New!</span>'
+BADGE_WITH_CLASS = '<span class="badge badge-warning">2</span>'
+BADGE_WITH_NUMBER_PARAM = '<span class="badge">12</span>'
