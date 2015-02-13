@@ -1,0 +1,14 @@
+<button class="<%= button[:class] %>" data-toggle="aside" data-target="#<%= div[:id] %>"><%= button[:caption] %></button>
+<div class="aside <%=div[:side] %> fade" id="<%= div[:id] %>" tabindex="-1" role="dialog" aria-labelledby="label-<%= div[:id] %>" aria-hidden="true">
+  <div class="<%= div[:class] %>">
+    <div class="aside-content">
+      <div class="aside-header">
+        <button type="button" class="close" data-dismiss="aside">
+          <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+        </button>
+        <h4 class="aside-title" id="label-<%= div[:id] %>"><%= div[:title] %></h4>
+      </div>
+      <%= content %>
+    </div>
+  </div>
+</div>
