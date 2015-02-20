@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib", "vendor"]
 
   s.add_dependency 'activesupport' # versioned in gemfiles/
-  s.add_dependency 'actionpack' # versioned in gemfiles/
+  s.add_dependency 'actionpack', '>= 3.0' # versioned in gemfiles/
   s.add_dependency 'less-rails', '>= 2.5.0', :path => ENV['LESS_RAILS_SOURCE'] if ENV['LESS_RAILS_SOURCE']
 
   # For development / Code coverage / Documentation

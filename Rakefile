@@ -1,7 +1,9 @@
 #!/usr/bin/env rake
 require 'bundler'
 require 'rspec/core/rake_task'
+require 'rspec/core/version'
 
+Bundler.setup
 Bundler::GemHelper.install_tasks
 
 desc 'Bundle the gem'

@@ -11,7 +11,7 @@ helpers_folder = File.expand_path '../railsstrap/helpers/*_helper.rb', __FILE__
 Dir[helpers_folder].each{|file| require file}
 
 # Conditionally require platform-specific helpers
-extension   = :railtie if defined?(Rails)
+extension   = :engine if defined?(Rails)
 extension ||= :middleman if defined?(Middleman)
 extension ||= :padrino if defined?(Padrino)
 require "railsstrap/core_ext/#{extension}" if extension

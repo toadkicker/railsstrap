@@ -1,3 +1,4 @@
+require 'json'
 require 'railsstrap/core_ext/rails/form_for_helper'
 
 module Railsstrap
@@ -10,7 +11,9 @@ module Railsstrap
     #
     # The current class is loaded during the initialization process, so
     # there is no need to manually require any other file.
-    class Railtie < ::Rails::Railtie
+
+    class Engine < ::Rails::Engine
+
       initializer 'railsstrap.add_helpers' do
         ActionView::Base.send :include, Railsstrap::Helpers
         ActionView::Base.send :include, Railsstrap::Rails::Helpers
@@ -21,15 +24,16 @@ module Railsstrap
         ActionController::Base.prepend_view_path views_path
       end
 
+      # Include local asset files where .bowerrc defines them
       initializer 'railsstrap.setup',
                   :after => 'railsstrap.before.load_config_initializers',
                   :group => :all do |app|
-        bowerrc = File.read(File.join(config.root, '.bowerrc'))
-        app.config.less.paths << File.join(bowerrc['directory'])
+        bowerrc = File.read(File.expand_path('../../.bowerrc'))
         app.config.assets.paths << File.join(bowerrc['directory'])
-        app.config.app_generators.stylesheet_engine :less
+        app.config.less.paths << File.join(bowerrc['directory']) if defined?(app.config.less)
+        app.config.generators.stylesheet_engine :less if ::Rails::VERSION::MAJOR <= 3.1
+        app.config.app_generators.stylesheet_engine :less if ::Rails::VERSION::MAJOR >= 3.2
       end
-
     end
   end
 

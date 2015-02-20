@@ -9,7 +9,7 @@ module Railsstrap
     # @param [#to_s] name the name of the icon to display, with either dashes
     #   or underscores to separate multiple words.
     # @param [Hash] options the options for the icon tag. Any option not
-    #   listed below is passed as an HTML attribute to the icon’s `<span>`.
+    #   listed below is passed as an HTML attribute to the icon’s tag.
     # @option options [#to_s] :library (:glyphicons) the vector icon library
     #   to use. Valid values are 'glyphicon', 'glyphicons' (for Glyphicons),
     #   'font-awesome', 'font_awesome' and 'fa' (for Font Awesome).

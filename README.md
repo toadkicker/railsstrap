@@ -11,6 +11,36 @@ railsstrap integrates Bootstrap and FontAwesome for Rails Asset Pipeline (Rails 
 
 Railsstrap is more than just another gem providing bootstrap and fontawesome for Rails apps. It includes Bootstrap additions that include exotic placements, animations, and other component enhancements not included in the official bootstrap release. It also includes many HTML helpers and additional javascript components. All of this is exposed to UI developers to customize to their liking using either LESS and Coffeescript, or plain CSS and Javascript.
 
+How to try it in your browser
+=============================
+
+The `examples` folder includes three sample apps that you can rapidly run in
+your browser and edit as you please, in order to visually appreciate the result
+of Railsstrap.
+
+If you’d like to run the _test Rails app_:
+
+1. Download the source code
+1. `cd` into the `examples/rails` folder
+1. Run `bundle install`
+1. Run `bundle exec rails server`
+1. Point your browser to [http://0.0.0.0:3000](http://0.0.0.0:3000)
+
+If you prefer to see the helpers inside a _test Middleman app_:
+
+1. Download the source code
+1. `cd` into the `examples/middleman` folder
+1. Run `bundle install`
+1. Run `bundle exec middleman`
+1. Point your browser to [http://0.0.0.0:4567](http://0.0.0.0:4567)
+
+If you prefer to see the helpers inside a _test Padrino app_:
+
+1. Download the source code
+1. `cd` into the `examples/padrino` folder
+1. Run `bundle install`
+1. Run `bundle padrino start`
+1. Point your browser to [http://0.0.0.0:3000](http://0.0.0.0:3000)
 
 ##Bootstrap additions
 
@@ -22,14 +52,11 @@ Railsstrap is more than just another gem providing bootstrap and fontawesome for
 * [Popover enhancements](https://github.com/toadkicker/railsstrap/wiki/Bootstrap-Additions#popover) - animations and custom placements for popover arrows and locations.
 * [Tooltip](https://github.com/toadkicker/railsstrap/wiki/Bootstrap-Additions#tooltip) - animations and custom placements for tooltip arrows and locations.
 
-###Animations
+### Animations
 
 Railsstrap comes with over 75 CSS animations. See the wiki or the [vendor/assets/stylesheets/animate](https://github.com/toadkicker/railsstrap/tree/develop/vendor/assets/stylesheets/animate) folder for more info. Also the wiki has detailed instructions on using them.
 
-## Example Application
-An example application is available at [toadkicker/teststrap](https://github.com/toadkicker/teststrap). You can view it running on heroku [here.](http://teststrap.herokuapp.com/) Contributions welcome.
-
-## Quick install
+## Quick rails install
 Open your Gemfile, and add the gem to your list of dependencies.
 
 ```
@@ -48,33 +75,14 @@ This will insert the appropriate entries into your application.js and applicatio
 
 Most of the info you'll need is in the [wiki](https://github.com/toadkicker/railsstrap/wiki/Installing), and if it isn't please contribute!
 
-##Building the gem
+## Building the gem
 
 The gem is organized by ruby specific tasks, and front-end specific tasks. `bundle exec rake` will attempt to run the suite of build commands, but you need a few dependencies that are outside of bundler/rubygems's domain.
 
 For compiling stylesheets and javascripts, the gem uses Gruntjs. You'll need node/npm installed to compile them manually. *You do not need to use grunt if you are just referencing specific less/js/coffee files in your rails app*
 
-## Many thanks to the twitter-bootstrap-rails contributors, who made this fork possible:
-<ul>
-  <li>Seyhun Akyürek</li>
-  <li>Ben Lovell</li>
-  <li>Daniel Morris</li>
-  <li>Bradly Feeley</li>
-  <li>Guilherme Moreira</li>
-  <li>Alex Behar</li>
-  <li>Brandon Keene</li>
-  <li>Anthony Corcutt</li>
-  <li>Colin Warren</li>
-  <li>Giovanni Cappellotto</li>
-  <li>Masakuni Kato</li>
-  <li>Gudleik Rasch</li>
-  <li>Thomas Volkmar Worm</li>
-  <li>Thiago Almeida</li>
-  <li>Sébastien Grosjean</li>
-  <li>Nick DeSteffen</li>
-  <li>Christian Joudrey</li>
-  <li>Leonid Shevtsov</li>
-</ul>
+## Contributions
+
 
 ## About Me
 [toadkicker.com](http://toadkicker.com)
