@@ -33,8 +33,8 @@ An example application is available at [toadkicker/teststrap](https://github.com
 Open your Gemfile, and add the gem to your list of dependencies.
 
 ```
-gem less-rails
-gem railsstrap
+gem 'less-rails'
+gem 'railsstrap'
 ```
 
 Then run the installer
