@@ -34,6 +34,7 @@ module Railsstrap
           when 'navbar' then 'navbar-form'
           when 'inline' then 'form-inline'
           when 'horizontal' then 'form-horizontal'
+          else 'form-horizontal'
         end
       end
     end

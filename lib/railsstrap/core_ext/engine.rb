@@ -28,7 +28,7 @@ module Railsstrap
       initializer 'railsstrap.setup',
                   :after => 'railsstrap.before.load_config_initializers',
                   :group => :all do |app|
-        bowerrc = File.read(File.expand_path('../../.bowerrc'))
+        bowerrc = File.read(File.join(config.root, '.bowerrc'))
         app.config.assets.paths << File.join(bowerrc['directory'])
         app.config.less.paths << File.join(bowerrc['directory']) if defined?(app.config.less)
         app.config.generators.stylesheet_engine :less if ::Rails::VERSION::MAJOR <= 3.1

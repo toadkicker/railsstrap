@@ -42,5 +42,15 @@ module Railsstrap
     def bootstrap_js(options = {})
       Railsstrap::Cdn.bootstrap options.merge(name: 'bootstrap', extension: 'js')
     end
+
+    # @see http://www.railsstrap.io
+    # @return [String] the URL of the Railsstrap CSS file
+    # @param [Hash] options the options for which CSS file to retrieve.
+    # @option options [String] :version the version of Railsstrap.
+    # @option options [String] :scheme the URI scheme to use.
+    # @option options [Boolean] :minified whether to use the minified version.
+    def railsstrap_css(options = {})
+      Railsstrap::Cdn.railsstrap options.merge(name: 'railsstrap', extension: 'css')
+    end
   end
 end
