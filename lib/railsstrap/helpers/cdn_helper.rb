@@ -52,5 +52,25 @@ module Railsstrap
     def railsstrap_css(options = {})
       Railsstrap::Cdn.railsstrap options.merge(name: 'railsstrap', extension: 'css')
     end
+
+    # @see http://www.railsstrap.io
+    # @return [String] the URL of the Bootstrap Additions CSS file
+    # @param [Hash] options the options for which CSS file to retrieve.
+    # @option options [String] :version the version of Bootstrap Additions.
+    # @option options [String] :scheme the URI scheme to use.
+    # @option options [Boolean] :minified whether to use the minified version.
+    def bootstrap_addtions_css(options = {})
+      Railsstrap::Cdn.bootstrap_additions options.merge(name: 'bootstrap_additions', extension: 'css')
+    end
+
+    # @see http://www.railsstrap.io
+    # @return [String] the URL of the Datepicker CSS file
+    # @param [Hash] options the options for which CSS file to retrieve.
+    # @option options [String] :version the version of Bootstrap Additions.
+    # @option options [String] :scheme the URI scheme to use.
+    # @option options [Boolean] :minified whether to use the minified version.
+    def date_picker(options = {})
+      Railsstrap::Cdn.date_picker options.merge(name: 'date_picker', extension: 'css')
+    end
   end
 end

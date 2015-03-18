@@ -14,6 +14,17 @@ shared_examples_for 'the font_awesome_css helper' do
   it { expect(:font_awesome_css).to link_to_existing_file }
 end
 
+shared_examples_for 'the railsstrap_css helper' do
+  it { expect(:railstrap_css).to link_to_existing_file }
+end
+
+shared_examples_for 'the bootstrap_additions_css helper' do
+  it { expect(:bootstrap_additions_css).to link_to_existing_file }
+end
+
+shared_examples_for 'the datepicker_css helper' do
+  it { expect(:datepicker_css).to link_to_existing_file }
+end
 #--
 
 RSpec::Matchers.define :link_to_existing_file do

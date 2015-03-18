@@ -18,7 +18,31 @@ module Railsstrap
         cdn_asset options.merge(library: 'font-awesome')
       end
 
-    private
+      # @note if unspecified, the version should match the latest available
+      #   version. If that's not the case, it's a bug and should be fixed.
+      def self.railsstrap_cdn(options = {})
+        version = options[:version] ||= Railsstrap::VERSION
+        host = options[:host] || '//cdn.railsstrap.io'
+        cdn_asset options.merge(library: 'railsstrap', host: host, version: version)
+      end
+
+      # @note if unspecified, the version should match the latest available
+      #   version. If that's not the case, it's a bug and should be fixed.
+      def self.bootstrap_additions(options = {})
+        version = options[:version] ||= Railsstrap::VERSION
+        host = options[:host] ||= '//cdn.railsstrap.io'
+        cdn_asset options.merge(library: 'bootstrap-additions', host: host, version: version)
+      end
+
+      # @note if unspecified, the version should match the latest available
+      #   version. If that's not the case, it's a bug and should be fixed.
+      def self.date_picker(options = {})
+        version = options[:version] ||= Railsstrap::VERSION
+        host = options[:host] ||= '//cdn.railsstrap.io'
+        cdn_asset options.merge(library: 'date-picker', host: host, version: version)
+      end
+
+      private
 
       def self.cdn_asset(options = {})
         version = options[:version]
@@ -27,7 +51,7 @@ module Railsstrap
         name = "#{name}.min" if options.fetch(:minified, true)
         library = options[:library]
         scheme = "#{options[:scheme]}:" if options[:scheme]
-        host = "#{scheme}//netdna.bootstrapcdn.com"
+        host = options[:host] ||= "#{scheme}//netdna.bootstrapcdn.com"
         "#{host}/#{library}/#{version}/#{extension}/#{name}.#{extension}"
       end
     end
