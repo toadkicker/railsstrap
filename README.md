@@ -1,15 +1,13 @@
-# Bootstrap + FontAwesome for Rails v3.1 & v4 Asset Pipeline
+# Bh helpers + Bootstrap + FontAwesome with **Rails 3.2**, **Rails 4**, **Padrino** and **Middleman**.
 
 [![Bower version](https://badge.fury.io/bo/bootstrap.svg)](http://badge.fury.io/bo/bootstrap)
 [![Gem Version](https://badge.fury.io/rb/railsstrap.svg)](http://badge.fury.io/rb/railsstrap)
 [![Build Status](https://travis-ci.org/toadkicker/railsstrap.svg?branch=v3.2.0.1)](https://travis-ci.org/toadkicker/railsstrap)
 [![Coverage Status](https://img.shields.io/coveralls/toadkicker/railsstrap.svg)](https://coveralls.io/r/toadkicker/railsstrap?branch=develop)
 
-railsstrap integrates Bootstrap and FontAwesome for Rails Asset Pipeline (Rails 4, 3.1, 3.2 are supported). It was born and extended from twitter-bootstrap-rails.
-
 ## Why is your gem different?
 
-Railsstrap is more than just another gem providing bootstrap and fontawesome for Rails apps. It includes Bootstrap additions that include exotic placements, animations, and other component enhancements not included in the official bootstrap release. It also includes many HTML helpers and additional javascript components. All of this is exposed to UI developers to customize to their liking using either LESS and Coffeescript, or plain CSS and Javascript.
+Railsstrap is more than just another gem providing bootstrap and fontawesome for apps. It includes Bootstrap additions that include exotic placements, animations, and other component enhancements not included in the official bootstrap release. It also includes many HTML helpers and additional javascript components. All of this is exposed to UI developers to customize to their liking using either LESS and Coffeescript, or plain CSS and Javascript.
 
 How to try it in your browser
 =============================
@@ -60,15 +58,15 @@ Railsstrap comes with over 75 CSS animations. See the wiki or the [vendor/assets
 Open your Gemfile, and add the gem to your list of dependencies.
 
 ```
-gem less-rails
-gem railsstrap
+gem 'less-rails' #recomended: if you want to use LESS
+gem 'railsstrap'
 ```
 
 Then run the installer
 
 ```
 bundle install
-bundle exec rails g railsstrap:install
+bundle exec rails g railsstrap:install #optional
 ```
 
 This will insert the appropriate entries into your application.js and application.css files, as well as configure rails asset pipeline. It will also provide you with the ability to customize Bootstrap and FontAwesome to your liking.
