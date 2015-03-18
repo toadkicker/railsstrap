@@ -1,4 +1,6 @@
+require 'railsstrap/classes/panel'
 require 'railsstrap/classes/panel_row'
+require 'railsstrap/classes/stack'
 
 module Railsstrap
   module Helpers

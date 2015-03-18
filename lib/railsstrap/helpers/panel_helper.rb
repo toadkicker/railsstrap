@@ -41,7 +41,7 @@ module Railsstrap
       panel.merge_html! panel.body
       panel.prepend_html! panel.heading
 
-      if panel_row == Railsstrap::Stack.find(Railsstrap::PanelRow)
+      if panel_row = Railsstrap::Stack.find(Railsstrap::PanelRow)
         container = Railsstrap::Base.new(self) { panel.content_tag panel.tag }
         container.append_class! panel_row.column_class
         container.render_tag :div
