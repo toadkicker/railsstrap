@@ -15,7 +15,7 @@ shared_examples_for 'the font_awesome_css helper' do
 end
 
 shared_examples_for 'the railsstrap_css helper' do
-  it { expect(:railstrap_css).to link_to_existing_file }
+  it { expect(:railsstrap_css).to link_to_existing_file }
 end
 
 shared_examples_for 'the bootstrap_additions_css helper' do
