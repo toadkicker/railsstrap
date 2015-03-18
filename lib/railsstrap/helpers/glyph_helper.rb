@@ -1,5 +1,5 @@
 module Railsstrap
-  module GlyphHelper
+  module Helpers
     # ==== Examples
     # @deprecated Use {#icon} instead.
     # glyph(:share_alt)
