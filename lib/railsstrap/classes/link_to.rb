@@ -10,12 +10,16 @@ module Railsstrap
 
       def current_page?
         case Railsstrap.framework
-        when :rails
-          @app.current_page? @url
-        when :padrino, :middleman
-          request = Railsstrap.framework == :middleman ? @app.req : @app.request
-          request.path_info == @app.url_for(@url)
+          when :rails
+            @app.current_page? @url
+          when :padrino, :middleman
+            request = Railsstrap.framework == :middleman ? @app.req : @app.request
+            request.path_info == @app.url_for(@url)
         end
+      end
+
+      def content
+        super if @content
       end
     end
   end
