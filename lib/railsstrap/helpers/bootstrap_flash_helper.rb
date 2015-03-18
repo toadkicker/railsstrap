@@ -1,24 +1,51 @@
-module Railsstrap
-  module BootstrapFlashHelper
-    ALERT_TYPES = [:success, :info, :warning, :danger] unless const_defined?(:ALERT_TYPES)
+require 'railsstrap/classes/alert_box'
 
+module Railsstrap
+  module Helpers
+    # Displays a Bootstrap-styled alert message.
+    # @see http://getbootstrap.com/components/#alerts
+    # @return [String] the HTML to display a Bootstrap-styled alert message.
+    # @overload bootstrap_flash(content, options = {})
+    #   @param [#to_s] content the content to display in the alert.
+    #   @param [Hash] options the options for the alert box. Any option not
+    #     listed below is passed as an HTML attribute to the alert’s `<div>`.
+    #   @option options [Boolean] :dismissible (false) whether to display an
+    #     '×' to the right of the box that can be clicked to dismiss the alert.
+    #   @option options [#to_s] :context (:info) the contextual alternative to
+    #     apply to the alert. Can be `:danger`, `:info`, `:success` or
+    #     `:warning`.
+    #   @option options [#to_s] :priority if set to one of the priority levels
+    #     of Rails flash contents, determines the context of the alert box.
+    #     Can be :alert or :notice.
+    #   @example Display a dismissible alert box with a plain-text content.
+    #       bootstrap_flash 'User updated successfully', dismissible: true
+    # @overload bootstrap_flash(options = {}, &block)
+    #   @param [Hash] options the options for the alert box (see above).
+    #   @yieldreturn [#to_s] the content to display in the alert.
+    #   @example Display a success alert box with an HTML content.
+    #       bootstrap_flash context: :success do
+    #         content_tag :strong, 'User updated successfully'
+    #       end
+    # @dependencies alert_box
+    ALERT_TYPES = [:success, :info, :warning, :danger] unless const_defined?(:ALERT_TYPES)
     def bootstrap_flash(options = {})
 
       flash_messages = []
-      close_button = content_tag(:button, raw('&times;'), :type => 'button', :class => 'close', 'data-dismiss' => 'alert')
 
       flash.each do |type, message|
-        default_opts = {
-            show_close: true,
-            type: :info,
-            container_tag: :div,
-            animation: 'fade in'
-        }
-        opts = default_opts.merge(options)
-
         # Skip empty messages, e.g. for devise messages set to nothing in a locale file.
         next if message.blank?
 
+        # In Railsstrap 3.2 show_close was used instead of dismissible.
+        options[:show_close] ? options[:dismissible] = true : options[:show_close]
+
+        opts = {
+            dismissible: true,
+            type: :info,
+            container_tag: :div,
+        }.merge(options)
+
+        #reassign traditional rails flash types to bootstrap types
         type = type.to_sym
         type = :success if type == :notice
         type = :danger  if type == :alert
@@ -27,12 +54,14 @@ module Railsstrap
 
         Array(message).each do |msg|
 
-          text = content_tag(opts[:container_tag],
-                             (opts[:show_close] ? close_button : '') +
-                             msg.html_safe, :class => "alert #{opts[:animation]} alert-#{type} #{opts[:class]}")
+          text = alert_box context: type, class: opts[:class], dismissible: opts[:dismissible] do
+            content_tag opts[:container_tag], msg
+          end
+
           flash_messages << text if msg
         end
       end
+
       flash_messages.join("\n").html_safe
     end
   end
