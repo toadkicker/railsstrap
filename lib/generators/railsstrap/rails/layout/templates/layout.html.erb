@@ -27,7 +27,7 @@
     <!-- Size should be 32 x 32 pixels -->
     <%%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
-    <%= stylesheet_link_tag font_awesome_css, bootstrap_css, bootstrap_theme_css %>
+    <%%= stylesheet_link_tag font_awesome_css, bootstrap_css, bootstrap_theme_css %>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -69,16 +69,16 @@
               <li><%%= link_to "Link2", "/path2"  %></li>
               <li><%%= link_to "Link3", "/path3"  %></li>
             </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-      </div><!--/row-->
+          </div>
+        </div>
+      </div>
 
       <footer>
         <p>&copy; <%= app_name %> <%= Date.today.year %></p>
       </footer>
 
     </div> <!-- /container -->
-    <%= javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js' %>
-    <%= javascript_include_tag bootstrap_js %>
+    <%%= javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js' %>
+    <%%= javascript_include_tag bootstrap_js %>
   </body>
 </html>
