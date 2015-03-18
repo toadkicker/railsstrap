@@ -1,1 +1,1 @@
-require 'railsstrap/engine'
+require 'railsstrap/core_ext/engine'
