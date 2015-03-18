@@ -16,18 +16,14 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 1.9.3'
 
   s.files = `git ls-files`.split($/)
-  s.test_files = Dir['spec/**/*.rb']
-  s.executables = `git ls-files -- bin/*`.split('\n').map { |f| File.basename(f) }
-  s.require_paths = ["lib", "vendor"]
-
-  s.files = `git ls-files`.split($/)
   s.executables = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
   s.test_files = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ["lib", "vendor"]
 
   s.add_dependency 'activesupport' # versioned in gemfiles/
   s.add_dependency 'actionpack', '>= 3.0' # versioned in gemfiles/
-  s.add_dependency 'less-rails', '>= 2.5.0', :path => ENV['LESS_RAILS_SOURCE'] if ENV['LESS_RAILS_SOURCE']
+  s.add_dependency 'railties', '>= 2.1.5'
+  s.add_dependency 'less-rails', '>= 2.5.0'
 
   # For development / Code coverage / Documentation
   s.add_development_dependency 'bundler', '~> 1.1'
