@@ -62,11 +62,11 @@ gem 'less-rails' #recomended: if you want to use LESS
 gem 'railsstrap'
 ```
 
-Then run the installer
+Then *optionally* run the installer, which adds additional js and css entries.
 
 ```
 bundle install
-bundle exec rails g railsstrap:install #optional
+bundle exec rails g railsstrap:install
 ```
 
 This will insert the appropriate entries into your application.js and application.css files, as well as configure rails asset pipeline. It will also provide you with the ability to customize Bootstrap and FontAwesome to your liking.

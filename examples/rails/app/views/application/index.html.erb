@@ -10,9 +10,6 @@
 <body>
 <div class='container'>
 
-  <h1>Breadcrumbs</h1>
-  <%= render_breadcrumbs(" &mdash; ", { :class => '', :item_class => '', :divider_class => '', :active_class => 'active' })%>
-
   <h1>Alerts</h1>
 
   <!-- Try setting different :dismissible and :context options -->
@@ -22,13 +19,17 @@
       <em>Thanks!</em> You accepted the <%= link_to 'Terms of service', '/#terms' %>.
   <% end %>
 
+  <h1>Flash messeging</h1>
+
+  <%= bootstrap_flash %>
+
   <h1>Panels</h1>
 
   <!-- Try setting different :title, :tag and :context options -->
   <%= panel 'You accepted the Terms of service', title: 'Thanks', tag: :aside %>
 
   <%= panel heading: 'Thanks', context: :info, id: 'panel', class: :en, data: {js: 1} do %>
-      <div class='panel-body'>You accepted the Terms of service. <%= icon :ok %></div>
+      <div class='panel-body'>You accepted the Terms of service. <%= icon 'ok', library: :font_awesome, title: 'Hot' %></div>
   <% end %>
 
   <h1>Panel rows</h1>

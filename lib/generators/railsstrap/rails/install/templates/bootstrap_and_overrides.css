@@ -1,4 +1,8 @@
 /*
+ Good news everyone! You don't need to use this file AT ALL. Read below on how to use the new helpers instead.
+*/
+
+/*
   =require bootstrap/dist/bootstrap.css
   =require bootstrap/dist/bootstrap-theme.css
   If you want exotic placement features, animations, components, and more, uncomment this:
