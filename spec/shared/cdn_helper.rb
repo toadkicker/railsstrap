@@ -25,6 +25,10 @@ end
 shared_examples_for 'the datepicker_css helper' do
   it { expect(:datepicker_css).to link_to_existing_file }
 end
+
+shared_examples_for 'the datepicker_js helper' do
+  it { expect(:datepicker_js).to link_to_existing_file }
+end
 #--
 
 RSpec::Matchers.define :link_to_existing_file do

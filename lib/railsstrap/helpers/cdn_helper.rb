@@ -66,7 +66,7 @@ module Railsstrap
     # @see http://www.railsstrap.io
     # @return [String] the URL of the Datepicker CSS file
     # @param [Hash] options the options for which CSS file to retrieve.
-    # @option options [String] :version the version of Bootstrap Additions.
+    # @option options [String] :version the version of the datepicker.
     # @option options [String] :scheme the URI scheme to use.
     # @option options [Boolean] :minified whether to use the minified version.
     def datepicker_css(options = {})
@@ -74,9 +74,9 @@ module Railsstrap
     end
 
     # @see http://www.railsstrap.io
-    # @return [String] the URL of the Datepicker CSS file
-    # @param [Hash] options the options for which CSS file to retrieve.
-    # @option options [String] :version the version of Bootstrap Additions.
+    # @return [String] the URL of the Datepicker Js file
+    # @param [Hash] options the options for which Js file to retrieve.
+    # @option options [String] :version the version of datepicker.
     # @option options [String] :scheme the URI scheme to use.
     # @option options [Boolean] :minified whether to use the minified version.
     def datepicker_js(options = {})
