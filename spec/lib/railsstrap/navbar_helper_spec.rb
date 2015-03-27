@@ -129,25 +129,25 @@ describe Railsstrap::NavbarHelper, :type => :helper do
   end
 
   describe "drop_down" do
-    it "should do render the proper drop down code" do
+    it "should output <li class='dropdown'><a class='dropdown-toggle'></a></li>" do
       ele = drop_down "Products" do
         menu_item "Latest", "/"
       end
-      expect(ele).to have_tag(:li, with: {class: 'dropdown'})
-      expect(ele).to have_tag(:a, with: {class: 'dropdown-toggle'})
+      expect(ele).to have_tag 'li', with: {class: 'dropdown'}
+      expect(ele).to have_tag 'a', with: {class: 'dropdown-toggle'}
     end
   end
 
   describe "drop_down_with_submenu" do
-    it "should do render the proper drop down code" do
+    it "should output a three level menu item" do
       ele = drop_down_with_submenu "Products" do
           drop_down_submenu "Latest" do
             menu_item "Option1", "/"
           end
         end
-      expect(ele).to have_tag(:li, with: {class: 'dropdown'})
-      expect(ele).to have_tag(:a, with: {class: 'dropdown-toggle'})
-      expect(ele).to have_tag(:ul, with: {class: 'dropdown-menu'})
+      expect(ele).to have_tag 'li', with: {class: 'dropdown'}
+      expect(ele).to have_tag 'a', with: {class: 'dropdown-toggle'}
+      expect(ele).to have_tag 'ul', with: {class: 'dropdown-menu'}
     end
   end
 

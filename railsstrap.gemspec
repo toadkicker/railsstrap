@@ -34,7 +34,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'rspec-mocks'
   s.add_development_dependency 'rspec-rails'
-  s.add_development_dependency 'rspec-html-matchers'
   s.add_development_dependency 'rspec-activemodel-mocks'
 
   s.add_development_dependency 'guard'
