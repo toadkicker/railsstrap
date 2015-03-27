@@ -88,7 +88,7 @@
 .alert.bottom-left,
 .alert.bottom-right {
   position: fixed;
-  z-index: 1040;
+  z-index: 1050;
   margin: 20px;
 }
 .alert.top,
@@ -141,7 +141,7 @@
   visibility: hidden;
   top: 0;
   bottom: 0;
-  z-index: 1039;
+  z-index: 1049;
   overflow: auto;
   min-width: 320px;
   background: white;
@@ -219,10 +219,12 @@
   margin-left: 0;
 }
 .aside-backdrop {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
+  bottom: 0;
   left: 0;
+  z-index: 1040;
   background-color: #000000;
 }
 .aside-backdrop.fade {
@@ -520,7 +522,7 @@
 }
 .datepicker.dropdown-menu button {
   outline: none;
-  border: 0px;
+  border: 0;
 }
 .datepicker.dropdown-menu tbody {
   height: 180px;
