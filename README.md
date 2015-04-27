@@ -1,8 +1,8 @@
 # Bootstrap + FontAwesome for Rails v3.1 & v4 Asset Pipeline
 
-[![Bower version](https://badge.fury.io/bo/bootstrap.svg)](http://badge.fury.io/bo/bootstrap)
+Bootstrap version: [![Bower version](https://badge.fury.io/bo/bootstrap.svg)](http://badge.fury.io/bo/bootstrap)
 [![Gem Version](https://badge.fury.io/rb/railsstrap.svg)](http://badge.fury.io/rb/railsstrap)
-[![Build Status](https://travis-ci.org/toadkicker/railsstrap.svg?branch=v3.2.0.1)](https://travis-ci.org/toadkicker/railsstrap)
+[![Build Status](https://travis-ci.org/toadkicker/railsstrap.svg?branch=master)](https://travis-ci.org/toadkicker/railsstrap)
 [![Coverage Status](https://img.shields.io/coveralls/toadkicker/railsstrap.svg)](https://coveralls.io/r/toadkicker/railsstrap?branch=develop)
 
 railsstrap integrates Bootstrap and FontAwesome for Rails Asset Pipeline (Rails 4, 3.1, 3.2 are supported). It was born and extended from twitter-bootstrap-rails.
