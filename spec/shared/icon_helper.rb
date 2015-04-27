@@ -8,7 +8,7 @@ end
 
 shared_examples_for 'no icon options' do
   specify 'creates a <span> with an icon' do
-    html = '<span class="glyphicon glyphicon-zoom-in"></span>'
+    html = %Q{<span class="glyphicon glyphicon-zoom-in"></span>}
     expect(:icon).to generate html
   end
 end
@@ -16,7 +16,7 @@ end
 shared_examples_for 'extra icon options' do
   specify 'passes the options to the <span>' do
     options = {class: 'important', data: {value: 1}, id: 'my-icon'}
-    html = '<span class="important glyphicon glyphicon-zoom-in" data-value="1" id="my-icon"></span>'
+    html = %Q{<span class="important glyphicon glyphicon-zoom-in" data-value="1" id="my-icon"></span>}
     expect(icon: options).to generate html
   end
 end

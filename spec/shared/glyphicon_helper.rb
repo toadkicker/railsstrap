@@ -7,15 +7,15 @@ end
 
 shared_examples_for 'no glyphicon options' do
   specify 'creates a <span> with an icon' do
-    html = '<span class="glyphicon glyphicon-zoom-in"></span>'
+    html = %Q{<span class="glyphicon glyphicon-zoom-in"></span>}
     expect(:glyphicon).to generate html
   end
 end
 
 shared_examples_for 'extra glyphicon options' do
   specify 'passes the options to the <span>' do
-    options = {class: 'important', data: {value: 1}, id: 'my-glyphicon'}
-    html = '<span class="important glyphicon glyphicon-zoom-in" data-value="1" id="my-glyphicon"></span>'
+    options = {name: 'important', data: {value: 1}, id: 'my-glyphicon'}
+    html = %Q{<span class="important glyphicon glyphicon-zoom-in" data-value="1" id="my-glyphicon"></span>}
     expect(glyphicon: options).to generate html
   end
 end

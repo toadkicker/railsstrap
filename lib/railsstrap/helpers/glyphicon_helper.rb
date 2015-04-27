@@ -12,7 +12,7 @@ module Railsstrap
     # @example Display the "zoom-in" glyphicon
     #   glyphicon :zoom_in
     def glyphicon(name = nil, options = {})
-      icon name, options.merge(library: :glyphicons)
+      icon name, options.merge!(library: :glyphicons)
     end
   end
 end

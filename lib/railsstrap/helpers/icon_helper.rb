@@ -21,7 +21,7 @@ module Railsstrap
 
       icon.append_class! icon.library_class
       icon.append_class! icon.name_class
-      icon.render_tag :span
+      icon.render_tag icon.tag_class
     end
   end
 end

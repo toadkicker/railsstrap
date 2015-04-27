@@ -20,14 +20,15 @@ Gem::Specification.new do |s|
   s.test_files = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ["lib", "vendor"]
 
-  s.add_dependency 'activesupport' # versioned in gemfiles/
-  s.add_dependency 'actionpack', '>= 3.0' # versioned in gemfiles/
-  s.add_dependency 'railties', '>= 2.1.5'
-  s.add_dependency 'less-rails', '>= 2.5.0'
+  s.add_dependency 'activesupport'          # versioned in gemfiles/
+  s.add_dependency 'actionpack', '>= 3.0'   # versioned in gemfiles/
+
 
   # For development / Code coverage / Documentation
   s.add_development_dependency 'bundler', '~> 1.1'
+  s.add_development_dependency 'minitest', '~> 5.6.0'
   s.add_development_dependency 'rspec', '~> 3.1'
+  s.add_development_dependency 'rspec-html-matchers', '~> 0.7.0'
   s.add_development_dependency 'rake', '~> 10.3'
   s.add_development_dependency 'yard', '~> 0.8.7'
   s.add_development_dependency 'coveralls', '~> 0.7.1'
@@ -39,6 +40,10 @@ Gem::Specification.new do |s|
   # For Middleman/Padrino tests
   s.add_development_dependency 'padrino-helpers', '~> 0.12.4'
   s.add_development_dependency 'padrino-routing', '~> 0.5.0'
+
+  # For compiling LESS files
+  s.add_dependency 'railties', '>= 2.1.5'
+  s.add_dependency 'less-rails', '>= 2.5.0'
 
   if Gem::Platform::RUBY === 'jruby'
     s.add_runtime_dependency 'therubyrhino'

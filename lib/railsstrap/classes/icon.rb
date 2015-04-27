@@ -18,6 +18,12 @@ module Railsstrap
         end
       end
 
+      # @return [#to_s] the html tag to assign to the icon based on the tag
+      #   of the icon.
+      def tag_class
+        :span || @options[:tag]
+      end
+
     private
 
       # @return [Hash<Symbol, String>] the classes that Bootstrap requires to
