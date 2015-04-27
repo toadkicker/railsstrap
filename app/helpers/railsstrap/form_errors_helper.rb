@@ -1,6 +1,8 @@
 module Railsstrap
   module FormErrorsHelper
     include ActionView::Helpers::FormTagHelper
+
+    #attr_reader required for Rails 3.2 support
     attr_reader :template
     attr_reader :object
 

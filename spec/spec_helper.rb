@@ -9,12 +9,17 @@ require 'bundler/setup'
 require 'action_view'
 require 'active_support'
 require 'active_model'
-require 'rspec-html-matchers'
 require 'railsstrap'
 require 'abstract_controller'
 require 'action_controller'
 require 'mocha/api'
 require 'pry'
+require 'rspec'
+require 'rspec-html-matchers'
 
 require 'coveralls'
 Coveralls.wear!
+
+RSpec.configure do |config|
+  config.include RSpecHtmlMatchers
+end

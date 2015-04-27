@@ -1,6 +1,13 @@
 ## Change Log
 
-### 3.3.2 (2015/01/22 16:42 +00:00)
+### 3.3.4 (2015/04/27 00:50 +00:00)
+- [0899010](https://github.com/toadkicker/railsstrap/commit/0899010e9fcce46f54c7569fa920e1f994697976) revert 93d95feac8cb40f7e13e5fd229d3cb84133ecaaa (@toadkicker)
+- [cd68f80](https://github.com/toadkicker/railsstrap/commit/cd68f80cce759ed312a548ce309923fa06e6577e) updated fontawesome (@toadkicker)
+
+### v3.3.2 (2015/01/22 16:59 +00:00)
+- [add8974](https://github.com/toadkicker/railsstrap/commit/add8974d2d915c89a23fec2ce70ab1528b5bffe9) remove gemspec error (@toadkicker)
+- [#39](https://github.com/toadkicker/railsstrap/pull/39) Merge pull request #39 from toadkicker/develop (@toadkicker)
+- [bf8bf15](https://github.com/toadkicker/railsstrap/commit/bf8bf15b63940fce511ee264bf52a423fdd63184) update changelog v2 (@toadkicker)
 - [878b1b0](https://github.com/toadkicker/railsstrap/commit/878b1b001dd957d6e0c777c31b941261bd921d23) update bootstrap to 3.3.2 (@toadkicker)
 - [526e499](https://github.com/toadkicker/railsstrap/commit/526e499df7163f595ed3d93d95358a2b69f460c9) updated changelog. ship 3.3.2 (@toadkicker)
 - [#38](https://github.com/toadkicker/railsstrap/pull/38) Merge pull request #38 from toadkicker/support/fix35 (@toadkicker)
