@@ -1,4 +1,4 @@
-require 'spec_helper'
+require_relative 'spec_helper'
 Dir['./spec/padrino/*_helper.rb'].each {|f| require f}
 
 describe 'When used in Padrino or Middleman' do
