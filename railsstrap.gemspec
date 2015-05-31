@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib", "vendor"]
 
   s.add_dependency 'activesupport'          # versioned in gemfiles/
-  s.add_dependency 'actionpack', '>= 3.0'   # versioned in gemfiles/
+  s.add_dependency 'actionpack'   # versioned in gemfiles/
 
 
   # For development / Code coverage / Documentation
@@ -38,16 +38,15 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'middleman-core' # versioned in gemfiles/
 
   # For Middleman/Padrino tests
-  s.add_development_dependency 'padrino-helpers', '~> 0.12.4'
-  s.add_development_dependency 'padrino-routing', '~> 0.5.0'
+  s.add_development_dependency 'padrino-helpers', '~> 0.12'
+  s.add_development_dependency 'padrino-routing', '~> 0.5'
 
   # For compiling LESS files
-  s.add_dependency 'railties', '>= 2.1.5'
-  s.add_dependency 'less-rails', '>= 2.5.0'
+  s.add_dependency 'less-rails', '~> 2.5'
 
   if Gem::Platform::RUBY === 'jruby'
     s.add_runtime_dependency 'therubyrhino'
   else
-    s.add_runtime_dependency 'therubyracer'
+    s.add_runtime_dependency 'therubyracer', '~> 0.10'
   end
 end
