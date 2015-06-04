@@ -1,6 +1,6 @@
-<button class="<%= button[:class] %>" data-toggle="aside" data-target="#<%= div[:id] %>"><%= button[:caption] %></button>
-<div class="aside <%=div[:side] %> fade" id="<%= div[:id] %>" tabindex="-1" role="dialog" aria-labelledby="label-<%= div[:id] %>" aria-hidden="true">
-  <div class="<%= div[:class] %>">
+<button class="<%= button[:class] %>" data-toggle="modal" data-target="#<%= div[:id] %>"><%= button[:caption] %></button>
+<div class="aside <%=div[:class] %>" id="<%= div[:id] %>" tabindex="-1" role="dialog" aria-labelledby="label-<%= div[:id] %>" aria-hidden="true">
+  <div class="aside-dialog <%= div[:size] %>">
     <div class="aside-content">
       <div class="aside-header">
         <button type="button" class="close" data-dismiss="aside">

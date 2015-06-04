@@ -15,22 +15,22 @@ module Railsstrap
         cdn_asset options.merge(library: 'font-awesome')
       end
 
-      def self.railsstrap_css(options = {})
+      def self.railsstrap(options = {})
         version = options[:version] ||= Railsstrap::VERSION
-        host = options[:host] || '//cdn.railsstrap.io'
+        host = options[:host] || '//d170ghk4u9976v.cloudfront.net'
         cdn_asset options.merge(library: 'railsstrap', host: host, version: version)
       end
 
       def self.bootstrap_additions(options = {})
         version = options[:version] ||= Railsstrap::VERSION
-        host = options[:host] ||= '//cdn.railsstrap.io'
+        host = options[:host] ||= '//d170ghk4u9976v.cloudfront.net'
         cdn_asset options.merge(library: 'bootstrap-additions', host: host, version: version)
       end
 
       def self.datepicker(options = {})
         version = options[:version] ||= Railsstrap::VERSION
-        host = options[:host] ||= '//cdn.railsstrap.io'
-        cdn_asset options.merge(library: 'date-picker', host: host, version: version)
+        host = options[:host] ||= '//d170ghk4u9976v.cloudfront.net'
+        cdn_asset options.merge(library: 'railsstrap', host: host, version: version)
       end
 
       private

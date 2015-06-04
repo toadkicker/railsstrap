@@ -35,6 +35,7 @@ module Railsstrap
           klass[:'']            = :'glyphicon'
         end
       end
+
     end
   end
 end

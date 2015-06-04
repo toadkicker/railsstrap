@@ -43,9 +43,12 @@ module Railsstrap
         @options.fetch :id, "aside-#{rand 10**10}"
       end
 
+      def side
+        @options.fetch :side, "left"
+      end
 
-      def dialog_side
-        Aside.dialog_side[@options[:side]]
+      def animation_class
+        @options.fetch :animation, "fade"
       end
 
       private
@@ -61,7 +64,7 @@ module Railsstrap
         end
       end
 
-      def self.dialog_side
+      def self.side
         HashWithIndifferentAccess.new.tap do |klass|
           klass[:left] = 'left'
           klass[:right] = 'right'

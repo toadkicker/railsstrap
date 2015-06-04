@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <%= stylesheet_link_tag font_awesome_css, bootstrap_css, bootstrap_theme_css %>
+  <%= stylesheet_link_tag font_awesome_css, bootstrap_css, bootstrap_theme_css, railsstrap_css, datepicker_css %>
   <title>Railsstrap test page (Rails)</title>
 </head>
 <body>
@@ -19,7 +19,7 @@
       <em>Thanks!</em> You accepted the <%= link_to 'Terms of service', '/#terms' %>.
   <% end %>
 
-  <h1>Flash messeging</h1>
+  <h1>Flash messaging</h1>
 
   <%= bootstrap_flash %>
 
@@ -61,9 +61,9 @@
   <h1>Asides</h1>
 
   <!-- Try setting different :title, :size, :button or :context options -->
-  <%= aside 'Do what you want!', button: {size: :small, context: :info} %>
+  <%= aside title: 'Do what you want!', size: :sm, side: :right, button: {size: :small, context: :info} %>
 
-  <%= aside title: 'Terms of service', size: :large, id: 'aside', button: {class: :en} do %>
+  <%= aside title: 'Terms of service', size: :large, side: :left, id: 'aside', button: {class: :en} do %>
       <div class="aside-body">Please accept the Terms of service.</div>
       <div class="aside-footer">
         <button type="button" class="btn btn-primary">Accept</button>
@@ -174,5 +174,7 @@
 </div>
 <%= javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js' %>
 <%= javascript_include_tag bootstrap_js %>
+<%= javascript_include_tag datepicker_js %>
+
 </body>
 </html>

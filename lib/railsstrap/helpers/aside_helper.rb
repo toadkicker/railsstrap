@@ -37,7 +37,7 @@ module Railsstrap
     #       end
     def aside(*args, &block)
       aside = Railsstrap::Aside.new self, *args, &block
-      aside.extract! :button, :size, :body, :title, :id, :side
+      aside.extract! :button, :size, :body, :title, :id, :side, :animation
 
       aside.extract_from :button, [:context, :size, :layout, :caption]
       aside.append_class_to! :button, :btn
@@ -46,8 +46,9 @@ module Railsstrap
       aside.merge! button: {caption: aside.caption}
 
       aside.append_class_to! :div, :'aside-dialog'
-      aside.append_class_to! :div, aside.dialog_side
       aside.append_class_to! :div, aside.dialog_size_class
+      aside.append_class_to! :div, aside.side
+      aside.append_class_to! :div, aside.animation_class
       aside.merge! div: {title: aside.title, id: aside.id}
 
       aside.render_partial 'aside'
