@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib", "vendor"]
 
   s.add_dependency 'activesupport'          # versioned in gemfiles/
-  s.add_dependency 'actionpack'   # versioned in gemfiles/
+  s.add_dependency 'actionpack'             # versioned in gemfiles/
 
 
   # For development / Code coverage / Documentation
