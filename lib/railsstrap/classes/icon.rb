@@ -13,9 +13,13 @@ module Railsstrap
       # @return [#to_s] the class to assign to the icon based on the name
       #   of the icon.
       def name_class
-        if :name == @options[:name]
+        if @options[:name].present?
+          name = @options[:name]
           "#{library_class}-#{name.to_s.gsub '_', '-'}"
+        else
+          "#{library_class}-missing-icon-name"
         end
+
       end
 
       # @return [#to_s] the html tag to assign to the icon based on the tag
