@@ -46,6 +46,7 @@ Gem::Specification.new do |s|
 
   if Gem::Platform::RUBY === 'jruby'
     s.add_runtime_dependency 'therubyrhino'
+    s.add_development_dependency 'jdbc-sqlite3' #travis complained about this!
   else
     s.add_runtime_dependency 'therubyracer'
   end
