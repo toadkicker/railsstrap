@@ -1,7 +1,12 @@
 language: ruby
+cache: bundler
+sudo: false
 rvm:
   - 1.9.3
-  - 2.0.0
-  - 2.1.1
-  - jruby-1.7.20
+  - ruby-head
+  - jruby-head
+  - 2.2.1
 script: bundle exec rake spec
+env:
+  global:
+    - "JRUBY_OPTS=-Xcext.enabled=true"
