@@ -4,7 +4,7 @@ require 'railsstrap/constants'
 Gem::Specification.new do |s|
   s.name        = 'railsstrap'
   s.version     = Railsstrap::Constants::VERSION
-  s.platform    = Gem::Platform::RUBY
+  s.platform    = Gem::Platform::CURRENT
   s.authors     = ['Todd Baur']
   s.email       = ['todd@toadkicker.com']
   s.license     = 'MIT'
