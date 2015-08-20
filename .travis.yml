@@ -7,3 +7,6 @@ rvm:
   - jruby-head
   - 2.2.1
 script: bundle exec rake spec
+env:
+  global:
+    - "JRUBY_OPTS=-Xcext.enabled=true"
