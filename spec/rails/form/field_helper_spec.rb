@@ -14,8 +14,8 @@ field_helpers_to_test.each do |form_field|
   describe form_field do
     attr_accessor :output_buffer
     let(:protect_against_forgery?) { false }
-    let(:user) { User.new }
     let(:form) { form_for user, layout: layout, errors: errors, url: '/', &block }
+    let(:user) { User.new }
     let(:errors) { {} }
 
     let(:block) { Proc.new {|f| f.send form_field, :name, options} }
