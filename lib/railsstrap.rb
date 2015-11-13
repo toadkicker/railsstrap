@@ -1,5 +1,17 @@
+require 'active_support'
+require 'active_support/core_ext'
+
+# Bootstrap Helpers
 module Railsstrap
-  require 'railsstrap/engine' if defined?(Rails)
+  mattr_accessor :framework
 end
 
-require 'railsstrap/bootstrap' if defined?(Rails)
+# Always require every generic helper
+helpers_folder = File.expand_path '../railsstrap/helpers/*_helper.rb', __FILE__
+Dir[helpers_folder].each{|file| require file}
+
+# Conditionally require platform-specific helpers
+extension   = :engine if defined?(Rails)
+extension ||= :middleman if defined?(Middleman)
+extension ||= :padrino if defined?(Padrino)
+require "railsstrap/core_ext/#{extension}" if extension

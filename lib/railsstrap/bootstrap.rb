@@ -1,2 +1,1 @@
-require 'railsstrap/engine'
-require 'railsstrap/constants'
+require 'railsstrap/core_ext/engine'

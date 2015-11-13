@@ -1,7 +1,7 @@
 {
   "name": "railsstrap",
   "app": ".",
-  "version": "3.3.2",
+  "version": "4.0.0-RC1",
   "description": "Make your rails project awesome with railsstrap. Bootstrap 3.2+ Helpers, additional components, and more.",
   "main": "Gruntfile.js",
   "scripts": {
@@ -26,5 +26,8 @@
     "grunt-less-imports": "~1.0.0",
     "grunt-contrib-less": "~0.11.4",
     "load-grunt-tasks": "~1.0.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-uglify": "^0.9.1"
   }
 }
