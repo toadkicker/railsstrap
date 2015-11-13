@@ -1,3 +1,3 @@
 module Railsstrap
-  VERSION = '3.3.5'
+  VERSION = '4.0.0-RC1'
 end
