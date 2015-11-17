@@ -22,29 +22,32 @@ Gem::Specification.new do |s|
   s.add_dependency         'less-rails', '>= 2.5.0', :path => ENV['LESS_RAILS_SOURCE'] if ENV['LESS_RAILS_SOURCE']
 
   s.add_development_dependency 'capybara', '~> 2.2.1'
-  s.add_development_dependency 'sqlite3', '~> 1.3.8'
+#  s.add_development_dependency 'sqlite3', '~> 1.3.8'
 
   s.add_development_dependency 'jquery-rails',   '~> 3.1.0'
 
-  s.add_development_dependency 'better_errors',     '~> 1.1.0'
-  s.add_development_dependency 'binding_of_caller', '~> 0.7.2'
-  s.add_development_dependency 'rb-readline'
+  if Gem::ruby_engine != 'jruby'
+    s.add_development_dependency 'better_errors',     '~> 1.1.0'
+    s.add_development_dependency 'binding_of_caller', '~> 0.7.2'
+    s.add_development_dependency 'rb-readline'
+
+    s.add_development_dependency 'guard'
+    s.add_development_dependency 'guard-rspec'
+  end
 
   s.add_development_dependency 'pry'
+
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'rspec-mocks'
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'rspec-activemodel-mocks'
-
-  s.add_development_dependency 'guard'
-  s.add_development_dependency 'guard-rspec'
 
   s.add_development_dependency 'coveralls'
   s.add_development_dependency 'mocha'
   s.add_development_dependency 'minitest'
   s.add_development_dependency 'rake'
 
-  if Gem::Platform::RUBY === 'jruby'
+  if Gem::ruby_engine == 'jruby'
     s.add_runtime_dependency 'therubyrhino'
   else
     s.add_runtime_dependency 'therubyracer'
