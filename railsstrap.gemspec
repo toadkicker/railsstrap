@@ -44,7 +44,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'minitest'
   s.add_development_dependency 'rake'
 
-  if Gem::Platform::RUBY === 'jruby'
+  if Gem::ruby_engine == 'jruby'
     s.add_runtime_dependency 'therubyrhino'
   else
     s.add_runtime_dependency 'therubyracer'
