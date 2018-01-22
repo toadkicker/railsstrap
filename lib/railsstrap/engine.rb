@@ -15,10 +15,13 @@ module Railsstrap
     initializer 'railsstrap.setup',
                 :after => 'railsstrap.before.load_config_initializers',
                 :group => :all do |app|
-      bowerrc = File.read(File.join(config.root, '.bowerrc'))
-      app.config.less.paths << File.join(bowerrc['directory'])
-      app.config.assets.paths << File.join(bowerrc['directory'])
-      app.config.app_generators.stylesheet_engine :less
+      app.config.assets.paths << File.join(config.root, 'vendor', 'assets', 'javascripts')
+      app.config.assets.paths << File.join(config.root, 'vendor', 'assets', 'stylesheets')
+      app.config.assets.paths << File.join(config.root, 'node_modules', '@fortawesome', 'fontawesome')
+      app.config.assets.paths << File.join(config.root, 'node_modules', '@fortawesome', 'fontawesome-free-regular')
+      app.config.assets.paths << File.join(config.root, 'node_modules', '@fortawesome', 'fontawesome-free-solid')
+      app.config.assets.paths << File.join(config.root, 'node_modules', '@fortawesome', 'fontawesome-free-brands')
+      app.config.assets.paths << File.join(config.root, 'node_modules', 'bootstrap', 'scss')
     end
 
     initializer 'railsstrap.setup_helpers' do |app|
@@ -27,13 +30,12 @@ module Railsstrap
       end
 
       [Railsstrap::AsideHelper,
+       Railsstrap::BadgeLabelHelper,
        Railsstrap::BootstrapFlashHelper,
        Railsstrap::FormErrorsHelper,
        Railsstrap::ModalHelper,
-       Railsstrap::GlyphHelper,
        Railsstrap::IconHelper,
        Railsstrap::NavbarHelper,
-       Railsstrap::BadgeLabelHelper,
        Railsstrap::DatePickerHelper].each do |h|
         app.config.to_prepare do
           ActionController::Base.send :helper, h

@@ -2,21 +2,26 @@ module Railsstrap
   module IconHelper
     # ==== Examples
     # icon(:share_alt)
-    # # => <span class="icon-share-alt"></span>
+    # # => <i class="far fa-share-alt"></i>
     # icon(:lock, :white)
-    # # => <span class="icon-lock icon-white"></span>
-    # icon(:thumbs_up, :pull_left)
-    # # => <i class="icon-thumbs-up pull-left"></i>
-    # icon(:lock, {tag: :span})
-    # # => <span class="icon-lock"></span>
+    # # => <i class="far fa-lock fa-white"></i>
+    # icon(:thumbs_up, :fas)
+    # # => <i class="fas fa-thumbs-up"></i>
+    # icon(:lock, library: :far, tag: :span)
+    # # => <span class="far fa-lock"></span>
     def icon(*names)
+      defaults = {library: :far, tag: :i}.freeze
+
       options = (names.last.kind_of?(Hash)) ? names.pop : {}
-      names.map! { |name| name.to_s.gsub('_','-') }
+      opts = defaults.merge options
+
+      names.map! {|name| name.to_s.gsub('_', '-')}
       names.map! do |name|
-        name =~ /pull-(?:left|right)/ ? name : "fa fa-#{name}"
+        name =~ /pull-(?:left|right)/ ? name : "fa-#{name}"
       end
-      options[:tag] = options[:tag] ||= :i
-      content_tag options[:tag], nil, :class => names
+      names.insert(0, opts[:library].to_s)
+
+      content_tag opts[:tag], nil, :class => names
     end
   end
 end

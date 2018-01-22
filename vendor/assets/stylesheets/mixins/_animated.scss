@@ -1,0 +1,16 @@
+//Contributions for animations from http://daneden.me/animate
+
+@mixin animated($duration: 0.6s) {
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  &.infinite {
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    &.hinge {
+      -webkit-animation-duration: 2s;
+      animation-duration: 2s;
+    }
+  }
+}
