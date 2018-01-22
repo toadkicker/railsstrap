@@ -1,5 +1,5 @@
 !!! 5
-%html(lang="en")
+%html(lang="en" class="fontawesome-i2svg-pending")
   %head
     %meta(charset="utf-8")
     %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
@@ -47,4 +47,4 @@
               %li= link_to "Link 2", "/path2"
               %li= link_to "Link 3", "/path3"
       %footer
-        %p &copy; Company <%= Date.today.year %>
+        %p &copy; <%= app_name %> <%= Date.today.year %>
