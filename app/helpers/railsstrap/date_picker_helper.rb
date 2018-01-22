@@ -21,7 +21,6 @@
 
 module Railsstrap
   module DatePickerHelper
-
     def date_picker(options = {})
       opts = default_dp_options.deep_merge(options)
       content_tag(:div, class: "input-group date #{opts[:class]}", id: opts[:id], data: opts[:data]) {
@@ -31,9 +30,7 @@ module Railsstrap
 
     def date_picker_icon(options = {})
       opts = default_dp_options.deep_merge(options)
-      content_tag opts[:icon_wrapper_tag], class: opts[:icon_wrapper_class] {
-        content_tag :i, '', class: opts[:icon]
-      }
+      content_tag opts[:icon_wrapper_tag], icon(opts[:icon]), class: opts[:icon_wrapper_class]
     end
 
     def date_picker_input(options = {})
@@ -58,7 +55,7 @@ module Railsstrap
         wrapper_class: 'input-group date',
         icon_wrapper_tag: :span,
         icon_wrapper_class: 'input-group-append',
-        icon: 'fa fa-calendar',
+        icon: 'calendar',
         data: {datepicker: true, locale: 'en', target_input: 'nearest'}
       }
     end
@@ -66,12 +63,12 @@ module Railsstrap
     def default_js_options
       {
         selector: '[data-datepicker="true"]',
-        language: 'en',
+        locale: 'en',
         icons: {
-          time: 'fa fa-clock-o',
-          date: 'fa fa-calendar',
-          up: 'fa fa-chevron-up',
-          down: 'fa fa-chevron-down'
+          time: 'far fa-clock-o',
+          date: 'far fa-calendar',
+          up: 'far fa-chevron-up',
+          down: 'far fa-chevron-down'
         }
       }
     end
