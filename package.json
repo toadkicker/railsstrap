@@ -1,8 +1,8 @@
 {
   "name": "railsstrap",
   "app": ".",
-  "version": "4.0.0",
-  "description": "Make your rails project awesome with railsstrap. Bootstrap 4 Helpers, custom components, and CSS animations.",
+  "version": "4.0.0-RC1",
+  "description": "Make your rails project awesome with railsstrap. Bootstrap 3.2+ Helpers, additional components, and more.",
   "main": "Gruntfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
