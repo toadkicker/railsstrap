@@ -2,8 +2,8 @@ require 'railsstrap/classes/button'
 
 module Railsstrap
   module Classes
-    class Modal < Base
-      # Differently from other classes, Modal works with no content or block,
+    class Aside < Base
+      # Differently from other classes, Aside works with no content or block,
       # given that the options[:body] is passed, in which case it functions
       # as the content.
       def initialize(app = nil, *args, &block)
@@ -14,44 +14,44 @@ module Railsstrap
         super
       end
 
-      # @return [#to_s] the context-related class to assign to the modal button.
+      # @return [#to_s] the context-related class to assign to the aside button.
       def button_context_class
         Button.contexts[@options.fetch(:button, {})[:context]]
       end
 
-      # @return [#to_s] the size-related class to assign to the modal button.
+      # @return [#to_s] the size-related class to assign to the aside button.
       def button_size_class
         Button.sizes[@options.fetch(:button, {})[:size]]
       end
 
-      # @return [#to_s] the size-related class to assign to the modal dialog.
+      # @return [#to_s] the size-related class to assign to the aside dialog.
       def dialog_size_class
-        Modal.dialog_sizes[@options[:size]]
+        Aside.dialog_sizes[@options[:size]]
       end
 
-      # @return [#to_s] the caption for the modal button.
+      # @return [#to_s] the caption for the aside button.
       def caption
         @options.fetch(:button, {}).fetch :caption, title
       end
 
-      # @return [#to_s] the title to display on top of the modal dialog.
+      # @return [#to_s] the title to display on top of the aside dialog.
       def title
-        @options.fetch :title, 'Modal'
+        @options.fetch :title, 'Aside'
       end
 
       def id
-        @options.fetch :id, "modal-#{rand 10**10}"
+        @options.fetch :id, "aside-#{rand 10**10}"
       end
 
       # @return [Hash<Symbol, String>] the classes that Bootstrap requires to
-      #   append to the modal dialog for each possible size.
+      #   append to the aside dialog for each possible size.
       private_class_method
       def self.dialog_sizes
         HashWithIndifferentAccess.new.tap do |klass|
-          klass[:large]       = :'modal-lg'
-          klass[:lg]          = :'modal-lg'
-          klass[:sm]          = :'modal-sm'
-          klass[:small]       = :'modal-sm'
+          klass[:large]       = :'aside-lg'
+          klass[:lg]          = :'aside-lg'
+          klass[:sm]          = :'aside-sm'
+          klass[:small]       = :'aside-sm'
         end
       end
 
@@ -60,7 +60,7 @@ module Railsstrap
         if block_given?
           super
         else
-          @app.content_tag :div, super, class: 'modal-body'
+          @app.content_tag :div, super, class: 'aside-body'
         end
       end
     end

@@ -6,6 +6,8 @@ describe 'When used in Rails' do
   before { Railsstrap.framework = :rails }
 
   all_tests_pass_for 'the alert_box helper'
+  all_tests_pass_for 'the badge helper'
+  all_tests_pass_for 'the aside helper'
   all_tests_pass_for 'the bootstrap_css helper'
   all_tests_pass_for 'the bootstrap_js helper'
   all_tests_pass_for 'the bootstrap_theme_css helper'

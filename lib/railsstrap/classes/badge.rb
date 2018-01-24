@@ -8,14 +8,6 @@ module Railsstrap
         Badge.variants[@options.fetch :variant, @options[:priority]]
       end
 
-      # @return [#to_s] the HTML to show a dismissible button for the badge box.
-      def dismissible_button
-        if @options[:dismissible] || @options[:priority]
-          path = '../../views/railsstrap/_badge_dismiss_button.html'
-          File.read File.expand_path(path, __FILE__)
-        end
-      end
-
       def render_tag
         if @options[:href]
           render content_tag(:a)

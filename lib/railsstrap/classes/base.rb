@@ -47,6 +47,14 @@ module Railsstrap
         render template.result(assigns.instance_eval {binding &nil}).html_safe
       end
 
+      # @return [#to_s] the HTML to show a dismissible button.
+      def dismissible_button
+        if @options[:dismissible] || @options[:priority]
+          path = '../../views/railsstrap/_dismiss_button.html'
+          File.read File.expand_path(path, __FILE__)
+        end
+      end
+
       def tag
         :div
       end
