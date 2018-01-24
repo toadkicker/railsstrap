@@ -11,7 +11,7 @@ module Railsstrap
     #     listed below is passed as an HTML attribute to the alert’s `<div>`.
     #   @option options [Boolean] :dismissible (false) whether to display an
     #     '×' to the right of the box that can be clicked to dismiss the alert.
-    #   @option options [#to_s] :variant (:info) the variantual alternative to
+    #   @option options [#to_s] :variant (:info) the variant alternative to
     #     apply to the alert. Can be `:danger`, `:info`, `:success` or
     #     `:warning`.
     #   @option options [#to_s] :priority if set to one of the priority levels

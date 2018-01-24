@@ -28,8 +28,8 @@ end
 
 shared_examples_for 'extra button_to options (Padrino)' do
   specify 'passes the options to the form and the submit_options to the button' do
-    options = {context: :default, class: 'big', id: 'my-form', submit_options: {class: 'important', data: {value: 1}, id: 'my-button_to'}}
-    html = '<form action="/" accept-charset="UTF-8" class="big" id="my-form" method="post"><input type="hidden" name="authenticity_token" /><input type="submit" value="content" class="important btn btn-default" data-value="1" id="my-button_to" /></form>'
+    options = {variant: :info, class: 'big', id: 'my-form', submit_options: {class: 'important', data: {value: 1}, id: 'my-button_to'}}
+    html = '<form action="/" accept-charset="UTF-8" class="big" id="my-form" method="post"><input type="hidden" name="authenticity_token" /><input type="submit" value="content" class="important btn btn-info" data-value="1" id="my-button_to" /></form>'
     expect(button_to: options).to generate html
   end
 end

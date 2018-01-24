@@ -23,19 +23,19 @@ module Railsstrap
     #   precedence, so it must be set to `false` to display a full-width button.
     # @option options [#to_s] :align if set to :right, the dropdown is aligned
     #   to the right-end of the button, rather than to the left-end.
-    # @option options [#to_s] :context (:default) the context for the button,
+    # @option options [#to_s] :variant (:default) the variant for the button,
     #   which determines its color.
     # @option options [#to_s] :size the size of the button.
     # @yieldreturn [#to_s] the content of the dropdown.
     def dropdown(caption, options = {}, &block)
       dropdown = Railsstrap::Dropdown.new self, nil, options, &block
-      dropdown.extract! :id, :groupable, :direction, :align, :split, :context,
+      dropdown.extract! :id, :groupable, :direction, :align, :split, :variant,
                         :size, :layout, :button
 
-      dropdown.extract_from :button, [:context, :size, :layout]
+      dropdown.extract_from :button, [:variant, :size, :layout]
       dropdown.merge! button: {caption: caption, id: dropdown.id}
       dropdown.append_class_to! :button, :btn
-      dropdown.append_class_to! :button, dropdown.context_class
+      dropdown.append_class_to! :button, dropdown.variant_class
       dropdown.append_class_to! :button, dropdown.size_class
       dropdown.append_class_to! :button, dropdown.layout_class
       dropdown.append_class_to! :div, dropdown.groupable_class

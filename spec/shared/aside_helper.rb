@@ -5,7 +5,7 @@ shared_examples_for 'the aside helper' do
   all_tests_pass_with 'the :title aside option'
   all_tests_pass_with 'the :size aside option'
   all_tests_pass_with 'the button: :caption aside option'
-  all_tests_pass_with 'the button: :context aside option'
+  all_tests_pass_with 'the button: :variant aside option'
   all_tests_pass_with 'the button: :size aside option'
   all_tests_pass_with 'the button: :class aside option'
 end
@@ -78,11 +78,11 @@ shared_examples_for 'the button: :caption aside option' do
   end
 end
 
-shared_examples_for 'the button: :context aside option' do
-  Railsstrap::Button.contexts.each do |context, context_class|
-    specify %Q{set to :#{context}, adds the class "#{context_class}"} do
-      html = %r{<button class="btn #{context_class}"}
-      expect(aside: {button: {context: context}}).to generate html
+shared_examples_for 'the button: :variant aside option' do
+  Railsstrap::Button.variants.each do |variant, variant_class|
+    specify %Q{set to :#{variant}, adds the class "#{variant_class}"} do
+      html = %r{<button class="btn #{variant_class}"}
+      expect(aside: {button: {variant: variant}}).to generate html
     end
   end
 end

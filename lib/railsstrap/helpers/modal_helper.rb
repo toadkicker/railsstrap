@@ -39,9 +39,9 @@ module Railsstrap
       modal = Railsstrap::Modal.new self, *args, &block
       modal.extract! :button, :size, :body, :title, :id
 
-      modal.extract_from :button, [:context, :size, :layout, :caption]
+      modal.extract_from :button, [:variant, :size, :layout, :caption]
       modal.append_class_to! :button, :btn
-      modal.append_class_to! :button, modal.button_context_class
+      modal.append_class_to! :button, modal.button_variant_class
       modal.append_class_to! :button, modal.button_size_class
       modal.merge! button: {caption: modal.caption}
 

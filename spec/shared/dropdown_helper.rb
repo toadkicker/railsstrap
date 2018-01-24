@@ -1,7 +1,7 @@
 shared_examples_for 'the dropdown helper' do
   all_tests_pass_with 'no dropdown options'
   all_tests_pass_with 'the :id dropdown option'
-  all_tests_pass_with 'the :context dropdown option'
+  all_tests_pass_with 'the :variant dropdown option'
   all_tests_pass_with 'the :size dropdown option'
   all_tests_pass_with 'the :layout dropdown option'
   all_tests_pass_with 'the :groupable dropdown option'
@@ -38,11 +38,11 @@ shared_examples_for 'the :id dropdown option' do
   end
 end
 
-shared_examples_for 'the :context dropdown option' do
-  Railsstrap::Button.contexts.each do |context, context_class|
-    specify %Q{set to :#{context}, adds the class "#{context_class}"} do
-      html = %r{<button class="dropdown-toggle btn #{context_class}"}
-      expect(dropdown: {context: context}).to generate html
+shared_examples_for 'the :variant dropdown option' do
+  Railsstrap::Button.variants.each do |variant, variant_class|
+    specify %Q{set to :#{variant}, adds the class "#{variant_class}"} do
+      html = %r{<button class="dropdown-toggle btn #{variant_class}"}
+      expect(dropdown: {variant: variant}).to generate html
     end
   end
 end

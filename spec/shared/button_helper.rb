@@ -1,7 +1,7 @@
 shared_examples_for 'the button helper' do
   all_tests_pass_with 'no button options'
   all_tests_pass_with 'extra button options'
-  all_tests_pass_with 'the :context button option'
+  all_tests_pass_with 'the :variant button option'
   all_tests_pass_with 'the :size button option'
   all_tests_pass_with 'the :layout button option'
 end
@@ -24,11 +24,11 @@ shared_examples_for 'extra button options' do
   end
 end
 
-shared_examples_for 'the :context button option' do
-  Railsstrap::Button.contexts.each do |context, context_class|
-    specify %Q{set to :#{context}, adds the class "#{context_class}"} do
-      html = %Q{<button class="btn #{context_class}">content</button>}
-      expect(button: {context: context}).to generate html
+shared_examples_for 'the :variant button option' do
+  Railsstrap::Button.variants.each do |variant, variant_class|
+    specify %Q{set to :#{variant}, adds the class "#{variant_class}"} do
+      html = %Q{<button class="btn #{variant_class}">content</button>}
+      expect(button: {variant: variant}).to generate html
     end
   end
 end

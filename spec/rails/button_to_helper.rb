@@ -24,7 +24,7 @@ end
 
 shared_examples_for 'extra button_to options (Rails)' do
   specify 'passes the options to the button' do
-    options = {context: :default, class: 'important', data: {value: 1}, id: 'my-button_to'}
+    options = {variant: :default, class: 'important', data: {value: 1}, id: 'my-button_to'}
     html = %r{<(input|button) class="important btn btn-default" data-value="1" id="my-button_to" type="submit"}
     expect(button_to: options).to generate html
   end

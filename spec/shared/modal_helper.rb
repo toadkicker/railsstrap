@@ -5,7 +5,7 @@ shared_examples_for 'the modal helper' do
   all_tests_pass_with 'the :title modal option'
   all_tests_pass_with 'the :size modal option'
   all_tests_pass_with 'the button: :caption modal option'
-  all_tests_pass_with 'the button: :context modal option'
+  all_tests_pass_with 'the button: :variant modal option'
   all_tests_pass_with 'the button: :size modal option'
   all_tests_pass_with 'the button: :class modal option'
 end
@@ -78,11 +78,11 @@ shared_examples_for 'the button: :caption modal option' do
   end
 end
 
-shared_examples_for 'the button: :context modal option' do
-  Railsstrap::Button.contexts.each do |context, context_class|
-    specify %Q{set to :#{context}, adds the class "#{context_class}"} do
-      html = %r{<button class="btn #{context_class}"}
-      expect(modal: {button: {context: context}}).to generate html
+shared_examples_for 'the button: :variant modal option' do
+  Railsstrap::Button.variants.each do |variant, variant_class|
+    specify %Q{set to :#{variant}, adds the class "#{variant_class}"} do
+      html = %r{<button class="btn #{variant_class}"}
+      expect(modal: {button: {variant: variant}}).to generate html
     end
   end
 end

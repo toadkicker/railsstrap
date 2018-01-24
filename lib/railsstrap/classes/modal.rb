@@ -14,9 +14,9 @@ module Railsstrap
         super
       end
 
-      # @return [#to_s] the context-related class to assign to the modal button.
-      def button_context_class
-        Button.contexts[@options.fetch(:button, {})[:context]]
+      # @return [#to_s] the variant-related class to assign to the modal button.
+      def button_variant_class
+        Button.variants[@options.fetch(:button, {})[:variant]]
       end
 
       # @return [#to_s] the size-related class to assign to the modal button.
