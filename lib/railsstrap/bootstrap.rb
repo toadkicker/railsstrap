@@ -1,2 +1,2 @@
 require 'railsstrap/engine'
-require 'railsstrap/constants'
+require 'railsstrap/version'

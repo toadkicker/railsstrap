@@ -9,10 +9,10 @@ include Railsstrap::NavbarHelper
 
 describe Railsstrap::NavbarHelper, 'uri_state', type: :helper do
   before do
-    allow(subject).to receive_message_chain("request.host_with_port").and_return("#{HOST}")
-    allow(subject).to receive_message_chain("request.protocol").and_return("http://")
-    allow(subject).to receive_message_chain("request.url").and_return("#{HOST}/a/b")
-    allow(subject).to receive_message_chain("request.path").and_return('/a/b')    
+    allow(subject).to receive_message_chain('request.host_with_port').and_return(HOST.to_s)
+    allow(subject).to receive_message_chain('request.protocol').and_return('http://')
+    allow(subject).to receive_message_chain('request.url').and_return("#{HOST}/a/b")
+    allow(subject).to receive_message_chain('request.path').and_return('/a/b')
   end
 
   it 'must return active state' do
@@ -23,10 +23,10 @@ describe Railsstrap::NavbarHelper, 'uri_state', type: :helper do
   end
 
   it 'must not return chosen for non get method' do
-    expect(subject.uri_state('/a/b', :method => 'delete')).to be :inactive
-    expect(subject.uri_state("#{HOST}/a/b", :method => 'delete')).to be :inactive
-    expect(subject.uri_state('/a/b', "data-method" => 'delete')).to be :inactive
-    expect(subject.uri_state("#{HOST}/a/b", "data-method" => 'delete')).to be :inactive
+    expect(subject.uri_state('/a/b', method: 'delete')).to be :inactive
+    expect(subject.uri_state("#{HOST}/a/b", method: 'delete')).to be :inactive
+    expect(subject.uri_state('/a/b', 'data-method' => 'delete')).to be :inactive
+    expect(subject.uri_state("#{HOST}/a/b", 'data-method' => 'delete')).to be :inactive
   end
 
   it 'must return chosen state' do
@@ -43,7 +43,6 @@ describe Railsstrap::NavbarHelper, 'uri_state', type: :helper do
     expect(subject.uri_state('/')).to be :inactive
     expect(subject.uri_state("#{HOST}/")).to be :inactive
   end
-
 end
 
-HOST = "http://example.com:80"
+HOST = 'http://example.com:80'.freeze
