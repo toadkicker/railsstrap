@@ -9,7 +9,7 @@ end
 
 shared_examples_for 'no button_to options (Rails)' do
   specify 'uses the original button_to helper' do
-    html = %r{^<form action="/" class="button_to" method="post"><div><(input|button) type="submit"(>| value=")content(" />|</button>)</div></form>$}
+    html = %r{^<form class="button_to" method="post" action="/"><(input|button) type="submit"(>| value=")content(" />|</button>)</form>$}
     expect(:button_to).to generate html
   end
 end
@@ -25,7 +25,7 @@ end
 shared_examples_for 'extra button_to options (Rails)' do
   specify 'passes the options to the button' do
     options = {context: :default, class: 'important', data: {value: 1}, id: 'my-button_to'}
-    html = %r{<(input|button) class="important btn btn-default" data-value="1" id="my-button_to" type="submit"}
+    html = %r{<(input|button) class="important btn btn-primary" data-value="1" id="my-button_to" type="submit"}
     expect(button_to: options).to generate html
   end
 end

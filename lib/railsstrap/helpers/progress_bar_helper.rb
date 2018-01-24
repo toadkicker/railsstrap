@@ -17,13 +17,13 @@ module Railsstrap
     #     striped version of the progress bar (rather than solid color).
     #   @option bar_options [Boolean] :animated (false) whether to display an
     #     animated version of the progress bar (rather than solid color).
-    #   @option bar_options [#to_s] :context (:default) the contextual
+    #   @option bar_options [#to_s] :variant (:default) thevariant
     #     alternative to apply to the progress bar. Can be `:success`, `:info`,
     #     `:warning` or `:danger`.
     #   @param [Hash] container_options the options to pass as HTML attributes
     #     to the container’s `<div>`.
     #   @example Display a 30% warning progress bar.
-    #       progress_bar percentage: 30, context: :warning
+    #       progress_bar percentage: 30, variant: :warning
     # @overload progress_bar(stacked_bars_options = [], container_options = {})
     #   @param [Hash] stacked_bars_options an array of bar_options (see above).
     #     When an array is provided, a group of stacked progress bars is 
@@ -31,15 +31,15 @@ module Railsstrap
     #   @param [Hash] container_options the options to pass as HTML attributes
     #     to the container’s `<div>`.
     #   @example Display two stacked progress bars.
-    #       progress_bar [{percentage: 30, context: :warning}, {percentage: 20}]
+    #       progress_bar [{percentage: 30, variant: :warning}, {percentage: 20}]
     def progress_bar(args = nil, container_options = {})
       progress_bars = Array.wrap(args).map do |options|
         progress_bar = Railsstrap::ProgressBar.new self, nil, options
-        progress_bar.extract! :percentage, :context, :striped, :animated, :label
+        progress_bar.extract! :percentage, :variant, :striped, :animated, :label
 
         progress_bar.merge! progress_bar.aria_values
         progress_bar.append_class! :'progress-bar'
-        progress_bar.append_class! progress_bar.context_class
+        progress_bar.append_class! progress_bar.variant_class
         progress_bar.append_class! progress_bar.striped_class
         progress_bar.append_class! progress_bar.animated_class
         progress_bar.merge! progress_bar.values

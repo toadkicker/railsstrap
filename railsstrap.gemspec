@@ -28,12 +28,9 @@ Gem::Specification.new do |s|
 
   # For development / Code coverage / Documentation
   s.add_development_dependency 'bundler', '~> 1.1'
-  s.add_development_dependency 'minitest', '~> 5.6.0'
   s.add_development_dependency 'rspec', '~> 3.1'
   s.add_development_dependency 'rspec-html-matchers', '~> 0.7.0'
-  s.add_development_dependency 'rake', '~> 10.3'
   s.add_development_dependency 'yard', '~> 0.8.7'
-  s.add_development_dependency 'coveralls', '~> 0.7.1'
   s.add_development_dependency 'activemodel' # versioned in gemfiles/
 
   # For spec/dummy
@@ -42,7 +39,7 @@ Gem::Specification.new do |s|
   # For Middleman/Padrino tests
   s.add_development_dependency 'padrino-helpers', '~> 0.12'
   s.add_development_dependency 'padrino-routing', '~> 0.5'
-
+  s.add_development_dependency 'simplecov', '~> 0.14.1'
   s.add_development_dependency 'coveralls'
   s.add_development_dependency 'mocha'
   s.add_development_dependency 'minitest'

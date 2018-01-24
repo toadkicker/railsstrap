@@ -11,7 +11,7 @@ end
 shared_examples_for 'no navbar options' do
   specify 'creates a <nav> element with a nested container' do
     html = <<-EOT.strip_heredoc.strip
-      <nav class="navbar navbar-default" role="navigation">
+      <nav class="navbar navbar-primary" role="navigation">
         <div class="container">
           content
         </div>
@@ -42,7 +42,7 @@ end
 shared_examples_for 'the :position navbar option' do
   Railsstrap::Navbar.positions.each do |position, position_class|
     specify %Q{set to #{position}, sets the class "#{position_class}"} do
-      html = %r{<nav class="navbar navbar-default #{position_class}"}
+      html = %r{<nav class="navbar navbar-primary #{position_class}"}
       expect(navbar: {position: position}).to generate html
     end
   end

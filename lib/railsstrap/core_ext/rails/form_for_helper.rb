@@ -31,10 +31,8 @@ module Railsstrap
 
       def class_for(layout)
         case layout.to_s
-          when 'navbar' then 'navbar-form'
+          when 'navbar' then 'form-inline'
           when 'inline' then 'form-inline'
-          when 'horizontal' then 'form-horizontal'
-          else 'form-horizontal'
         end
       end
     end

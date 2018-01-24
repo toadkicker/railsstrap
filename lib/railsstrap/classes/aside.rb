@@ -14,9 +14,9 @@ module Railsstrap
         super
       end
 
-      # @return [#to_s] the context-related class to assign to the aside button.
-      def button_context_class
-        Button.contexts[@options.fetch(:button, {})[:context]]
+      # @return [#to_s] the  variant-related class to assign to the aside button.
+      def button_ variant_class
+        Button.variants[@options.fetch(:button, {})[ :variant]]
       end
 
       # @return [#to_s] the size-related class to assign to the aside button.
@@ -40,7 +40,7 @@ module Railsstrap
       end
 
       def id
-        @options.fetch :id, "aside-#{rand 10**10}"
+        @options.fetch :id, "aside-#{rand 10 ** 10}"
       end
 
       def side
@@ -57,10 +57,10 @@ module Railsstrap
       #   append to the aside dialog for each possible size.
       def self.dialog_sizes
         HashWithIndifferentAccess.new.tap do |klass|
-          klass[:large]       = :'aside-lg'
-          klass[:lg]          = :'aside-lg'
-          klass[:sm]          = :'aside-sm'
-          klass[:small]       = :'aside-sm'
+          klass[:large] = :'aside-lg'
+          klass[:lg] = :'aside-lg'
+          klass[:sm] = :'aside-sm'
+          klass[:small] = :'aside-sm'
         end
       end
 

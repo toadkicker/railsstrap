@@ -17,7 +17,7 @@ module Railsstrap
     #     (alias `:lg`) or `:small` (alias `:sm`).
     #   @option options [Hash] :button the options for the toggle button.
     #     * :caption (#to_s) ('Aside') the caption of the toggle button.
-    #     * :context (#to_s) (:default) the contextual alternative to apply to
+    #     * :variant (#to_s) (:default) the variant alternative to apply to
     #        the toggle button. Can be `:danger`, `:info`, `:link`, `:primary`,
     #       `:success` or `:warning`.
     #     * :size (#to_s) the size of the toggle button. Can be `:extra_small`
@@ -25,7 +25,7 @@ module Railsstrap
     #     * :layout (#to_s) if set to `:block`, span the button for the full
     #       width of the parent.
     #   @example Display a simple aside toggled by a blue button.
-    #       aside 'You clicked me!', title: 'Click me', button: {context: :info}
+    #       aside 'You clicked me!', title: 'Click me', button: {variant: :info}
     # @overload aside(options = {}, &block)
     #   @param [Hash] options the options for the aside (see above).
     #   @yieldreturn [#to_s] the content to display in the aside.
@@ -39,9 +39,9 @@ module Railsstrap
       aside = Railsstrap::Aside.new self, *args, &block
       aside.extract! :button, :size, :body, :title, :id, :side, :animation
 
-      aside.extract_from :button, [:context, :size, :layout, :caption]
+      aside.extract_from :button, [:variant, :size, :layout, :caption]
       aside.append_class_to! :button, :btn
-      aside.append_class_to! :button, aside.button_context_class
+      aside.append_class_to! :button, aside.button_variant_class
       aside.append_class_to! :button, aside.button_size_class
       aside.merge! button: {caption: aside.caption}
 

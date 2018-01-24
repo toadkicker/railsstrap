@@ -1,8 +1,8 @@
 source 'http://rubygems.org'
 
-gem 'activesupport', '~> 4.0'
-gem 'actionpack', '~> 4.0'
-gem 'activemodel', '~> 4.0'
-gem 'middleman-core', '~> 3.3.0'
+gem 'activesupport', '~> 5.1'
+gem 'actionpack', '~> 5.1'
+gem 'activemodel', '~> 5.1'
+gem 'middleman-core', '~> 4.2.1'
 
 gemspec path: '../'

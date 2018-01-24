@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require 'railsstrap/core_ext/rails/form_for_helper'
 include Railsstrap::Rails::Helpers
 
 def self.field_helpers_to_test
-  types = %w(email number password phone search telephone text url)
+  types = %w[email number password phone search telephone text url]
   if defined?(ActionView::VERSION) # only defined in ActionView >=4
     # types.concat %w(color date datetime datetime_local month time week)
   end
-  types.map{|type| "#{type}_field"} << "text_area"
+  types.map { |type| "#{type}_field" } << 'text_area'
 end
 
 field_helpers_to_test.each do |form_field|
@@ -18,7 +20,7 @@ field_helpers_to_test.each do |form_field|
     let(:user) { User.new }
     let(:errors) { {} }
 
-    let(:block) { Proc.new {|f| f.send form_field, :name, options} }
+    let(:block) { proc { |f| f.send form_field, :name, options } }
     let(:options) { {} }
 
     context 'given any layout' do
@@ -29,7 +31,7 @@ field_helpers_to_test.each do |form_field|
       end
 
       context 'given a placeholder option, uses the provided one' do
-        let(:options) { {placeholder: 'Given name'} }
+        let(:options) { { placeholder: 'Given name' } }
         it { expect(form).to include 'placeholder="Given name"' }
       end
 
@@ -38,7 +40,7 @@ field_helpers_to_test.each do |form_field|
       end
 
       context 'given a label option, uses the provided one' do
-        let(:options) { {label: 'Given name'} }
+        let(:options) { { label: 'Given name' } }
         it { expect(form).to include 'Given name</label>' }
       end
 
@@ -47,7 +49,7 @@ field_helpers_to_test.each do |form_field|
       end
 
       context 'given a help option, displays a help box' do
-        let(:options) { {help: 'Please write the given name'} }
+        let(:options) { { help: 'Please write the given name' } }
         it { expect(form).to include '<span class="help-block text-left">Please write the given name</span>' }
       end
 
@@ -56,12 +58,12 @@ field_helpers_to_test.each do |form_field|
       end
 
       context 'given a prefix option, prints the prefix before the field' do
-        let(:options) { {prefix: 'Mr.'} }
+        let(:options) { { prefix: 'Mr.' } }
         it { expect(form).to include '<div class="input-group"><span class="input-group-addon">Mr.</span><' }
       end
 
       context 'given a suffix option, prints the prefix after the field' do
-        let(:options) { {suffix: 'Jr'} }
+        let(:options) { { suffix: 'Jr' } }
         it { expect(form).to match %r{<div class="input-group"><.+?><span class="input-group-addon">Jr</span></div>}m }
       end
 
@@ -82,18 +84,18 @@ field_helpers_to_test.each do |form_field|
         end
 
         context 'given an option to hide error icons, hides error icons' do
-          let(:errors) { {icons: false} }
-          it{ expect(form).not_to include 'has-feedback' }
+          let(:errors) { { icons: false } }
+          it { expect(form).not_to include 'has-feedback' }
         end
 
         context 'given the suffix option, hides error icons (or they would overlap)' do
-          let(:options) { {suffix: 'Jr'} }
-          it{ expect(form).not_to include 'form-control-feedback' }
+          let(:options) { { suffix: 'Jr' } }
+          it { expect(form).not_to include 'form-control-feedback' }
         end
 
         context 'given an option to hide error messages, hides error messages' do
-          let(:errors) { {messages: false} }
-          it{ expect(form).not_to include 'help-block' }
+          let(:errors) { { messages: false } }
+          it { expect(form).not_to include 'help-block' }
         end
       end
     end
@@ -101,25 +103,25 @@ field_helpers_to_test.each do |form_field|
     describe 'given a basic layout' do
       let(:layout) { :basic }
       specify 'applies form-group to the container, form-control to the input' do
-        expect(form).to match %r{<div class="form-group"><label.+?>Name</label><(input|textarea) class="form-control"}
+        expect(form).to match %r{<div class="form-group"><label.+?>Name</label><(input|textarea) placeholder="Name" class="form-control"}
       end
     end
 
     describe 'given a horizontal layout' do
       let(:layout) { :horizontal }
       specify 'applies form-group to the container, form-control to the input, col-sm-3.control-label to the label and col-sm-9 to the field container' do
-        expect(form).to match %r{<div class="form-group"><label class="col-sm-3 control-label".+?>Name</label><div class="col-sm-9"><(input|textarea) class="form-control"}
+        expect(form).to match %r{<div class="form-group"><label class="col-sm-3 control-label".+?>Name</label><div class="col-sm-9"><(input|textarea) placeholder="Name" class="form-control"}
       end
     end
 
     describe 'given an inline layout' do
       let(:layout) { :inline }
       specify 'applies form-group to the container, form-control to the input, sr-only to the label' do
-        expect(form).to match %r{<div class="form-group"><label class="sr-only".+?>Name</label><(input|textarea) class="form-control"}
+        expect(form).to match %r{<div class="form-group"><label class="sr-only".+?>Name</label><(input|textarea) placeholder="Name" class="form-control"}
       end
 
       context 'given a help message' do
-        let(:options) { {help: 'Please write the given name'} }
+        let(:options) { { help: 'Please write the given name' } }
 
         specify 'applies sr-only to the help message' do
           expect(form).to include '<span class="help-block text-left sr-only">Please write the given name</span>'

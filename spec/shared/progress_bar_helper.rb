@@ -4,7 +4,7 @@ shared_examples_for 'the progress_bar helper' do
   all_tests_pass_with 'extra progress_bar bar options'
   all_tests_pass_with 'the :percentage progress_bar option'
   all_tests_pass_with 'the :label progress_bar option'
-  all_tests_pass_with 'the :context progress_bar option'
+  all_tests_pass_with 'the :variant progress_bar option'
   all_tests_pass_with 'the :striped progress_bar option'
   all_tests_pass_with 'the :animated progress_bar option'
   all_tests_pass_with 'an array of progress_bar options'
@@ -59,11 +59,11 @@ shared_examples_for 'the :label progress_bar option' do
   end
 end
 
-shared_examples_for 'the :context progress_bar option' do
-  Railsstrap::ProgressBar.contexts.each do |context, context_class|
-    specify %Q{set to :#{context}, adds the class "#{context_class}"} do
-      html = %r{<div.+class="progress-bar #{context_class}"}
-      expect(progress_bar: {percentage: 30, context: context}).to generate html
+shared_examples_for 'the :variant progress_bar option' do
+  Railsstrap::ProgressBar.variants.each do |variant, variant_class|
+    specify %Q{set to :#{variant}, adds the class "#{variant_class}"} do
+      html = %r{<div.+class="progress-bar #{variant_class}"}
+      expect(progress_bar: {percentage: 30, variant: variant}).to generate html
     end
   end
 end

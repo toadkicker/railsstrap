@@ -13,13 +13,13 @@ describe 'fields_for' do
   let(:fields_block) { Proc.new {|f| f.text_field :street } }
 
   describe 'with the :fieldset option' do
-    specify 'not set, wraps the fields in a <fieldset> styled like a panel' do
-      expect(form).to include 'fieldset class="panel panel-default">'
+    specify 'not set, wraps the fields in a <fieldset> styled like a card' do
+      expect(form).to include 'fieldset class="card card-primary">'
     end
 
-    describe 'set to true, wraps the fields in a <fieldset> styled like a panel' do
+    describe 'set to true, wraps the fields in a <fieldset> styled like a card' do
       let(:options) { {fieldset: true} }
-      it { expect(form).to include 'fieldset class="panel panel-default">' }
+      it { expect(form).to include 'fieldset class="card card-primary">' }
     end
 
     describe 'set to false, does not wrap the fields in a <fieldset>' do
@@ -30,12 +30,12 @@ describe 'fields_for' do
 
   describe 'with the :title option' do
     specify 'not set, generates a title from the field name' do
-      expect(form).to include '<div class="panel-heading">Address</div>'
+      expect(form).to include '<div class="card-title">Address</div>'
     end
 
-    context 'set to a value, uses the value as the panel title' do
+    context 'set to a value, uses the value as the card title' do
       let(:options) { {title: 'Your address'} }
-      it { expect(form).to include '<div class="panel-heading">Your address</div>' }
+      it { expect(form).to include '<div class="card-title">Your address</div>' }
     end
   end
 
@@ -54,12 +54,12 @@ describe 'fields_for' do
     let(:block) { Proc.new {|f| f.fields_for :address, user.name, options, &fields_block } }
 
     specify 'and no other options, uses the provided record object' do
-      expect(form).to include 'fieldset class="panel panel-default">'
+      expect(form).to include 'fieldset class="card card-primary">'
     end
 
     context 'and other options, uses the provided record object and options' do
       let(:options) { {title: 'Your address'} }
-      it { expect(form).to include '<div class="panel-heading">Your address</div>' }
+      it { expect(form).to include '<div class="card-heading">Your address</div>' }
     end
   end
 end

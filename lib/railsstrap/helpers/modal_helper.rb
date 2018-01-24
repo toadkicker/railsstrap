@@ -17,7 +17,7 @@ module Railsstrap
     #     (alias `:lg`) or `:small` (alias `:sm`).
     #   @option options [Hash] :button the options for the toggle button.
     #     * :caption (#to_s) ('Modal') the caption of the toggle button.
-    #     * :context (#to_s) (:default) the contextual alternative to apply to
+    #     * :variant (#to_s) (:default) thevariant alternative to apply to
     #        the toggle button. Can be `:danger`, `:info`, `:link`, `:primary`,
     #       `:success` or `:warning`.
     #     * :size (#to_s) the size of the toggle button. Can be `:extra_small`
@@ -25,7 +25,7 @@ module Railsstrap
     #     * :layout (#to_s) if set to `:block`, span the button for the full
     #       width of the parent.
     #   @example Display a simple modal toggled by a blue button.
-    #       modal 'You clicked me!', title: 'Click me', button: {context: :info}
+    #       modal 'You clicked me!', title: 'Click me', button: {variant: :info}
     # @overload modal(options = {}, &block)
     #   @param [Hash] options the options for the modal (see above).
     #   @yieldreturn [#to_s] the content to display in the modal.
@@ -39,9 +39,9 @@ module Railsstrap
       modal = Railsstrap::Modal.new self, *args, &block
       modal.extract! :button, :size, :body, :title, :id
 
-      modal.extract_from :button, [:context, :size, :layout, :caption]
+      modal.extract_from :button, [:variant, :size, :layout, :caption]
       modal.append_class_to! :button, :btn
-      modal.append_class_to! :button, modal.button_context_class
+      modal.append_class_to! :button, modal.button_variant_class
       modal.append_class_to! :button, modal.button_size_class
       modal.merge! button: {caption: modal.caption}
 

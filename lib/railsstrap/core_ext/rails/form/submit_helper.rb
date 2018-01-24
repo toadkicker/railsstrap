@@ -6,8 +6,8 @@ module Railsstrap
       include BaseHelper
 
       def submit(value=nil, options={})
-        context = options.delete(:context) || 'primary'
-        append_class! options, "btn btn-#{context}"
+        variant = options.delete(:variant) || 'primary'
+        append_class! options, "btn btn-#{variant}"
         if horizontal_form?
           content_tag :div, class: 'form-group' do
             content_tag :div, class: 'col-sm-offset-3 col-sm-9' do

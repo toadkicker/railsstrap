@@ -39,7 +39,7 @@ module Railsstrap
       # @return [Hash<Symbol, String>] the classes that Bootstrap requires to
       #   append to navbars to specify a color combination.
       def self.styles
-        HashWithIndifferentAccess.new(:'navbar-default').tap do |klass|
+        HashWithIndifferentAccess.new(:'navbar-primary').tap do |klass|
           klass[true] = :'navbar-inverse'
         end
       end
@@ -48,12 +48,12 @@ module Railsstrap
       #   append to navbars to set a specific DOM position.
       def self.positions
         HashWithIndifferentAccess.new.tap do |klass|
-          klass[:static]        = :'navbar-static-top'
-          klass[:static_top]    = :'navbar-static-top'
-          klass[:top]           = :'navbar-fixed-top'
-          klass[:fixed_top]     = :'navbar-fixed-top'
-          klass[:bottom]        = :'navbar-fixed-bottom'
-          klass[:fixed_bottom]  = :'navbar-fixed-bottom'
+          klass[:static]        = :'position-static'
+          klass[:sticky_top]    = :'sticky-top'
+          klass[:top]           = :'fixed-top'
+          klass[:fixed_top]     = :'fixed-top'
+          klass[:bottom]        = :'fixed-bottom'
+          klass[:fixed_bottom]  = :'fixed-bottom'
         end
       end
 
@@ -70,7 +70,7 @@ module Railsstrap
       end
 
       def body_padding_type
-        /navbar-fixed-(?<type>top|bottom)$/ =~ position_class
+        /fixed-(?<type>top|bottom)$/ =~ position_class
         type
       end
     end

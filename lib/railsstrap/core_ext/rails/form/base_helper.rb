@@ -9,7 +9,7 @@ module Railsstrap
       private
 
       def base_field(method, field_type, options = {}, &block)
-        errors = (object.errors.get method if object) || {}
+        errors = (object.errors[method.to_sym] if object) || {}
         label = label_for method, errors, field_type, options
         field = field_container(options) do
           field_tags errors, field_type, options, &block
@@ -119,7 +119,7 @@ module Railsstrap
         label_options = options.delete(:label_options) || {}
 
         label_and_field = @template.capture(&block)
-        if index = label_and_field =~ %r{</div>$}
+        if (index = label_and_field =~ %r{</div>$})
           label_and_field.insert index, label
         else
           label_and_field.concat label

@@ -1,7 +1,7 @@
 shared_examples_for 'the dropdown helper' do
   all_tests_pass_with 'no dropdown options'
   all_tests_pass_with 'the :id dropdown option'
-  all_tests_pass_with 'the :context dropdown option'
+  all_tests_pass_with 'the :variant dropdown option'
   all_tests_pass_with 'the :size dropdown option'
   all_tests_pass_with 'the :layout dropdown option'
   all_tests_pass_with 'the :groupable dropdown option'
@@ -17,7 +17,7 @@ shared_examples_for 'no dropdown options' do
   specify 'displays a button with the caption and the caret to toggle a menu' do
     html = <<-EOT.strip_heredoc.strip
       <div class="btn-group">
-        <button class="dropdown-toggle btn btn-default" type="button" id="(.+)" data-toggle="dropdown">
+        <button class="dropdown-toggle btn btn-primary" type="button" id="(.+)" data-toggle="dropdown">
           caption
           <span class=\"caret\"><\/span>
         <\/button>
@@ -38,11 +38,11 @@ shared_examples_for 'the :id dropdown option' do
   end
 end
 
-shared_examples_for 'the :context dropdown option' do
-  Railsstrap::Button.contexts.each do |context, context_class|
-    specify %Q{set to :#{context}, adds the class "#{context_class}"} do
-      html = %r{<button class="dropdown-toggle btn #{context_class}"}
-      expect(dropdown: {context: context}).to generate html
+shared_examples_for 'the :variant dropdown option' do
+  Railsstrap::Button.variants.each do |variant, variant_class|
+    specify %Q{set to :#{variant}, adds the class "#{variant_class}"} do
+      html = %r{<button class="dropdown-toggle btn #{variant_class}"}
+      expect(dropdown: {variant: variant}).to generate html
     end
   end
 end
@@ -50,7 +50,7 @@ end
 shared_examples_for 'the :size dropdown option' do
   Railsstrap::Button.sizes.each do |size, size_class|
     specify %Q{set to :#{size}, adds the class "#{size_class}"} do
-      html = %r{<button class="dropdown-toggle btn btn-default #{size_class}"}
+      html = %r{<button class="dropdown-toggle btn btn-primary #{size_class}"}
       expect(dropdown: {size: size}).to generate html
     end
   end
@@ -59,7 +59,7 @@ end
 shared_examples_for 'the :layout dropdown option' do
   Railsstrap::Button.layouts.each do |layout, layout_class|
     specify %Q{set to :#{layout}, adds the class "#{layout_class}"} do
-      html = %r{<button class="dropdown-toggle btn btn-default #{layout_class}"}
+      html = %r{<button class="dropdown-toggle btn btn-primary #{layout_class}"}
       expect(dropdown: {layout: layout}).to generate html
     end
   end
@@ -93,7 +93,7 @@ shared_examples_for 'the :align dropdown option' do
 end
 
 shared_examples_for 'the :split dropdown option' do
-  html = %r{<button type="button" class="btn btn-default">caption</button>}
+  html = %r{<button type="button" class="btn btn-primary">caption</button>}
 
   specify %Q{set to truthy, splits the caption and the caret} do
     expect(dropdown: {split: true}).to generate html
@@ -106,7 +106,7 @@ end
 
 shared_examples_for 'the button: :class dropdown option' do
   specify 'appends the class to the modal button' do
-    html = %r{<button class="dropdown-toggle important btn btn-default"}
+    html = %r{<button class="dropdown-toggle important btn btn-primary"}
     expect(dropdown: {button: {class: 'important'}}).to generate html
   end
 end

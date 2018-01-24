@@ -14,9 +14,9 @@ module Railsstrap
         super
       end
 
-      # @return [#to_s] the context-related class to assign to the modal button.
-      def button_context_class
-        Button.contexts[@options.fetch(:button, {})[:context]]
+      # @return [#to_s] the  variant-related class to assign to the modal button.
+      def button_variant_class
+        Button.variants[@options.fetch(:button, {})[:variant]]
       end
 
       # @return [#to_s] the size-related class to assign to the modal button.
@@ -40,19 +40,19 @@ module Railsstrap
       end
 
       def id
-        @options.fetch :id, "modal-#{rand 10**10}"
+        @options.fetch :id, "modal-#{rand 10 ** 10}"
       end
 
-    private
+      private
 
       # @return [Hash<Symbol, String>] the classes that Bootstrap requires to
       #   append to the modal dialog for each possible size.
       def self.dialog_sizes
         HashWithIndifferentAccess.new.tap do |klass|
-          klass[:large]       = :'modal-lg'
-          klass[:lg]          = :'modal-lg'
-          klass[:sm]          = :'modal-sm'
-          klass[:small]       = :'modal-sm'
+          klass[:large] = :'modal-lg'
+          klass[:lg] = :'modal-lg'
+          klass[:sm] = :'modal-sm'
+          klass[:small] = :'modal-sm'
         end
       end
 

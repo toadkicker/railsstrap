@@ -4,30 +4,30 @@ module Railsstrap
   module Classes
     class AlertBox < Base
       # @return [#to_s] the content-related class to assign to the alert box.
-      def context_class
-        AlertBox.contexts[@options.fetch :context, @options[:priority]]
+      def variant_class
+        AlertBox.variants[@options.fetch :variant, @options[:variant]]
       end
 
       # @return [#to_s] the HTML to show a dismissible button for the alert box.
       def dismissible_button
-        if @options[:dismissible] || @options[:priority]
+        if @options[:dismissible] || @options[:variant]
           path = '../../views/railsstrap/_alert_dismiss_button.html'
           File.read File.expand_path(path, __FILE__)
         end
       end
 
-      private
 
       # @return [Hash<Symbol, String>] the class that Bootstrap requires to
-      #   append to an alert box based on its context.
-      def self.contexts
+      #   append to an alert box based on its  variant. Using the SASS mixin
+      #   alert-variant is supported, but you must set Railsstrap::Base::ALERT_TYPES
+      #   to include your custom variant names.
+      private_class_method
+
+      def self.variants
         HashWithIndifferentAccess.new(:'alert-info').tap do |klass|
-          klass[:alert]   = :'alert-danger'
-          klass[:danger]  = :'alert-danger'
-          klass[:info]    = :'alert-info'
-          klass[:notice]  = :'alert-success'
-          klass[:success] = :'alert-success'
-          klass[:warning] = :'alert-warning'
+          VARIANT_TYPES.each do |variant|
+            klass[variant.to_sym] = :"alert-#{variant}"
+          end
         end
       end
     end

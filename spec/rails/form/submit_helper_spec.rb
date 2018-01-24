@@ -12,12 +12,12 @@ describe 'submit' do
     let(:layout) { :whatever }
 
     specify 'applies .btn.btn-primary to the button' do
-      expect(form).to include 'input class="btn btn-primary"'
+      expect(form).to include 'class="btn btn-primary"'
     end
 
-    context 'given a context option, applies the context class' do
-      let(:options) { {context: :info} }
-      it { expect(form).to include 'input class="btn btn-info"' }
+    context 'given a variant option, applies the context class' do
+      let(:options) { {variant: :primary} }
+      it { expect(form).to include 'class="btn btn-primary"' }
     end
   end
 

@@ -6,7 +6,7 @@ module Railsstrap
   module Helpers
     # Overrides `button_to` to display a Bootstrap-styled button.
     # Can only be used in Ruby frameworks that provide the `button_to` method.
-    # Only overrides the original method if called with any of the `:context`,
+    # Only overrides the original method if called with any of the `:variant`,
     # `:size` or `:layout` option, otherwise calls the original method.
     # @see http://getbootstrap.com/css/#buttons
     # @see http://getbootstrap.com/components/#nav
@@ -19,7 +19,7 @@ module Railsstrap
     #   @param [#to_s] url the URL to submit to.
     #   @param [Hash] options the options for the button. Any option not
     #     listed below is passed to the original `button_to` method.
-    #   @option options [#to_s] :context (:default) the contextual alternative
+    #   @option options [#to_s] :variant (:default) thevariant alternative
     #     to apply to the button. Can be `:danger`, `:info`, `:link`,
     #     `:primary`, `:success` or `:warning`.
     #   @option options [#to_s] :size the size of the button.
@@ -34,15 +34,15 @@ module Railsstrap
     #   @param [Hash] options the options for the button (see above).
     #   @yieldreturn [#to_s] the caption to display in the button.
     #   @example Display a danger button with HTML content to delete a user.
-    #       button_to '/user_destroy', context: :danger do
+    #       button_to '/user_destroy', variant: :danger do
     #         content_tag :strong, "Delete user"
     #       end
     def button_to(*args, &block)
       button_to = Railsstrap::ButtonTo.new self, *args, &block
 
-      if button_to.extract! :context, :size, :layout
+      if button_to.extract! :variant, :size, :layout
         button_to.append_button_class! :btn
-        button_to.append_button_class! button_to.context_class
+        button_to.append_button_class! button_to.variant_class
         button_to.append_button_class! button_to.size_class
         button_to.append_button_class! button_to.layout_class
         button_to.append_form_class! 'navbar-form' if Railsstrap::Stack.find(Railsstrap::Navbar)

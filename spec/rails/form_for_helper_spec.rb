@@ -15,20 +15,11 @@ describe 'form_for' do
 
   specify 'wrapped in navbar, applies Bootstrap attributes of a navbar form' do
     railsstrap.navbar { expect(form).to include 'role="form"' }
-    railsstrap.navbar { expect(form).to include 'class="navbar-form"' }
+    railsstrap.navbar { expect(form).to include 'class="form-inline"' }
   end
 
   specify 'wrapped in nav, surrounds the form in a <li> item' do
     railsstrap.nav { expect(form).to match %r{^<li><form.+?</form></li>$} }
-  end
-
-  describe 'with layout: :horizontal' do
-    let(:options) { {layout: :horizontal} }
-
-    specify 'applies Bootstrap attributes of an horizontal form' do
-      expect(form).to include 'role="form"'
-      expect(form).to include 'class="form-horizontal"'
-    end
   end
 
   describe 'with layout: :inline' do

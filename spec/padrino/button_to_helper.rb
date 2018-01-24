@@ -9,7 +9,7 @@ end
 
 shared_examples_for 'no button_to options (Padrino)' do
   specify 'uses the original button_to helper' do
-    html = '<form action="/" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" /><input type="submit" value="content" /></form>'
+    html = '<form action="/" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" /><button type="submit" value="content"></button></form>'
     expect(:button_to).to generate html
 
     # @note: Only Padrino >= 0.13.0 renders the content of the block as a
@@ -21,7 +21,7 @@ end
 shared_examples_for 'only extra button_to options (Padrino)' do
   specify 'uses the original button_to helper' do
     options = {class: 'big', id: 'my-form', submit_options: {class: 'important', data: {value: 1}, id: 'my-button_to'}}
-    html = '<form action="/" accept-charset="UTF-8" class="big" id="my-form" method="post"><input type="hidden" name="authenticity_token" /><input type="submit" value="content" class="important" data-value="1" id="my-button_to" /></form>'
+    html = '<form action="/" accept-charset="UTF-8" class="big" id="my-form" method="post"><input type="hidden" name="authenticity_token" /><button type="submit" value="content" class="important" data-value="1" id="my-button_to"></button></form>'
     expect(button_to: options).to generate html
   end
 end
@@ -29,7 +29,7 @@ end
 shared_examples_for 'extra button_to options (Padrino)' do
   specify 'passes the options to the form and the submit_options to the button' do
     options = {context: :default, class: 'big', id: 'my-form', submit_options: {class: 'important', data: {value: 1}, id: 'my-button_to'}}
-    html = '<form action="/" accept-charset="UTF-8" class="big" id="my-form" method="post"><input type="hidden" name="authenticity_token" /><input type="submit" value="content" class="important btn btn-default" data-value="1" id="my-button_to" /></form>'
+    html = '<form action="/" accept-charset="UTF-8" class="big" id="my-form" method="post"><input type="hidden" name="authenticity_token" /><button type="submit" value="content" class="important btn btn-primary" data-value="1" id="my-button_to"></button</form>'
     expect(button_to: options).to generate html
   end
 end

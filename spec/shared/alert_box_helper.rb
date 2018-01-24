@@ -1,9 +1,9 @@
 shared_examples_for 'the alert_box helper' do
   all_tests_pass_with 'no alert options'
   all_tests_pass_with 'extra alert options'
-  all_tests_pass_with 'the :context alert option'
+  all_tests_pass_with 'the :variant alert option'
   all_tests_pass_with 'the :dismissible alert option'
-  all_tests_pass_with 'the :priority alert option'
+  all_tests_pass_with 'the :variant alert option'
 end
 
 #--
@@ -23,15 +23,6 @@ shared_examples_for 'extra alert options' do
   end
 end
 
-shared_examples_for 'the :context alert option' do
-  Railsstrap::AlertBox.contexts.each do |context, context_class|
-    specify %Q{set to :#{context}, adds the class "#{context_class}"} do
-      html = %Q{<div class="alert #{context_class}" role="alert">content</div>}
-      expect(alert_box: {context: context.to_s}).to generate html
-    end
-  end
-end
-
 shared_examples_for 'the :dismissible alert option' do
   specify 'set to false, does not display a button to dismiss the alert' do
     html = '<div class="alert alert-info" role="alert">content</div>'
@@ -44,19 +35,20 @@ shared_examples_for 'the :dismissible alert option' do
   end
 end
 
-shared_examples_for 'the :priority alert option' do
+shared_examples_for 'the :variant alert option' do
   specify 'set, displays a button to dismiss the alert' do
     html = %r{<span aria-hidden="true">&times;</span>}
-    expect(alert_box: {priority: :anything}).to generate html
+    expect(alert_box: {variant: :anything}).to generate html
   end
 
-  specify 'set to :notice, adds the class "alert-success"' do
-    html = %r{<div class="alert alert-success" role="alert">}
-    expect(alert_box: {priority: :notice}).to generate html
+  specify 'when overriding Railsstrap::Base::ALERT_TYPES, sets to :notice, adds the class "alert-notice"' do
+    Railsstrap::Base::VARIANT_TYPES = %i(notice)
+    html = %r{<div class="alert alert-notice" role="alert">}
+    expect(alert_box: {variant: :notice}).to generate html
   end
 
-  specify 'set to :alert, adds the class "alert-danger"' do
-    html = %r{<div class="alert alert-danger" role="alert">}
-    expect(alert_box: {priority: :alert}).to generate html
+  specify 'set to :alert, adds the class "alert-info"' do
+    html = %r{<div class="alert alert-info" role="alert">}
+    expect(alert_box: {variant: :alert}).to generate html
   end
 end

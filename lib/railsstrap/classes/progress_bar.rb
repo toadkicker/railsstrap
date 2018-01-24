@@ -3,9 +3,9 @@ require 'railsstrap/classes/base'
 module Railsstrap
   module Classes
     class ProgressBar < Base
-      # @return [#to_s] the context-related class to assign to the progress bar.
-      def context_class
-        ProgressBar.contexts[@options[:context]]
+      # @return [#to_s] the  variant-related class to assign to the progress bar.
+      def  variant_class
+        ProgressBar. variants[@options[:variant]]
       end
 
       # @return [#to_s] the class to assign to make the progress bar striped.
@@ -41,8 +41,8 @@ module Railsstrap
     private
 
       # @return [Hash<Symbol, String>] the classes that Bootstrap requires to
-      #   append to the progress bar for each possible context.
-      def self.contexts
+      #   append to the progress bar for each possible  variant.
+      def self. variants
         HashWithIndifferentAccess.new.tap do |klass|
           klass[:danger]  = :'progress-bar-danger'
           klass[:info]    = :'progress-bar-info'
@@ -81,7 +81,7 @@ module Railsstrap
 
       def text
         "#{percentage}%".tap do |text|
-          text << " (#{@options[:context]})" if @options[:context]
+          text << " (#{@options[:variant]})" if @options[:variant]
         end
       end
     end

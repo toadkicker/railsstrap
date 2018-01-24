@@ -26,10 +26,9 @@ module Railsstrap
         @options[:split] ? 'dropdown_split' : 'dropdown'
       end
 
-    private
-
       # @return [Hash<Symbol, String>] the class that Bootstrap requires to
       #   append to a dropdown to display it as inline or block.
+      private_class_method
       def self.groupables
         HashWithIndifferentAccess.new(:'btn-group').tap do |klass|
           klass[false] = :dropdown

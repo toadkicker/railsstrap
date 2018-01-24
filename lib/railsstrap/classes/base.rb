@@ -7,6 +7,8 @@ module Railsstrap
   # @api private
   module Classes
     class Base
+      VARIANT_TYPES = %w(primary secondary success danger warning info light dark) unless const_defined?(:VARIANT_TYPES)
+
       def initialize(app = nil, *args, &block)
         @app = app
         @concat = block_given? &&  @app.respond_to?(:concat_content)
@@ -34,6 +36,10 @@ module Railsstrap
 
       def prepend_html!(html)
         @content = safe_join [html, @content]
+      end
+
+      def append_html!(html, to)
+        @content = safe_join [@content, html]
       end
 
       def render_tag(tag)
