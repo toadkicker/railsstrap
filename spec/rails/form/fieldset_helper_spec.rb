@@ -14,19 +14,19 @@ describe 'fieldset' do
     expect(form).to include 'fieldset class="card card-default">'
   end
 
-  context 'given a title, and a non-inline layout, adds the title in the card heading' do
+  context 'given a title, and a non-inline layout, adds the title in the card header' do
     let(:title) { 'Info' }
-    it { expect(form).to include '<div class="card-heading">Info</div>' }
+    it { expect(form).to include '<div class="card-header">Info</div>' }
   end
 
-  context 'given a title, and an inline layout, does not add a card heading' do
+  context 'given a title, and an inline layout, does not add a card header' do
     let(:layout) { :inline }
     let(:title) { 'Info' }
-    it { expect(form).not_to include '<div class="card-heading">Info</div>' }
+    it { expect(form).not_to include '<div class="card-header">Info</div>' }
   end
 
-  context 'not given a title, does not add a card heading' do
+  context 'not given a title, does not add a card header' do
     let(:title) { '' }
-    it { expect(form).not_to include 'card-heading' }
+    it { expect(form).not_to include 'card-header' }
   end
 end

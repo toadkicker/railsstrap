@@ -25,11 +25,16 @@ module Railsstrap
       end
 
       # @return [#to_s] the text to display as the card header
-      def heading
-        text = title || @options[:heading]
-        @app.content_tag :div, text, class: 'card-heading' if text
+      def header
+        text = title || @options[:header]
+        @app.content_tag :div, text, class: 'card-header' if text
       end
 
+      def image_cap
+        if @options[:img]
+          @app.content_tag :img, nil, class: 'card-img-top', src: @options[:img]
+        end
+      end
       def body
         if @options[:body]
           @app.content_tag :div, @options[:body], class: 'card-body'
@@ -60,6 +65,7 @@ module Railsstrap
           variant_types.each { |variant| klass[variant.to_sym] = :"card-#{variant}" }
         end
       end
+
     end
   end
 end

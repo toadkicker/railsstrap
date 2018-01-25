@@ -14,12 +14,12 @@ describe 'fields_for' do
 
   describe 'with the :fieldset option' do
     specify 'not set, wraps the fields in a <fieldset> styled like a card' do
-      expect(form).to include 'fieldset class="card card-default">'
+      expect(form).to match %r{.*fieldset.*class="card card-default">.*}
     end
 
     describe 'set to true, wraps the fields in a <fieldset> styled like a card' do
       let(:options) { {fieldset: true} }
-      it { expect(form).to include 'fieldset class="card card-default">' }
+      it { expect(form).to match %r{.*fieldset.*class="card card-default">.*} }
     end
 
     describe 'set to false, does not wrap the fields in a <fieldset>' do
@@ -30,12 +30,12 @@ describe 'fields_for' do
 
   describe 'with the :title option' do
     specify 'not set, generates a title from the field name' do
-      expect(form).to include '<div class="card-heading">Address</div>'
+      expect(form).to include '<div class="card-header">Address</div>'
     end
 
     context 'set to a value, uses the value as the card title' do
       let(:options) { {title: 'Your address'} }
-      it { expect(form).to include '<div class="card-heading">Your address</div>' }
+      it { expect(form).to include '<div class="card-header">Your address</div>' }
     end
   end
 
@@ -54,12 +54,12 @@ describe 'fields_for' do
     let(:block) { Proc.new {|f| f.fields_for :address, user.name, options, &fields_block } }
 
     specify 'and no other options, uses the provided record object' do
-      expect(form).to include 'fieldset class="card card-default">'
+      expect(form).to match %r{.*fieldset.*class="card card-default">.*}
     end
 
     context 'and other options, uses the provided record object and options' do
       let(:options) { {title: 'Your address'} }
-      it { expect(form).to include '<div class="card-heading">Your address</div>' }
+      it { expect(form).to include '<div class="card-header">Your address</div>' }
     end
   end
 end
