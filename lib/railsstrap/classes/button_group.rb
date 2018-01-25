@@ -2,38 +2,45 @@ require 'railsstrap/classes/base'
 
 module Railsstrap
   module Classes
-    class Button < Base
+    class ButtonGroup < Base
       # @return [#to_s] the variant-related class to assign to the button.
       def variant_class
         Button.variants[@options[:variant]]
       end
 
-      # @return [#to_s] the size-related class to assign to the button.
+      # @return [#to_s] the size-related class to assign to the button group.
       def size_class
         Button.sizes[@options[:size]]
       end
 
-      # @return [#to_s] the layout-related class to assign to the button.
+      # @return [#to_s] the layout-related class to assign to the button group.
       def layout_class
         Button.layouts[@options[:layout]]
       end
 
-    private
+      def vertical_class
+        @options[:vertical].present? ? 'btn-group-vertical' : nil
+      end
 
-      # @return [Hash<Symbol, String>] the classes that Bootstrap requires to
-      #   append to buttons for each possible variant.
-      def self.variants
-        HashWithIndifferentAccess.new(:'btn-default').tap do |klass|
-          variant_types.each do |variant|
-            klass[variant.to_sym] = :"btn-#{variant}"
-            klass[:"outline-#{variant}"] = :"btn-outline-#{variant}"
-          end
-          klass[:link] = :'btn-link'
-        end
+      def toolbar_class
+        @options[:toolbar].present? ? 'btn-toolbar' : nil
+      end
+
+      def role_name
+        { role: @options[:role] ||= 'group' }
+      end
+
+      def aria_label
+        @options[:'aria-label'] ||= 'Button Group'
+      end
+
+      def buttons
+        @options[:buttons].map! {|button| @app.button(button)} if @options[:buttons]
       end
 
       # @return [Hash<Symbol, String>] the classes that Bootstrap requires to
       #   append to buttons for each possible size.
+      private_class_method
       def self.sizes
         HashWithIndifferentAccess.new.tap do |klass|
           klass[:extra_small] = :'btn-xs'
@@ -47,20 +54,13 @@ module Railsstrap
 
       # @return [Hash<Symbol, String>] the classes that Bootstrap requires to
       #   append to buttons for each possible layout.
+      private_class_method
       def self.layouts
         HashWithIndifferentAccess.new.tap do |klass|
           klass[:block] = :'btn-block'
         end
       end
-
-      # @return [Hash<Symbol>, String] the javascript to toggle or dispose a button.
-      # @required @options[:id]
-      def self.js_methods
-        HashWithIndifferentAccess.new.tap do |klass|
-          klass[:toggle] = "$(#{@options[:id]}).button('toggle')"
-          klass[:dispose] = "$(#{@options[:id]}).button('dispose')"
-        end
-      end
+      
     end
   end
 end

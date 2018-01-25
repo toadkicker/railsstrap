@@ -23,6 +23,10 @@ module Railsstrap
         html_attributes.deep_merge! attributes
       end
 
+      def merge_html!(html)
+        @content ||= html
+      end
+
       def append_class!(new_class, hash = html_attributes, attribute = :class)
         existing_class = hash[attribute]
         hash[attribute] = [existing_class, new_class].compact.join ' '
@@ -79,9 +83,7 @@ module Railsstrap
       end
 
       def extract_from(option, attributes = [])
-        if @options[option]
-          @attributes[option] = @options[option].except *attributes
-        end
+        @attributes[option] = @options[option].except *attributes if @options[option]
       end
 
       def self.variant_types

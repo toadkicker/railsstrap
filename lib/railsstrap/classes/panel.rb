@@ -30,10 +30,6 @@ module Railsstrap
         @app.content_tag :div, text, class: 'panel-heading' if text
       end
 
-      def merge_html!(html)
-        @content ||= html
-      end
-
       def body
         if @options[:body]
           @app.content_tag :div, @options[:body], class: 'panel-body'

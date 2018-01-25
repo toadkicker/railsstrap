@@ -34,7 +34,7 @@ module Railsstrap
       button.append_class! button.variant_class
       button.append_class! button.size_class
       button.append_class! button.layout_class
-      button.render_tag :button
+      button.content_tag :button
     end
   end
 end
