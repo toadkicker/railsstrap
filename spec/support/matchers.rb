@@ -29,7 +29,7 @@ RSpec::Matchers.define :generate do |html|
     elsif helper == :progress_bar
       @inline = railsstrap.send helper, *Array.wrap(options)
       @block = @inline
-    elsif helper == :navbar || helper == :nav || helper == :panel_row
+    elsif helper == :navbar || helper == :nav || helper == :card_group
       @block = railsstrap.send(helper, *[options].compact) { 'content' }
       @inline = @block
     else

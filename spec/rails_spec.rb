@@ -21,8 +21,8 @@ describe 'When used in Rails' do
   all_tests_pass_for 'the modal helper'
   all_tests_pass_for 'the nav helper'
   all_tests_pass_for 'the navbar helper'
-  all_tests_pass_for 'the panel helper'
-  all_tests_pass_for 'the panel_row helper'
+  all_tests_pass_for 'the card helper'
+  all_tests_pass_for 'the card_group helper'
   all_tests_pass_for 'the progress_bar helper'
   all_tests_pass_for 'the vertical helper'
 

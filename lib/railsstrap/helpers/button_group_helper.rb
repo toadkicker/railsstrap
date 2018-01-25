@@ -28,7 +28,6 @@ module Railsstrap
       btn_group.append_class! btn_group.size_class
       btn_group.append_class! btn_group.toolbar_class
       btn_group.merge! btn_group.role_name
-      btn_group.merge_html! block if block_given?
       btn_group.content_tag :div
     end
   end

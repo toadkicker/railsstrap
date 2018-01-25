@@ -1,4 +1,4 @@
-require 'railsstrap/classes/panel_row'
+require 'railsstrap/classes/card_group'
 
 module Railsstrap
   module Helpers
@@ -13,16 +13,17 @@ module Railsstrap
     #   indicate how many columns of the row each panel should occupy.
     # @yieldreturn [#to_s] the panels to display in a row.
     # @example Display a row of two panels with the same width.
-    #   panel_row column_class: 'col-sm-6' do
+    #   card_group column_class: 'col-sm-6' do
     #     panel 'Panel #1', context: :success
     #     panel 'Panel #2', context: :info
     #   end
-    def panel_row(options = {}, &block)
-      panel_row = Railsstrap::PanelRow.new self, options, &block
-      panel_row.extract! :column_class
+    def card_group(options = {}, &block)
+      card_group = Railsstrap::CardGroup.new self, options, &block
+      card_group.extract! :column_class
 
-      panel_row.append_class! :row
-      panel_row.render_tag :div
+      card_group.append_class! 'card-group'
+      card_group.append_class! card_group.column_class
+      card_group.render_tag :div
     end
   end
 end
