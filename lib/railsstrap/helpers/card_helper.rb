@@ -43,7 +43,7 @@ module Railsstrap
 
       if card_row = Railsstrap::Stack.find(Railsstrap::CardGroup)
         container = Railsstrap::Base.new(self) { card.content_tag card.tag }
-        container.append_class! card_row.column_class
+        container.append_class! card_row.layout
         container.render_tag :div
       else
         card.render_tag card.tag

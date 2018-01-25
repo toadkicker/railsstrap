@@ -69,8 +69,8 @@ shared_examples_for 'the :variant card option' do
 end
 
 shared_examples_for 'the card wrapped in card_row' do
-  specify 'wraps the card <div> in a grid <div> with the :column_class class of the card row' do
-    html = %r{^<div class="col-sm-4"><div class="card card-default">(?:|<div class="card-body">)content(?:|</div>)</div></div>$}
-    railsstrap.card_group(column_class: 'col-sm-4') { expect(:card).to generate html }
+  specify 'wraps the card <div> in a grid <div> with the :layout class of the card row' do
+    html = %r{^<div class="card-deck"><div class="card card-default">(?:|<div class="card-body">)content(?:|</div>)</div></div>$}
+    railsstrap.card_group(layout: :deck) { expect(:card).to generate html }
   end
 end
