@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: Railsstrap::Form::FieldsForHelper
+  
+    &mdash; Documentation by YARD 0.9.12
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Railsstrap::Form::FieldsForHelper";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (F)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Railsstrap.html" title="Railsstrap (module)">Railsstrap</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Form.html" title="Railsstrap::Form (module)">Form</a></span></span>
+     &raquo; 
+    <span class="title">FieldsForHelper</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: Railsstrap::Form::FieldsForHelper
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  <dl>
+      <dt>Includes:</dt>
+      <dd><span class='object_link'><a href="BaseHelper.html" title="Railsstrap::Form::BaseHelper (module)">BaseHelper</a></span>, <span class='object_link'><a href="FieldsetHelper.html" title="Railsstrap::Form::FieldsetHelper (module)">FieldsetHelper</a></span></dd>
+  </dl>
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/railsstrap/core_ext/rails/form/fields_for_helper.rb</dd>
+  </dl>
+  
+</div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fields_for-instance_method" title="#fields_for (instance method)">#<strong>fields_for</strong>(record_name, record_object = nil, fields_options = {}, &amp;block)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="FieldsetHelper.html" title="Railsstrap::Form::FieldsetHelper (module)">FieldsetHelper</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="FieldsetHelper.html#fieldset-instance_method" title="Railsstrap::Form::FieldsetHelper#fieldset (method)">#fieldset</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="../Helpers.html" title="Railsstrap::Helpers (module)">Helpers</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../Helpers.html#alert_box-instance_method" title="Railsstrap::Helpers#alert_box (method)">#alert_box</a></span>, <span class='object_link'><a href="../Helpers.html#aside-instance_method" title="Railsstrap::Helpers#aside (method)">#aside</a></span>, <span class='object_link'><a href="../Helpers.html#badge-instance_method" title="Railsstrap::Helpers#badge (method)">#badge</a></span>, <span class='object_link'><a href="../Helpers.html#bootstrap_css-instance_method" title="Railsstrap::Helpers#bootstrap_css (method)">#bootstrap_css</a></span>, <span class='object_link'><a href="../Helpers.html#bootstrap_js-instance_method" title="Railsstrap::Helpers#bootstrap_js (method)">#bootstrap_js</a></span>, <span class='object_link'><a href="../Helpers.html#bootstrap_theme_css-instance_method" title="Railsstrap::Helpers#bootstrap_theme_css (method)">#bootstrap_theme_css</a></span>, <span class='object_link'><a href="../Helpers.html#button-instance_method" title="Railsstrap::Helpers#button (method)">#button</a></span>, <span class='object_link'><a href="../Helpers.html#button_group-instance_method" title="Railsstrap::Helpers#button_group (method)">#button_group</a></span>, <span class='object_link'><a href="../Helpers.html#button_to-instance_method" title="Railsstrap::Helpers#button_to (method)">#button_to</a></span>, <span class='object_link'><a href="../Helpers.html#card-instance_method" title="Railsstrap::Helpers#card (method)">#card</a></span>, <span class='object_link'><a href="../Helpers.html#card_group-instance_method" title="Railsstrap::Helpers#card_group (method)">#card_group</a></span>, <span class='object_link'><a href="../Helpers.html#dropdown-instance_method" title="Railsstrap::Helpers#dropdown (method)">#dropdown</a></span>, <span class='object_link'><a href="../Helpers.html#font_awesome_css-instance_method" title="Railsstrap::Helpers#font_awesome_css (method)">#font_awesome_css</a></span>, <span class='object_link'><a href="../Helpers.html#glyphicon-instance_method" title="Railsstrap::Helpers#glyphicon (method)">#glyphicon</a></span>, <span class='object_link'><a href="../Helpers.html#horizontal-instance_method" title="Railsstrap::Helpers#horizontal (method)">#horizontal</a></span>, <span class='object_link'><a href="../Helpers.html#icon-instance_method" title="Railsstrap::Helpers#icon (method)">#icon</a></span>, <span class='object_link'><a href="../Helpers.html#link_to-instance_method" title="Railsstrap::Helpers#link_to (method)">#link_to</a></span>, <span class='object_link'><a href="../Helpers.html#modal-instance_method" title="Railsstrap::Helpers#modal (method)">#modal</a></span>, <span class='object_link'><a href="../Helpers.html#nav-instance_method" title="Railsstrap::Helpers#nav (method)">#nav</a></span>, <span class='object_link'><a href="../Helpers.html#navbar-instance_method" title="Railsstrap::Helpers#navbar (method)">#navbar</a></span>, <span class='object_link'><a href="../Helpers.html#progress_bar-instance_method" title="Railsstrap::Helpers#progress_bar (method)">#progress_bar</a></span>, <span class='object_link'><a href="../Helpers.html#vertical-instance_method" title="Railsstrap::Helpers#vertical (method)">#vertical</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="BaseHelper.html" title="Railsstrap::Form::BaseHelper (module)">BaseHelper</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="BaseHelper.html#base_field-instance_method" title="Railsstrap::Form::BaseHelper#base_field (method)">#base_field</a></span>, <span class='object_link'><a href="BaseHelper.html#basic_form%3F-instance_method" title="Railsstrap::Form::BaseHelper#basic_form? (method)">#basic_form?</a></span>, <span class='object_link'><a href="BaseHelper.html#error_icon_tag-instance_method" title="Railsstrap::Form::BaseHelper#error_icon_tag (method)">#error_icon_tag</a></span>, <span class='object_link'><a href="BaseHelper.html#field_container-instance_method" title="Railsstrap::Form::BaseHelper#field_container (method)">#field_container</a></span>, <span class='object_link'><a href="BaseHelper.html#field_in_group-instance_method" title="Railsstrap::Form::BaseHelper#field_in_group (method)">#field_in_group</a></span>, <span class='object_link'><a href="BaseHelper.html#field_tags-instance_method" title="Railsstrap::Form::BaseHelper#field_tags (method)">#field_tags</a></span>, <span class='object_link'><a href="BaseHelper.html#help_tag-instance_method" title="Railsstrap::Form::BaseHelper#help_tag (method)">#help_tag</a></span>, <span class='object_link'><a href="BaseHelper.html#horizontal_form%3F-instance_method" title="Railsstrap::Form::BaseHelper#horizontal_form? (method)">#horizontal_form?</a></span>, <span class='object_link'><a href="BaseHelper.html#inline_form%3F-instance_method" title="Railsstrap::Form::BaseHelper#inline_form? (method)">#inline_form?</a></span>, <span class='object_link'><a href="BaseHelper.html#input_addon-instance_method" title="Railsstrap::Form::BaseHelper#input_addon (method)">#input_addon</a></span>, <span class='object_link'><a href="BaseHelper.html#input_group_container-instance_method" title="Railsstrap::Form::BaseHelper#input_group_container (method)">#input_group_container</a></span>, <span class='object_link'><a href="BaseHelper.html#label_and_field-instance_method" title="Railsstrap::Form::BaseHelper#label_and_field (method)">#label_and_field</a></span>, <span class='object_link'><a href="BaseHelper.html#label_and_field_container-instance_method" title="Railsstrap::Form::BaseHelper#label_and_field_container (method)">#label_and_field_container</a></span>, <span class='object_link'><a href="BaseHelper.html#label_for-instance_method" title="Railsstrap::Form::BaseHelper#label_for (method)">#label_for</a></span>, <span class='object_link'><a href="BaseHelper.html#label_options-instance_method" title="Railsstrap::Form::BaseHelper#label_options (method)">#label_options</a></span>, <span class='object_link'><a href="BaseHelper.html#show_error_help%3F-instance_method" title="Railsstrap::Form::BaseHelper#show_error_help? (method)">#show_error_help?</a></span>, <span class='object_link'><a href="BaseHelper.html#show_error_icon%3F-instance_method" title="Railsstrap::Form::BaseHelper#show_error_icon? (method)">#show_error_icon?</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="fields_for-instance_method">
+  
+    #<strong>fields_for</strong>(record_name, record_object = nil, fields_options = {}, &amp;block)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/railsstrap/core_ext/rails/form/fields_for_helper.rb', line 9</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_fields_for'>fields_for</span><span class='lparen'>(</span><span class='id identifier rubyid_record_name'>record_name</span><span class='comma'>,</span> <span class='id identifier rubyid_record_object'>record_object</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_fields_options'>fields_options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_record_object'>record_object</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_record_object'>record_object</span><span class='period'>.</span><span class='id identifier rubyid_extractable_options?'>extractable_options?</span>
+    <span class='id identifier rubyid_record_object'>record_object</span><span class='comma'>,</span> <span class='id identifier rubyid_fields_options'>fields_options</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_record_object'>record_object</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_fields_options'>fields_options</span><span class='lbracket'>[</span><span class='symbol'>:layout</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:layout</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_fields_options'>fields_options</span><span class='lbracket'>[</span><span class='symbol'>:errors</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:errors</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_title'>title</span> <span class='op'>=</span> <span class='id identifier rubyid_fields_options'>fields_options</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:title</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_record_name'>record_name</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_humanize'>humanize</span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_wrap_in_fieldset'>wrap_in_fieldset</span> <span class='op'>=</span> <span class='id identifier rubyid_fields_options'>fields_options</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span> <span class='symbol'>:fieldset</span><span class='comma'>,</span> <span class='kw'>true</span>
+  <span class='id identifier rubyid_fields'>fields</span> <span class='op'>=</span> <span class='kw'>super</span> <span class='id identifier rubyid_record_name'>record_name</span><span class='comma'>,</span> <span class='id identifier rubyid_record_object'>record_object</span><span class='comma'>,</span> <span class='id identifier rubyid_fields_options'>fields_options</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
+  <span class='id identifier rubyid_wrap_in_fieldset'>wrap_in_fieldset</span> <span class='op'>?</span> <span class='id identifier rubyid_fieldset'>fieldset</span><span class='lparen'>(</span><span class='id identifier rubyid_title'>title</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_fields'>fields</span> <span class='rbrace'>}</span> <span class='op'>:</span> <span class='id identifier rubyid_fields'>fields</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Fri Jan 26 23:27:04 2018 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.12 (ruby-2.5.0).
+</div>
+
+    </div>
+  </body>
+</html>
