@@ -15,7 +15,7 @@ end
 
 shared_examples_for 'html attributes' do
   specify 'accepts html attributes' do
-    html = '<div data-foo="1" class="btn-group" role="group">content</div>'
+    html = %r{.+[data-foo="1"].}
     options = { role: 'group', data: { foo: 1 } }
     expect(button_group: options).to generate html
   end
