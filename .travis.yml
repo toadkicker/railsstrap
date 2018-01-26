@@ -6,3 +6,5 @@ gemfile:
   - gemfiles/Gemfile.rails-3.x
   - gemfiles/Gemfile.rails-4.x
   - gemfiles/Gemfile.rails-5.x
+env:
+  - ONLY_RAILS=true
