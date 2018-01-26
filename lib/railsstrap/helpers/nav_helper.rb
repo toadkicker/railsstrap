@@ -8,10 +8,10 @@ module Railsstrap
     # @return [String] the HTML to display a Bootstrap-styled nav.
     # @param [Hash] options the options for the nav. Any option not listed below
     #   is passed as an HTML attribute to the alert’s `<ul>`.
-    # @option options [#to_s] :as (:tabs) the style of the nav. Can be `:tabs`
+    # @option options [#to_s] the style of the nav. Can be `:tabs`
     #   or `:pills`.
     # @option options [#to_s] :layout the layout of the nav. Can be
-    #   `:justified` or `:stacked`.
+    #   `:justified`, `:center`, `:right`, `:fill`, or `:stacked`.
     # @yieldreturn [#to_s] the content to display in the nav.
     # @example Display a pills-styled nav with a link.
     #   nav as: :pills do

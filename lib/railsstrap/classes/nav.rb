@@ -14,10 +14,9 @@ module Railsstrap
         Nav.layouts[@options[:layout]]
       end
 
-    private
-
       # @return [Hash<Symbol, String>] the classes that Bootstrap requires to
       #   append to navs for each possible style.
+      private_class_method
       def self.styles
         HashWithIndifferentAccess.new(:'nav-tabs').tap do |klass|
           klass[:pills] = :'nav-pills'
@@ -26,10 +25,14 @@ module Railsstrap
 
       # @return [Hash<Symbol, String>] the classes that Bootstrap requires to
       #   append to buttons for each possible layout.
+      private_class_method
       def self.layouts
         HashWithIndifferentAccess.new.tap do |klass|
           klass[:justified] = :'nav-justified'
-          klass[:stacked]   = :'nav-stacked'
+          klass[:stacked]   = :'flex-column'
+          klass[:center] = :'justify-content-center'
+          klass[:right] = :'justify-content-end'
+          klass[:fill] = :'nav-fill'
         end
       end
     end
