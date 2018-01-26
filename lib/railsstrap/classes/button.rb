@@ -18,10 +18,9 @@ module Railsstrap
         Button.layouts[@options[:layout]]
       end
 
-    private
-
       # @return [Hash<Symbol, String>] the classes that Bootstrap requires to
       #   append to buttons for each possible variant.
+      private_class_method
       def self.variants
         HashWithIndifferentAccess.new(:'btn-default').tap do |klass|
           variant_types.each do |variant|
@@ -34,6 +33,7 @@ module Railsstrap
 
       # @return [Hash<Symbol, String>] the classes that Bootstrap requires to
       #   append to buttons for each possible size.
+      private_class_method
       def self.sizes
         HashWithIndifferentAccess.new.tap do |klass|
           klass[:extra_small] = :'btn-xs'
@@ -47,6 +47,7 @@ module Railsstrap
 
       # @return [Hash<Symbol, String>] the classes that Bootstrap requires to
       #   append to buttons for each possible layout.
+      private_class_method
       def self.layouts
         HashWithIndifferentAccess.new.tap do |klass|
           klass[:block] = :'btn-block'
@@ -55,6 +56,7 @@ module Railsstrap
 
       # @return [Hash<Symbol>, String] the javascript to toggle or dispose a button.
       # @required @options[:id]
+      private_class_method
       def self.js_methods
         HashWithIndifferentAccess.new.tap do |klass|
           klass[:toggle] = "$(#{@options[:id]}).button('toggle')"
