@@ -1,0 +1,13 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb <%= @options[:class] %>">
+    <% @options[:items][0..-2].each do |crumb| %>
+      <li class="breadcrumb-item <%= @options[:item_class] %>">
+        <% unless crumb.equal? @content.last %>
+          <%= link_to crumb[:name], crumb[:url], crumb[:options] %>
+        <% else %>
+          <%= crumb[:name] %>
+        <% end %>
+      </li>
+    <% end %>
+  </ol>
+</nav>
