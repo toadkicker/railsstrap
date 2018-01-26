@@ -4,6 +4,7 @@ shared_examples_for 'the alert_box helper' do
   all_tests_pass_with 'the :variant alert option'
   all_tests_pass_with 'the :dismissible alert option'
   all_tests_pass_with 'the :priority alert option'
+  all_tests_pass_with 'the :size alert option'
 end
 
 #--
@@ -58,5 +59,16 @@ shared_examples_for 'the :priority alert option' do
   specify 'set to :alert, adds the class "alert-danger"' do
     html = %r{<div class="alert alert-danger" role="alert">}
     expect(alert_box: {priority: :alert}).to generate html
+  end
+end
+
+shared_examples_for 'the :size alert option' do
+  specify 'sets a :lg styled alert' do
+    html = %r{<div class="alert alert-success alert-lg" role="alert">}
+    expect(alert_box: {size: :lg, variant: :success}).to generate html
+    end
+  specify 'sets a :sm styled alert' do
+    html = %r{<div class="alert alert-success alert-sm" role="alert">}
+    expect(alert_box: {size: :sm, variant: :success}).to generate html
   end
 end

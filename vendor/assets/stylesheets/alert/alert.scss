@@ -1,11 +1,11 @@
-/*
- * Alerts placement
- */
 @import "../variables";
+
 .alert {
 
   outline: none;
-
+  /*
+   * Alerts placement
+   */
   &.top, &.top-left, &.top-right, &.bottom, &.bottom-left, &.bottom-right {
     position: fixed;
     z-index: $zindex-modal;
@@ -49,6 +49,22 @@
     left: 0;
     .close {
       padding-right: 10px;
+    }
+  }
+  /*
+   * Alerts sizes
+   */
+
+  &.alert-sm {
+    font-size: $alert-sm-font-size;
+    .alert-heading {
+      font-size: $alert-sm-heading-font-size;
+    }
+  }
+  &.alert-lg {
+    font-size: $alert-sm-font-size;
+    .alert-heading {
+      font-size: $alert-sm-heading-font-size;
     }
   }
 

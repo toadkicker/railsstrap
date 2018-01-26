@@ -777,6 +777,10 @@ $alert-bg-level:                    -10 !default;
 $alert-border-level:                -9 !default;
 $alert-color-level:                 6 !default;
 
+$alert-sm-font-size:                ($font-size-base * .75) !default;
+$alert-sm-heading-font-size:        ($font-size-base * .75) !default;
+$alert-lg-font-size:                ($font-size-base * 1.25) !default;
+$alert-lg-heading-font-size:        ($font-size-base * 1.25) !default;
 
 // Progress bars
 
