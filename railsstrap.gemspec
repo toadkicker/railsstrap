@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'actionpack' # versioned in gemfiles/
   s.add_dependency 'activesupport' # versioned in gemfiles/
   s.add_dependency 'bootstrap', '>= 4.0'
-  s.add_dependency 'jquery-rails', '~> 3.1.0'
+  s.add_dependency 'jquery-rails'
 
   if Gem::ruby_engine != 'jruby'
     s.add_development_dependency 'better_errors', '~> 1.1.0'
@@ -43,6 +43,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec-activemodel-mocks'
   s.add_development_dependency 'tilt'
   s.add_development_dependency 'yard'
+  s.metadata["yard.run"] = "yri"
 
   unless ENV['ONLY_RAILS']
     # For spec/dummy
