@@ -1,80 +1,107 @@
-# Bootstrap + FontAwesome for Rails v3.1 & v4 Asset Pipeline
+# Bootstrap 4 on Steroids + FontAwesome 5 for Rails 3.1 and up
 
-[![Bower version](https://badge.fury.io/bo/bootstrap.svg)](http://badge.fury.io/bo/bootstrap)
+**Custom UI Components + CSS Animations + ActionView Integrated Bootstrap templating**
+
 [![Gem Version](https://badge.fury.io/rb/railsstrap.svg)](http://badge.fury.io/rb/railsstrap)
-[![Build Status](https://travis-ci.org/toadkicker/railsstrap.svg?branch=v3.2.0.1)](https://travis-ci.org/toadkicker/railsstrap)
-[![Coverage Status](https://img.shields.io/coveralls/toadkicker/railsstrap.svg)](https://coveralls.io/r/toadkicker/railsstrap?branch=develop)
-
-railsstrap integrates Bootstrap and FontAwesome for Rails Asset Pipeline (Rails 4, 3.1, 3.2 are supported). It was born and extended from twitter-bootstrap-rails.
+[![Build Status](https://travis-ci.org/toadkicker/railsstrap.svg?branch=master)](https://travis-ci.org/toadkicker/railsstrap)
+[![Coverage Status](https://img.shields.io/coveralls/toadkicker/railsstrap.svg)](https://coveralls.io/r/toadkicker/railsstrap?branch=master)
 
 ## Why is your gem different?
 
-Railsstrap is more than just another gem providing bootstrap and fontawesome for Rails apps. It includes Bootstrap additions that include exotic placements, animations, and other component enhancements not included in the official bootstrap release. It also includes many HTML helpers and additional javascript components. All of this is exposed to UI developers to customize to their liking using either LESS and Coffeescript, or plain CSS and Javascript.
+Railsstrap fills the gap where the offical bootstrap gem only provides the assets needed. 
+You can mix and import SASS with sprockets or webpack.
+It includes helpers, exotic placements, animations, and other component enhancements 
+not included in the official bootstrap release. It also outputs Bootstrap compliant HTML and additional javascript 
+components. All of the CSS is exposed to developers to customize using SASS, Yarn, Webpack, and all the 
+modern development tools you would expect with supercharged ActionView powered templating.
 
+## Library size (compiled all assets for production)
+|                             Asset |     Size |  Chunks |           Chunk Names |
+|-----------------------------------|----------|---------|-----------------------|
+|                  railsstrap.min.js  |   241 kB |     0   | [emitted]  railsstrap |
+|   ../stylesheets/railsstrap.min.css |   193 kB |     0   | [emitted]  railsstrap |
+|../stylesheets/railsstrap.min.css.gz |  25.7 kB |         | [emitted]             |
+|                railsstrap.min.js.gz |  69.9 kB |         | [emitted]             |
 
 ##Bootstrap additions
 
 ###Custom Components
-* [Asides](https://github.com/toadkicker/railsstrap/wiki/Bootstrap-Additions#aside) - A modal that slides in from the left or right. Used often in mobile apps for off-screen sidebars or overlays. - New in 3.3.2!
-* [Callouts](https://github.com/toadkicker/railsstrap/wiki/Bootstrap-Additions#callout) - Similar to an alert, it is used for drawing attention to content. - New in 3.3.0!
-* [Date & Time picker](https://github.com/toadkicker/railsstrap/wiki/Bootstrap-Additions#datepicker--timepicker) - A styled HTML5 datepicker. - New in 3.3.1!
+* [Asides](https://github.com/toadkicker/railsstrap/wiki/Bootstrap-Additions#aside) - A modal that slides in from the left or right. Used often in mobile apps for off-screen sidebars or overlays.
+* Badges
+* Flash Helper
+* Date Picker
+* Navbar
+* Ajax-enabled breadcrumbs helper
+* Form errors are automatically styled
+* [Callouts](https://github.com/toadkicker/railsstrap/wiki/Bootstrap-Additions#callout) - Similar to an alert, it is used for drawing attention to content.
+* [Date & Time picker](https://github.com/toadkicker/railsstrap/wiki/Bootstrap-Additions#datepicker--timepicker) - A styled HTML5 datepicker.
 * [Modal enhancements](https://github.com/toadkicker/railsstrap/wiki/Bootstrap-Additions#modal) - animations and real centering placement.
 * [Popover enhancements](https://github.com/toadkicker/railsstrap/wiki/Bootstrap-Additions#popover) - animations and custom placements for popover arrows and locations.
 * [Tooltip](https://github.com/toadkicker/railsstrap/wiki/Bootstrap-Additions#tooltip) - animations and custom placements for tooltip arrows and locations.
 
+
 ###Animations
 
-Railsstrap comes with over 75 CSS animations. See the wiki or the [vendor/assets/stylesheets/animate](https://github.com/toadkicker/railsstrap/tree/develop/vendor/assets/stylesheets/animate) folder for more info. Also the wiki has detailed instructions on using them.
+Railsstrap comes with over 75 CSS animations. See the wiki or the [vendor/assets/stylesheets/animate](https://github.com/toadkicker/railsstrap/tree/master/vendor/assets/stylesheets/animate) folder for more info. Also the wiki has detailed instructions on using them.
 
-## Example Application
-An example application is available at [toadkicker/teststrap](https://github.com/toadkicker/teststrap). You can view it running on heroku [here.](http://teststrap.herokuapp.com/) Contributions welcome.
+### Font Awesome 5 Icon helper
+Railsstrap includes an `icon` helper compatible with Font Awesome 5 free and pro versions. 
+Only the pro version requires additional configuration. Railsstrap ships with the latest Font Awesome free and brand icon libraries.
+
+```
+icon(:share_alt)
+# => <i class="far fa-share-alt"></i>
+icon(:lock, :white)
+# => <i class="far fa-lock fa-white"></i>
+icon(:thumbs_up, :fas)
+# => <i class="fas fa-thumbs-up"></i>
+icon(:lock, library: :far, tag: :span)
+# => <span class="far fa-lock"></span>
+```
+
+Railsstrap does *not* bundle every icon in the library. It would just be too large to do that. 
+It uses the i2svg conversion method to replace any <i></i> tags with FontAwesome SVG. 
+If you disable FontAwesome, you will also want to remove the i2svg-pending class from the <html> tag in your layout or the <body> will not display.
+   
+To configure the pro version, create an `.npmrc` file, inserting:
+
+```
+@fortawesome:registry=https://npm.fontawesome.com/MY_PRO_KEY_GOES_HERE
+```
+
+And then install the pro icons with yarn/npm.
 
 ## Quick install
 Open your Gemfile, and add the gem to your list of dependencies.
 
 ```
-gem less-rails
 gem railsstrap
 ```
 
-Then run the installer
+Then *optionally* run the installer
 
 ```
 bundle install
 bundle exec rails g railsstrap:install
 ```
 
-This will insert the appropriate entries into your application.js and application.css files, as well as configure rails asset pipeline. It will also provide you with the ability to customize Bootstrap and FontAwesome to your liking.
+This will insert the appropriate entries into your application.js and application.css files, as well as configure rails asset pipeline. 
+
+It will also provide you with the ability to customize Bootstrap and FontAwesome to your liking.
 
 Most of the info you'll need is in the [wiki](https://github.com/toadkicker/railsstrap/wiki/Installing), and if it isn't please contribute!
 
-##Building the gem
+## Building the gem
 
 The gem is organized by ruby specific tasks, and front-end specific tasks. `bundle exec rake` will attempt to run the suite of build commands, but you need a few dependencies that are outside of bundler/rubygems's domain.
 
-For compiling stylesheets and javascripts, the gem uses Gruntjs. You'll need node/npm installed to compile them manually. *You do not need to use grunt if you are just referencing specific less/js/coffee files in your rails app*
+Compiled and minified versions of Fontawesome and Bootstrap JS/CSS are done using Webpack configuration. 
+Railsstrap reccomends using this file in your front end, either imported separately in a `javascript_script_tag` or in the application.js `require railsstrap` statements.
 
-## Many thanks to the twitter-bootstrap-rails contributors, who made this fork possible:
-<ul>
-  <li>Seyhun Akyürek</li>
-  <li>Ben Lovell</li>
-  <li>Daniel Morris</li>
-  <li>Bradly Feeley</li>
-  <li>Guilherme Moreira</li>
-  <li>Alex Behar</li>
-  <li>Brandon Keene</li>
-  <li>Anthony Corcutt</li>
-  <li>Colin Warren</li>
-  <li>Giovanni Cappellotto</li>
-  <li>Masakuni Kato</li>
-  <li>Gudleik Rasch</li>
-  <li>Thomas Volkmar Worm</li>
-  <li>Thiago Almeida</li>
-  <li>Sébastien Grosjean</li>
-  <li>Nick DeSteffen</li>
-  <li>Christian Joudrey</li>
-  <li>Leonid Shevtsov</li>
-</ul>
+
+## Contributing
+Railsstrap uses rspec for testing, and all essential ruby code is covered by tests. That doesn't mean it is bug free, but
+tests are always appreciated with pull requests.
 
 ## About Me
 [toadkicker.com](http://toadkicker.com)
@@ -84,10 +111,5 @@ For compiling stylesheets and javascripts, the gem uses Gruntjs. You'll need nod
 Bootstrap, FontAwesome, and all railsstrap contributors
 http://twbs.github.io/bootstrap
 
+Railsstrap is licensed under [MIT](https://github.com/toadkicker/railsstrap/LICENSE.md)
 
-## License
-Copyright (c) 2014 Todd Baur
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

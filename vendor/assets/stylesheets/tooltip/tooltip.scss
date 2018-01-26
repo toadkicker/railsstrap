@@ -1,0 +1,60 @@
+/*
+ * Fancy tooltips
+ *
+ */
+
+.tooltip {
+  @each $color, $value in $theme-colors {
+    &.tooltip-#{$color} {
+      &.top .tooltip-arrow, &.top-left .tooltip-arrow, &.top-right .tooltip-arrow {
+        border-top-color: $value;
+      }
+      &.right .tooltip-arrow {
+        border-right-color: $value;
+      }
+      &.bottom .tooltip-arrow, &.bottom-left .tooltip-arrow, &.bottom-right .tooltip-arrow {
+        border-bottom-color: $value;
+      }
+      &.left .tooltip-arrow {
+        border-left-color: $value;
+      }
+      .tooltip-inner {
+        @include alert-variant($value, darken($value, 3%), $value)
+      }
+    }
+  }
+}
+
+/*
+ * Tooltip corner placement
+ *
+ * Inherit exotic positioning from basic ones & fix arrow placement
+ */
+.bs-tooltip-top-left {
+  @extend .bs-tooltip-top;
+  .arrow {
+    @extend .arrow;
+    left: 10%;
+  }
+}
+.bs-tooltip-top-right {
+  @extend .bs-tooltip-top;
+  .arrow {
+    @extend .arrow;
+    left: 90%;
+  }
+}
+.bs-tooltip-bottom-left {
+  @extend .bs-tooltip-bottom;
+  .arrow {
+    @extend .arrow;
+    left: 10%;
+  }
+}
+.bs-tooltip-bottom-right {
+  @extend .bs-tooltip-bottom;
+  .arrow {
+    @extend .arrow;
+    left: 90%;
+  }
+}

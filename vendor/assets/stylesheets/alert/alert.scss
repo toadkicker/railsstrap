@@ -1,0 +1,71 @@
+@import "../variables";
+
+.alert {
+
+  outline: none;
+  /*
+   * Alerts placement
+   */
+  &.top, &.top-left, &.top-right, &.bottom, &.bottom-left, &.bottom-right {
+    position: fixed;
+    z-index: $zindex-modal;
+    margin: 20px;
+  }
+
+  &.top, &.top-left, &.top-right {
+    top: $navbar-brand-height;
+  }
+  &.top {
+    right: 0;
+    left: 0;
+  }
+  &.top-right {
+    right: 0;
+    .close {
+      padding-left: 10px;
+    }
+  }
+  &.top-left {
+    left: 0;
+    .close {
+      padding-right: 10px;
+    }
+  }
+
+  &.bottom, &.bottom-right, &.bottom-left {
+    bottom: 0;
+  }
+  &.bottom {
+    right: 0;
+    left: 0;
+  }
+  &.bottom-right {
+    right: 0;
+    .close {
+      padding-left: 10px;
+    }
+  }
+  &.bottom-left {
+    left: 0;
+    .close {
+      padding-right: 10px;
+    }
+  }
+  /*
+   * Alerts sizes
+   */
+
+  &.alert-sm {
+    font-size: $alert-sm-font-size;
+    .alert-heading {
+      font-size: $alert-sm-heading-font-size;
+    }
+  }
+  &.alert-lg {
+    font-size: $alert-sm-font-size;
+    .alert-heading {
+      font-size: $alert-sm-heading-font-size;
+    }
+  }
+
+}
