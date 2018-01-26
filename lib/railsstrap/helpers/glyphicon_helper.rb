@@ -4,7 +4,7 @@ module Railsstrap
   module Helpers
     # Displays any of the 200 glyphicons available in Bootstrap.
     # @deprecated Use {#icon} instead.
-    # @see http://getbootstrap.com/components/docs/4.0/glyphicons
+    # @see http://glyph.smarticons.co/
     # @return [String] the HTML to display a glyphicon.
     # @param [#to_s] name the name of the icon to display, with either dashes
     #   or underscores to separate multiple words.
