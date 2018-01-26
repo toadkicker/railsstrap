@@ -1,5 +1,5 @@
 require 'railsstrap/core_ext/rails/base_helper'
-require 'railsstrap/helpers/glyphicon_helper'
+require 'railsstrap/helpers/icon_helper'
 
 module Railsstrap
   module Form
@@ -79,7 +79,7 @@ module Railsstrap
       end
 
       def error_icon_tag
-        glyphicon :remove, class: 'form-control-feedback'
+        icon :remove, class: 'form-control-feedback'
       end
 
       def help_tag(help_text)

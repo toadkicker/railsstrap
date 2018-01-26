@@ -13,11 +13,13 @@ module Railsstrap
       # @return [#to_s] the class to assign to the icon based on the name
       #   of the icon.
       def name_class
-        return if @options[:name]
-        "#{library_class}-#{name.to_s.gsub '_', '-'}"
+        "#{library_class}-#{@options[:name].to_s.gsub '_', '-'}"
       end
 
-
+      # @return [#to_s] the icon html tag to use
+      def tag
+        @options[:tag] || :i
+      end
 
       # @return [Hash<Symbol, String>] the classes that Bootstrap requires to
       #   append to icons for each possible vector icon library.
@@ -28,7 +30,7 @@ module Railsstrap
           klass[:fas]  = :'fas' # font awesome solid
           klass[:far]  = :'far' # font awesome regular
           klass[:fal]  = :'fal' # font awesome light
-          klass[:fal]  = :'fab' # font awesome light
+          klass[:fal]  = :'fab' # font awesome brands
           klass[:glyphicons]    = :'glyphicon'
           klass[:'']            = :'far'
         end

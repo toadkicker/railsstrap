@@ -7,6 +7,7 @@ describe 'When used in Rails' do
 
   all_tests_pass_for 'the alert_box helper'
   all_tests_pass_for 'the badge helper'
+  all_tests_pass_for 'the breadcrumb helper'
   all_tests_pass_for 'the aside helper'
   all_tests_pass_for 'the bootstrap_css helper'
   all_tests_pass_for 'the bootstrap_js helper'

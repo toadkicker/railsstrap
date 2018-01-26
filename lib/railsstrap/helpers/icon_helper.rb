@@ -16,11 +16,11 @@ module Railsstrap
     #   icon 'fire', library: :font_awesome, title: 'Hot'
     def icon(name = nil, options = {})
       icon = Railsstrap::Icon.new self, nil, options.merge(name: name)
-      icon.extract! :library, :name
+      icon.extract! :library, :name, :tag
 
       icon.append_class! icon.library_class
       icon.append_class! icon.name_class
-      icon.render_tag :span
+      icon.render_tag icon.tag
     end
   end
 end

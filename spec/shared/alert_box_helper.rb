@@ -64,11 +64,11 @@ end
 
 shared_examples_for 'the :size alert option' do
   specify 'sets a :lg styled alert' do
-    html = %r{<div class="alert alert-success alert-lg" role="alert">}
+    html = %r{.*class.*alert-lg.*}
     expect(alert_box: {size: :lg, variant: :success}).to generate html
     end
   specify 'sets a :sm styled alert' do
-    html = %r{<div class="alert alert-success alert-sm" role="alert">}
+    html = %r{.*class.*alert-sm.*}
     expect(alert_box: {size: :sm, variant: :success}).to generate html
   end
 end

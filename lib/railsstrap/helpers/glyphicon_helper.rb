@@ -11,7 +11,10 @@ module Railsstrap
     # @param [Hash] options the options to pass to the icon’s `<span>`.
     # @example Display the "zoom-in" glyphicon
     #   glyphicon :zoom_in
-    def glyphicon(name = nil, options = {})
+    def glyphicon(name = nil, options)
+      if options.is_a?(Symbol || String)
+        return icon options, library: :glyphicons
+      end
       icon name, options.merge(library: :glyphicons)
     end
   end
