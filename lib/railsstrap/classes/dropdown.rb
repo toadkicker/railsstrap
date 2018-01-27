@@ -26,7 +26,7 @@ module Railsstrap
         @options[:split] ? 'dropdown_split' : 'dropdown'
       end
 
-    private
+      private
 
       # @return [Hash<Symbol, String>] the class that Bootstrap requires to
       #   append to a dropdown to display it as inline or block.

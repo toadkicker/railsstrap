@@ -16,7 +16,7 @@ module Railsstrap
         asset_initializer = 'config/initializers/assets.rb'
         config_asset_insert_line = "Rails.application.config.assets.precompile\s+=\s%w(.svg .eot .woff .ttf)"
 
-        if File.exist?(asset_initializer) && Rails::VERSION::MAJOR >= 4 # Must be Rails 4+
+        if File.exist?(asset_initializer) && ::Rails::VERSION::MAJOR >= 4 # Must be Rails 4+
           content = File.read(asset_initializer)
           if content.match(config_asset_insert_line)
             #set up properly
@@ -26,7 +26,7 @@ module Railsstrap
           end
         else #Assumes Rails 3.1 then (3.0 is not supported)...
           rails_three_config = 'config/environments/production.rb'
-          if File.exist?(rails_three_config) && Rails::VERSION::MAJOR <= 4
+          if File.exist?(rails_three_config) && ::Rails::VERSION::MAJOR <= 4
             inject_into_file rails_three_config, config_asset_insert_line, :after => 'config.assets.precompile\n'
           end
         end
@@ -83,7 +83,7 @@ module Railsstrap
         end
       end
 
-    private
+      private
 
       def use_coffeescript?
         return false if options[:'no-coffeescript']

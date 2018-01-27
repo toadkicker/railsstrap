@@ -30,7 +30,7 @@ module Railsstrap
         nav.append_class! nav.layout_class
       end
 
-      nav.render_tag :ul
+      nav.render_tag :nav
     end
   end
 end

@@ -15,7 +15,7 @@ end
 shared_examples_for 'no modal options' do
   specify 'sets the role and the class to "modal", uses a generated ID and uses "Modal" as the title and caption' do
     html = <<-EOT.strip_heredoc.strip
-      <button class="btn btn-default" data-toggle="modal" data-target="#(.+)">Modal<\/button>
+      <button class="btn btn-primary" data-toggle="modal" data-target="#(.+)">Modal<\/button>
       <div class="modal fade" id="\\1" tabindex="-1" role="dialog" aria-labelledby="label-\\1" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -90,7 +90,7 @@ end
 shared_examples_for 'the button: :size modal option' do
   Railsstrap::Button.sizes.each do |size, size_class|
     specify %Q{set to :#{size}, adds the class "#{size_class}"} do
-      html = %r{<button class="btn btn-default #{size_class}"}
+      html = %r{<button class="btn btn-primary #{size_class}"}
       expect(modal: {button: {size: size}}).to generate html
     end
   end
@@ -98,7 +98,7 @@ end
 
 shared_examples_for 'the button: :class modal option' do
   specify 'appends the class to the modal button' do
-    html = %r{<button class="important btn btn-default"}
+    html = %r{<button class="important btn btn-primary"}
     expect(modal: {button: {class: 'important'}}).to generate html
   end
 end

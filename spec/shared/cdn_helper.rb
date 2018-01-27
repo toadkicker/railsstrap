@@ -20,7 +20,6 @@ RSpec::Matchers.define :link_to_existing_file do
   match do |helper|
     require 'open-uri'
     open_uri_options = {ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE}
-
     # via HTTP
     open railsstrap.send(helper, scheme: :http), open_uri_options
 

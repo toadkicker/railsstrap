@@ -43,12 +43,12 @@ const config = {
       },
       //sass-loader
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         include: [css_output_path],
         use: extractPlugin.extract({
           use: [
             {
-              loader: 'css-loader',
+              loader: 'css-loader?' + JSON.stringify({ minimize: { discardComments: { removeAll: true } } }),
               options: {
                 sourceMap: true
               }
@@ -75,8 +75,8 @@ const config = {
       $: "jquery",
       jQuery: "jquery",
       "window.jQuery": "jquery",
-      Tether: "tether",
-      "window.Tether": "tether",
+      Popper: ['popper.js', 'default'],
+      moment: "moment",
       Alert: "exports-loader?Alert!bootstrap/js/dist/alert",
       Button: "exports-loader?Button!bootstrap/js/dist/button",
       Carousel: "exports-loader?Carousel!bootstrap/js/dist/carousel",
@@ -92,6 +92,9 @@ const config = {
     }),
     new UglifyJSPlugin(),
     new CompressionPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'railsstrap' // Specify the common bundle's name.
+    }),
     extractPlugin
   ]
 };

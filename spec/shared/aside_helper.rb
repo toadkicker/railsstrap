@@ -15,7 +15,7 @@ end
 shared_examples_for 'no aside options' do
   specify 'sets the role and the class to "aside", uses a generated ID and uses "Aside" as the title and caption' do
     html = <<-EOT.strip_heredoc.strip
-      <button class="btn btn-default" data-toggle="modal" data-target="#(.+)">Aside<\/button>
+      <button class="btn btn-primary" data-toggle="modal" data-target="#(.+)">Aside<\/button>
       <aside class="aside fade" id="\\1" tabindex="-1" role="dialog" aria-labelledby="label-\\1" aria-hidden="true">
         <div class="aside-dialog">
           <div class="aside-content">
@@ -90,7 +90,7 @@ end
 shared_examples_for 'the button: :size aside option' do
   Railsstrap::Button.sizes.each do |size, size_class|
     specify %Q{set to :#{size}, adds the class "#{size_class}"} do
-      html = %r{<button class="btn btn-default #{size_class}"}
+      html = %r{<button class="btn btn-primary #{size_class}"}
       expect(aside: {button: {size: size}}).to generate html
     end
   end
@@ -98,7 +98,7 @@ end
 
 shared_examples_for 'the button: :class aside option' do
   specify 'appends the class to the aside button' do
-    html = %r{<button class="important btn btn-default"}
+    html = %r{<button class="important btn btn-primary"}
     expect(aside: {button: {class: 'important'}}).to generate html
   end
 end

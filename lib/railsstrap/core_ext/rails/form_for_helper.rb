@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'railsstrap/core_ext/rails/base_helper'
 require 'railsstrap/core_ext/rails/form_builder'
 
@@ -20,20 +22,23 @@ module Railsstrap
         end
       end
 
-      private_class_method
+      private
+
       def add_form_options!(options)
         options[:html] ||= {}
-        options[:html].merge! role: 'form'
+        options[:html][:role] = 'form'
         append_class! options[:html], class_for(options[:layout])
         options.merge! builder: FormBuilder
       end
 
-      private_class_method
       def class_for(layout)
         case layout.to_s
-          when 'navbar' then 'navbar-form'
-          when 'inline' then 'form-inline'
-          when 'horizontal' then 'form-horizontal'
+        when 'navbar' then
+          'navbar-form'
+        when 'inline' then
+          'form-inline'
+        when 'horizontal' then
+          'form-horizontal'
         end
       end
     end

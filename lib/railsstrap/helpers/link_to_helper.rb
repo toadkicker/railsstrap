@@ -39,6 +39,7 @@ module Railsstrap
 
       link_to.append_class! :'alert-link' if Railsstrap::Stack.find(Railsstrap::AlertBox)
       link_to.append_class! :'navbar-brand' if Railsstrap::Stack.find(Railsstrap::Vertical)
+      link_to.append_class! :'nav-link' if Railsstrap::Stack.find(Railsstrap::Nav)
       link_to.merge! role: :menuitem if Railsstrap::Stack.find(Railsstrap::Dropdown)
       link_to.merge! tabindex: -1 if Railsstrap::Stack.find(Railsstrap::Dropdown)
       html = super link_to.content, link_to.url, link_to.attributes, &nil
@@ -50,6 +51,7 @@ module Railsstrap
       elsif Railsstrap::Stack.find(Railsstrap::Nav)
         container = Railsstrap::Base.new(self) { html }
         container.append_class! :active if link_to.current_page?
+        container.append_class! 'nav-item'
         container.render_tag :li
       else
         html

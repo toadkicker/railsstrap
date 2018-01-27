@@ -1,0 +1,21 @@
+<%- model_name = resource_name.camelize.downcase.gsub('::', '') -%>
+<%%= form_for @<%= model_name %>, html: { role: 'form' } do |f| %>
+
+<%%= errors_for @<%= model_name %> %>
+
+<%- attributes.each do |column| -%>
+  <div class="form-group">
+    <%%= f.label :<%= column.name %> %>
+    <%%= f.<%= column.field_type %> :<%= column.name %>, class: 'form-control' %>
+  </div>
+<%- end -%>
+
+<div class="form-group">
+  <div class="col-lg-offset-2 col-lg-10">
+    <%%= f.submit nil, class: 'btn btn-primary' %>
+    <%%= link_to t('.cancel', default: t("helpers.links.cancel")),
+    <%= controller_name %>_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+
+<%% end %>

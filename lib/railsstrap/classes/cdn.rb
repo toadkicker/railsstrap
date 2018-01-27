@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'railsstrap/classes/base'
 
 module Railsstrap
@@ -6,19 +8,29 @@ module Railsstrap
     class Cdn
       # @note if unspecified, the version should match the latest available
       #   version. If that's not the case, it's a bug and should be fixed.
+      def self.jquery_js(options = {})
+        options[:version] ||= '3.3.1'
+        cdn_asset options.merge(library: 'jquery')
+      end
+
+      # @note if unspecified, the version should match the latest available
+      #   version. If that's not the case, it's a bug and should be fixed.
       def self.bootstrap(options = {})
-        options[:version] ||= '3.3.6'
+        options[:version] ||= '4.0.0'
         cdn_asset options.merge(library: 'bootstrap')
       end
 
       # @note if unspecified, the version should match the latest available
       #   version. If that's not the case, it's a bug and should be fixed.
       def self.font_awesome(options = {})
-        options[:version] ||= '4.5.0'
+        options[:version] ||= '4.7.0'
         cdn_asset options.merge(library: 'font-awesome')
       end
 
-    private
+      def self.popper_js(options = {})
+        options[:version] ||= '1.13.0'
+        cdn_asset options.merge(library: 'popper')
+      end
 
       def self.cdn_asset(options = {})
         version = options[:version]
@@ -26,9 +38,10 @@ module Railsstrap
         name = options[:name]
         name = "#{name}.min" if options.fetch(:minified, true)
         library = options[:library]
-        scheme = "#{options[:scheme]}:" if options[:scheme]
-        host = "#{scheme}//netdna.bootstrapcdn.com"
-        "#{host}/#{library}/#{version}/#{extension}/#{name}.#{extension}"
+        scheme = options[:scheme].present? ? "#{options[:scheme]}:" : 'http:'
+        path = (options[:path]).to_s || 'ajax/libs'
+        host = "#{scheme}//cdnjs.cloudflare.com"
+        "#{host}/#{path}/#{library}/#{version}/#{extension}/#{name}.#{extension}"
       end
     end
   end

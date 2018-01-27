@@ -9,14 +9,14 @@ Gem::Specification.new do |s|
   s.email = ['todd@toadkicker.com']
   s.license = 'MIT'
   s.homepage = 'https://github.com/toadkicker/railsstrap'
-  s.summary = %q{Bootstrap and FontAwesome toolkit for Ruby}
+  s.summary = %q{Bootstrap 4 for Ruby}
   s.description = %q{Make your ruby project awesomer with template helpers, additional components, and more.}
 
   s.rubyforge_project = 'railsstrap'
-  s.files = Dir['lib/**/*'] + Dir['vendor/**/*'] + Dir['app/**/*'] + %w(Rakefile README.md .bowerrc)
+  s.files = Dir['lib/**/*'] + Dir['vendor/**/*'] + ['node_modules/**/*']
   s.test_files = Dir['spec/**/*.rb']
   s.executables = `git ls-files -- bin/*`.split('\n').map {|f| File.basename(f)}
-  s.require_paths = %w(lib app vendor)
+  s.require_paths = %w(lib node_modules vendor)
 
   s.add_dependency 'actionpack' # versioned in gemfiles/
   s.add_dependency 'activesupport' # versioned in gemfiles/

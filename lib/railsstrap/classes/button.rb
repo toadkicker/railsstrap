@@ -22,7 +22,7 @@ module Railsstrap
       #   append to buttons for each possible variant.
       private_class_method
       def self.variants
-        HashWithIndifferentAccess.new(:'btn-default').tap do |klass|
+        HashWithIndifferentAccess.new(:'btn-primary').tap do |klass|
           variant_types.each do |variant|
             klass[variant.to_sym] = :"btn-#{variant}"
             klass[:"outline-#{variant}"] = :"btn-outline-#{variant}"

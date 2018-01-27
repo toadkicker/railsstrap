@@ -4,8 +4,13 @@ module Railsstrap
   module Classes
     class Navbar < Base
       # @return [#to_s] the style-related class to assign to the navbar.
-      def style_class
-        Navbar.styles[@options[:inverted]]
+      def variant_class
+        Navbar.variants[@options[:variant]]
+      end
+
+      # @return [#to_s] the style-related class to assign to the navbar.
+      def text_variant_class
+        Navbar.text_variants[@options[:text_variant]]
       end
 
       # @return [#to_s] the position-related class to assign to the navbar.
@@ -38,9 +43,18 @@ module Railsstrap
 
       # @return [Hash<Symbol, String>] the classes that Bootstrap requires to
       #   append to navbars to specify a color combination.
-      def self.styles
-        HashWithIndifferentAccess.new(:'navbar-default').tap do |klass|
-          klass[true] = :'navbar-inverse'
+      def self.variants
+        HashWithIndifferentAccess.new(:'bg-primary').tap do |klass|
+          variant_types.each do |v|
+            klass[v] = :"bg-#{v}"
+          end
+        end
+      end
+
+      def self.text_variants
+        HashWithIndifferentAccess.new(:'navbar-dark').tap do |klass|
+          klass[:dark] = :'navbar-dark'
+          klass[:light] = :'navbar-light'
         end
       end
 
@@ -48,12 +62,12 @@ module Railsstrap
       #   append to navbars to set a specific DOM position.
       def self.positions
         HashWithIndifferentAccess.new.tap do |klass|
-          klass[:static]        = :'navbar-static-top'
-          klass[:static_top]    = :'navbar-static-top'
-          klass[:top]           = :'navbar-fixed-top'
-          klass[:fixed_top]     = :'navbar-fixed-top'
-          klass[:bottom]        = :'navbar-fixed-bottom'
-          klass[:fixed_bottom]  = :'navbar-fixed-bottom'
+          klass[:sticky]        = :'sticky-top'
+          klass[:static_top]    = :'static-top'
+          klass[:top]           = :'fixed-top'
+          klass[:fixed_top]     = :'fixed-top'
+          klass[:bottom]        = :'fixed-bottom'
+          klass[:fixed_bottom]  = :'fixed-bottom'
         end
       end
 

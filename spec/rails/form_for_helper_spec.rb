@@ -9,10 +9,6 @@ describe 'form_for' do
   let(:form) { form_for(:object, options.merge(url: '/')) {} }
   let(:options) { {} }
 
-  specify 'by default, does not apply Bootstrap attributes to the form' do
-    expect(form).not_to include 'role="form"'
-  end
-
   specify 'wrapped in navbar, applies Bootstrap attributes of a navbar form' do
     railsstrap.navbar { expect(form).to include 'role="form"' }
     railsstrap.navbar { expect(form).to include 'class="navbar-form"' }

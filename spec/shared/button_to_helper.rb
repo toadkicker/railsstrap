@@ -20,7 +20,7 @@ end
 shared_examples_for 'the :size button_to option' do
   Railsstrap::Button.sizes.each do |size, size_class|
     specify %(set to :#{size}, adds the class "#{size_class}") do
-      html = /<(input|button).+class="btn btn-default #{size_class}"/
+      html = /<(input|button).+class="btn btn-primary #{size_class}"/
       expect(button_to: { size: size }).to generate html
     end
   end
@@ -29,7 +29,7 @@ end
 shared_examples_for 'the :layout button_to option' do
   Railsstrap::Button.layouts.each do |layout, layout_class|
     specify %(set to :#{layout}, adds the class "#{layout_class}") do
-      html = /<(input|button).+class="btn btn-default #{layout_class}"/
+      html = /<(input|button).+class="btn btn-primary #{layout_class}"/
       expect(button_to: { layout: layout }).to generate html
     end
   end

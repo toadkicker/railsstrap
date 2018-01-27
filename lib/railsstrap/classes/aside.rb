@@ -40,22 +40,21 @@ module Railsstrap
       end
 
       def id
-        @options.fetch :id, "aside-#{rand 10**10}"
+        @options.fetch :id, "aside-#{rand 10 ** 10}"
       end
 
       # @return [Hash<Symbol, String>] the classes that Bootstrap requires to
       #   append to the aside dialog for each possible size.
-      private_class_method
+      private
       def self.dialog_sizes
         HashWithIndifferentAccess.new.tap do |klass|
-          klass[:large]       = :'aside-lg'
-          klass[:lg]          = :'aside-lg'
-          klass[:sm]          = :'aside-sm'
-          klass[:small]       = :'aside-sm'
+          klass[:large] = :'aside-lg'
+          klass[:lg] = :'aside-lg'
+          klass[:sm] = :'aside-sm'
+          klass[:small] = :'aside-sm'
         end
       end
 
-      private_class_method
       def extract_content_from(*args, &block)
         if block_given?
           super
