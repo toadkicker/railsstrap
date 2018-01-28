@@ -22,13 +22,8 @@ module Railsstrap
       nav.extract! :as, :layout
 
       nav.append_class! :nav
-      if Railsstrap::Stack.find(Railsstrap::Navbar)
-        nav.append_class! :'navbar-nav'
-      else
-        nav.merge! role: :tablist
-        nav.append_class! nav.style_class
-        nav.append_class! nav.layout_class
-      end
+      nav.append_class! nav.style_class
+      nav.append_class! nav.layout_class
 
       nav.render_tag :nav
     end
