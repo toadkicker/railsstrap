@@ -3,7 +3,7 @@
 **Custom UI Components + CSS Animations + ActionView Integrated Bootstrap templating**
 
 [![Gem Version](https://badge.fury.io/rb/railsstrap.svg)](http://badge.fury.io/rb/railsstrap)
-[![Build Status](https://travis-ci.org/toadkicker/railsstrap.svg?branch=current)](https://travis-ci.org/toadkicker/railsstrap)
+[![Build Status](https://travis-ci.org/toadkicker/railsstrap.svg?branch=develop)](https://travis-ci.org/toadkicker/railsstrap)
 [![Coverage Status](https://img.shields.io/coveralls/toadkicker/railsstrap.svg)](https://coveralls.io/r/toadkicker/railsstrap?branch=master)
 
 ## Quickstart
