@@ -28,7 +28,7 @@ end
 
 shared_examples_for 'the link wrapped in alert_box' do
   specify 'adds the "alert-link" class to the link' do
-    html = %r{^<a.+class="alert-link".*>content</a>$}
+    html = %r{(.*)class="(.*)alert-link(.*)">.*}
     railsstrap.alert_box { expect(:link_to).to generate html }
   end
 end
@@ -42,7 +42,7 @@ end
 
 shared_examples_for 'the link wrapped in nav' do
   specify 'surrounds the link in a <li> item' do
-    html = '<li><a href="/">content</a></li>'
+    html = %r{^<li class="nav-item"><a(.*)class="nav-link"(.*)}m
     railsstrap.nav { expect(:link_to).to generate html }
   end
 
@@ -50,7 +50,7 @@ shared_examples_for 'the link wrapped in nav' do
     before { allow_any_instance_of(Railsstrap::LinkTo).to receive(:current_page?).and_return true }
 
     specify 'surrounds the link in a <li class="active"> item' do
-      html = '<li class="active"><a href="/">content</a></li>'
+      html = %r{(class="active.*")}
       railsstrap.nav { expect(:link_to).to generate html }
     end
   end

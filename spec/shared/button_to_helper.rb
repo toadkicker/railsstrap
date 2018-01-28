@@ -37,7 +37,7 @@ end
 
 shared_examples_for 'the button wrapped in navbar' do
   specify 'adds the "navbar-form" class to the form' do
-    html = /^<form.+class="navbar-form"/
+    html = /<form(.+)class="navbar-form"(.*)/
     railsstrap.navbar { expect(button_to: { variant: :default }).to generate html }
   end
 end
