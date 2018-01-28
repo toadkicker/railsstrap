@@ -15,7 +15,7 @@ end
 
 shared_examples_for 'no vertical options' do
   specify 'creates a <div> element with the "navbar-header" class and toggle button' do
-    html = %r{(class="navbar-header")?(button class="navbar-toggler")}
+    html = %r{(class="navbar-header")?(button.+(class="navbar-toggler"))}
     railsstrap.navbar { expect(:vertical).to generate %r{#{html}} }
   end
 end
@@ -31,7 +31,7 @@ end
 shared_examples_for 'the vertical wrapped in a navbar with :id' do
   it 'uses the id from the navbar' do
     id = 'my-navbar'
-    html = %r{(.+)button class="navbar-toggler" data-target="##{id}"(.+)}
+    html = %r{(class="navbar-toggler").+(data-target="##{id}")?}
     railsstrap.navbar(id: id) { expect(:vertical).to generate html}
   end
 end
