@@ -24,7 +24,8 @@ module Railsstrap
     #     end
     #   end
     def horizontal(*args, &block)
-      if navbar = Railsstrap::Stack.find(Railsstrap::Navbar)
+      navbar = Railsstrap::Stack.find(Railsstrap::Navbar)
+      if navbar
         horizontal = Railsstrap::Base.new self, *args, &block
         horizontal.append_class! :'collapse navbar-collapse'
         horizontal.merge! id: navbar.id

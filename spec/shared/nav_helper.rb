@@ -9,8 +9,8 @@ end
 #--
 
 shared_examples_for 'no nav options' do
-  specify 'creates a <nav> element with the "tablist" role' do
-    html = %r{'(.*)role="tablist"(.*)</nav>'}
+  specify 'creates a <nav> element with the "navigation" role' do
+    html = %r{<nav.+role="navigation"(.*)<\/nav>}
     expect(:nav).to generate html
   end
 end
@@ -35,15 +35,15 @@ end
 shared_examples_for 'the :layout nav option' do
   Railsstrap::Nav.layouts.each do |layout, layout_class|
     specify %Q{set to :#{layout}, adds the class "#{layout_class}"} do
-      html = %r{<nav class="nav nav-tabs #{layout_class}"}
+      html = %r{<nav class="nav #{layout_class}"}
       expect(nav: {layout: layout}).to generate html
     end
   end
 end
 
 shared_examples_for 'the nav wrapped in navbar' do
-  specify 'creates a <ul> element with the "navbar-nav" class' do
-    html = '<nav class="nav navbar-nav">content</nav>'
+  specify 'creates a <nav> element with the "navbar-nav" class' do
+    html = %r{<nav.*(role="navigation")*(class="nav navbar-nav").+<\/nav>}
     railsstrap.navbar { expect(:nav).to generate html }
   end
 end

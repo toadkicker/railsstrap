@@ -16,9 +16,6 @@ module Railsstrap
     # @option options [#to_s] :position the position of the navbar. Can be
     #   `:top` (alias `:fixed_top`), `:bottom` (alias `:fixed_bottom`) or
     #   `:static` (alias `:static_top`).
-    # @option options [#to_s] :padding (70) if position is set to :top or
-    #   :bottom, the padding to at the top (or bottom) of <body> to prevent the
-    #   navbar from overlaying the content.
     # @yieldreturn [#to_s] the content to display in the navbar.
     # @example Display an inverted navbar with three links.
     #   navbar inverted: true do
@@ -34,7 +31,7 @@ module Railsstrap
     #   end
     def navbar(options = {}, &block)
       navbar = Railsstrap::Navbar.new(self, options, &block)
-      navbar.extract! :variant, :text_variant, :position, :padding, :fluid, :id
+      navbar.extract! :variant, :text_variant, :position, :fluid, :id
 
       navbar.append_class_to! :navigation, :navbar
       navbar.append_class_to! :navigation, navbar.variant_class
@@ -42,7 +39,6 @@ module Railsstrap
       navbar.append_class_to! :navigation, navbar.text_variant_class
       navbar.append_class_to! :navigation, navbar.position_class
       navbar.append_class_to! :div, navbar.layout_class
-      navbar.prepend_html! navbar.body_padding_style
 
       navbar.render_partial 'navbar'
     end

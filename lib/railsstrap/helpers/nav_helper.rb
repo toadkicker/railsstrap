@@ -24,6 +24,9 @@ module Railsstrap
       nav.append_class! :nav
       nav.append_class! nav.style_class
       nav.append_class! nav.layout_class
+      nav.merge! role: :navigation
+
+
 
       nav.render_tag :nav
     end

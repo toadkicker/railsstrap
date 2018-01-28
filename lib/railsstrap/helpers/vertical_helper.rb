@@ -22,7 +22,8 @@ module Railsstrap
     #     end
     #   end
     def vertical(*args, &block)
-      if navbar = Railsstrap::Stack.find(Railsstrap::Navbar)
+      navbar = Railsstrap::Stack.find(Railsstrap::Navbar)
+      if navbar
         vertical = Railsstrap::Vertical.new self, *args, &block
         vertical.append_class! :'navbar-header'
         vertical.prepend_html! vertical.toggle_button(navbar.id)
