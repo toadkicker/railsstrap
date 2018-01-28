@@ -5,12 +5,16 @@ module Railsstrap
     # @api private
     class Nav < Base
       # @return [#to_s] the style-related class to assign to the nav.
+      # Navbar navs are automatically assigned :navbar
       def style_class
+        return Nav.styles[:navbar] if Railsstrap::Stack.find(Railsstrap::Navbar)
         Nav.styles[@options[:as]]
       end
 
       # @return [#to_s] the layout-related class to assign to the nav.
+      # Navbar navs inherit layout from navbar and cannot use layouts
       def layout_class
+        return if Railsstrap::Stack.find(Railsstrap::Navbar)
         Nav.layouts[@options[:layout]]
       end
 
@@ -18,8 +22,10 @@ module Railsstrap
       #   append to navs for each possible style.
       private_class_method
       def self.styles
-        HashWithIndifferentAccess.new(:'nav-tabs').tap do |klass|
+        HashWithIndifferentAccess.new.tap do |klass|
+          klass[:tabs] = :'nav-tabs'
           klass[:pills] = :'nav-pills'
+          klass[:navbar] = :'navbar-nav'
         end
       end
 

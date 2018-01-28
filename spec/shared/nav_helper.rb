@@ -9,8 +9,8 @@ end
 #--
 
 shared_examples_for 'no nav options' do
-  specify 'creates a <ul> element with the "tablist" role' do
-    html = '<nav class="nav nav-tabs" role="tablist">content</nav>'
+  specify 'creates a <nav> element with the "tablist" role' do
+    html = %r{'(.*)role="tablist"(.*)</nav>'}
     expect(:nav).to generate html
   end
 end
@@ -18,7 +18,7 @@ end
 shared_examples_for 'extra nav options' do
   specify 'passes the options to the <ul> element' do
     options = {class: 'important', data: {value: 1}, id: 'my-alert'}
-    html = '<nav class="important nav nav-tabs" data-value="1" id="my-alert" role="tablist">content</nav>'
+    html = %r{(important).*(data-value="1").*(id="my-alert")}
     expect(nav: options).to generate html
   end
 end
