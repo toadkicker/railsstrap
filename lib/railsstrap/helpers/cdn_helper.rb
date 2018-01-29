@@ -42,7 +42,7 @@ module Railsstrap
       Railsstrap::Cdn.bootstrap options.merge(name: 'bootstrap-theme', extension: 'css')
     end
 
-    # @see http://www.bootstrapcdn.com
+    # @see http://www.cdnjs.com
     # @return [String] the URL of the Font Awesome CSS file
     # @param [Hash] options the options for which CSS file to retrieve.
     # @option options [String] :version the version of Font Awesome.
@@ -51,6 +51,20 @@ module Railsstrap
     # @see http://fontawesome.io/get-started/
     def font_awesome_css(options = {})
       Railsstrap::Cdn.font_awesome options.merge(name: 'font-awesome', extension: 'css')
+    end
+
+    # @see http://www.bootstrapcdn.com
+    # @return [String] the URL of the Font Awesome CSS file
+    # @param [Hash] options the options for which CSS file to retrieve.
+    # @option options [String] :version the version of Font Awesome. 5.0+ is required.
+    # @option options [String] :scheme the URI scheme to use.
+    # @option options [Boolean] :minified whether to use the minified version.
+    # @see http://fontawesome.io/get-started/
+    def font_awesome_js(options = {})
+      Railsstrap::Cdn.font_awesome options.merge(
+        name: 'font-awesome',
+        extension: 'js'
+      )
     end
 
     # @see http://www.bootstrapcdn.com

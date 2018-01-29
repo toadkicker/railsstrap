@@ -14,6 +14,10 @@ shared_examples_for 'the font_awesome_css helper' do
   it { expect(:font_awesome_css).to link_to_existing_file }
 end
 
+shared_examples_for 'the font_awesome_js helper' do
+  it { expect(:font_awesome_js).to link_to_existing_file }
+end
+
 #--
 
 RSpec::Matchers.define :link_to_existing_file do

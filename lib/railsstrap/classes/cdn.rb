@@ -27,6 +27,18 @@ module Railsstrap
         cdn_asset options.merge(library: 'font-awesome')
       end
 
+      # @note if unspecified, the version should match the latest available
+      #   version. If that's not the case, it's a bug and should be fixed.
+      def self.font_awesome_js(options = {})
+        options[:version] ||= '5.0.6'
+        options[:scheme] ||= 'https'
+        options[:host] ||= '//use.fontawesome.com'
+        options[:path] ||= 'releases/v5.0.6/js'
+        options[:name] ||= 'all'
+        options[:ext] ||= 'js'
+        cdn_asset options.merge(library: 'font-awesome')
+      end
+
       def self.popper_js(options = {})
         options[:version] ||= '1.13.0'
         cdn_asset options.merge(library: 'popper')
