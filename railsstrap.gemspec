@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.description = %q{Make your ruby project awesomer with template helpers, additional components, and more.}
 
   s.rubyforge_project = 'railsstrap'
-  s.files = Dir['lib/**/*'] + Dir['vendor/**/*'] + ['node_modules/**/*']
+  s.files = Dir['lib/**/*'] + Dir['vendor/**/*']
   s.test_files = Dir['spec/**/*.rb']
   s.executables = `git ls-files -- bin/*`.split('\n').map {|f| File.basename(f)}
   s.require_paths = %w(lib node_modules vendor)
