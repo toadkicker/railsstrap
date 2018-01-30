@@ -1,125 +1,159 @@
-## Change Log
+# Change Log
 
-### 3.3.4 (2015/04/27 00:50 +00:00)
-- [0899010](https://github.com/toadkicker/railsstrap/commit/0899010e9fcce46f54c7569fa920e1f994697976) revert 93d95feac8cb40f7e13e5fd229d3cb84133ecaaa (@toadkicker)
-- [cd68f80](https://github.com/toadkicker/railsstrap/commit/cd68f80cce759ed312a548ce309923fa06e6577e) updated fontawesome (@toadkicker)
+## [v4-beta.2](https://github.com/toadkicker/railsstrap/tree/v4-beta.2) (2018-01-30)
+[Full Changelog](https://github.com/toadkicker/railsstrap/compare/v4-beta.1...v4-beta.2)
 
-### v3.3.2 (2015/01/22 16:59 +00:00)
-- [add8974](https://github.com/toadkicker/railsstrap/commit/add8974d2d915c89a23fec2ce70ab1528b5bffe9) remove gemspec error (@toadkicker)
-- [#39](https://github.com/toadkicker/railsstrap/pull/39) Merge pull request #39 from toadkicker/develop (@toadkicker)
-- [bf8bf15](https://github.com/toadkicker/railsstrap/commit/bf8bf15b63940fce511ee264bf52a423fdd63184) update changelog v2 (@toadkicker)
-- [878b1b0](https://github.com/toadkicker/railsstrap/commit/878b1b001dd957d6e0c777c31b941261bd921d23) update bootstrap to 3.3.2 (@toadkicker)
-- [526e499](https://github.com/toadkicker/railsstrap/commit/526e499df7163f595ed3d93d95358a2b69f460c9) updated changelog. ship 3.3.2 (@toadkicker)
-- [#38](https://github.com/toadkicker/railsstrap/pull/38) Merge pull request #38 from toadkicker/support/fix35 (@toadkicker)
-- [9cc065b](https://github.com/toadkicker/railsstrap/commit/9cc065bc82569f8d3a27020f1cf3744d3c359732) This commit adds the ability to easily choose between hosting font awesome and glyphicon font files via cdn or via the asset pipeline by commenting or uncommenting entries in bootstrap_and_overrides.css.less (@toadkicker)
-- [fa861ba](https://github.com/toadkicker/railsstrap/commit/fa861ba8a641921fe482d94fe6ee9b874f52cd69) bumped versions to 3.3.2 (@toadkicker)
-- [07641de](https://github.com/toadkicker/railsstrap/commit/07641dea8d9a1e3472cf9617e9257bbbc64e1541) Merge branch 'feature/aside_helper' into develop (@toadkicker)
-- [974550d](https://github.com/toadkicker/railsstrap/commit/974550db8b26e6b68cf1f0a21cf076f4d8ff7088) update readme highlighting aside helper for 3.3.2 (@toadkicker)
-- [#34](https://github.com/toadkicker/railsstrap/pull/34) Merge pull request #34 from toadkicker/feature/aside_helper (@toadkicker)
-- [e5f2a96](https://github.com/toadkicker/railsstrap/commit/e5f2a961f15f60b2ad738e2a9c639e1bbd7722a6) update test (@toadkicker)
-- [717045e](https://github.com/toadkicker/railsstrap/commit/717045ea5a58ca5f8c41e3e722ac3652242f28cf) resolves #2 (@toadkicker)
-- [e7ce4be](https://github.com/toadkicker/railsstrap/commit/e7ce4be5d32d63125643a81c8a58d02f1ee1f9eb) add class option to modal so center class can be set. changed call on options to the merged var of opts (@toadkicker)
-- [5af0f34](https://github.com/toadkicker/railsstrap/commit/5af0f34766b033bbd7ad7e94dcb4355fa4179c7e) tests were failing because of the order of html attributes (@toadkicker)
-- [f84e72c](https://github.com/toadkicker/railsstrap/commit/f84e72ccbcfb1396c58225d26f8fb2bf3df6d219) add class option to modal so center class can be set. changed call on options to the merged var of opts (@toadkicker)
-- [1671b3f](https://github.com/toadkicker/railsstrap/commit/1671b3fd6b336ff9c2f4147dc71baaeb98d62c6c) update readme to show links to the wiki. update quick install to include less-rails gem. (@toadkicker)
-- [eb7baf2](https://github.com/toadkicker/railsstrap/commit/eb7baf20e847079a05b740a0905bdd0b3f64ec22) move deps out of gemfile to gemspec (@toadkicker)
-- [6f060c0](https://github.com/toadkicker/railsstrap/commit/6f060c0543fcdc2ead3055425d0615324317bb84) testing blocks on modal toggles (@toadkicker)
-- [6b83467](https://github.com/toadkicker/railsstrap/commit/6b83467f8ec72b8c7cfd337c58550e946856e25c) remove puts statement (@toadkicker)
-- [60e953d](https://github.com/toadkicker/railsstrap/commit/60e953d7932413e92879d11cef5be93381ea7d5c) get test coverage on lines 43,44 of modal helper (@toadkicker)
-- [b4a13c7](https://github.com/toadkicker/railsstrap/commit/b4a13c7951329ca37f384473d3b9c9c745c1ab3a) fix using raw call in modal_helper (@toadkicker)
-- [93d95fe](https://github.com/toadkicker/railsstrap/commit/93d95feac8cb40f7e13e5fd229d3cb84133ecaaa) removed tag_label method because bootstrap no longer requires a css class for setting success/info/etc on a badge. (@toadkicker)
-- [c7727a1](https://github.com/toadkicker/railsstrap/commit/c7727a19a571cdc413976714c92143cc62bfe39f) improve test coverage on modal helpers (@toadkicker)
-- [46001da](https://github.com/toadkicker/railsstrap/commit/46001da1d69fda54e75f3bda1c77eb456406e16a) improve test coverage on navbar helpers (@toadkicker)
-- [5a1778e](https://github.com/toadkicker/railsstrap/commit/5a1778e9f1db4a56d88ac0840facb34955342c5c) fixed failing tests (@toadkicker)
-- [30e4ddd](https://github.com/toadkicker/railsstrap/commit/30e4ddda6b615726ee26b3948936321b15da8d24) fixed failing tests (@toadkicker)
-- [9d9efd5](https://github.com/toadkicker/railsstrap/commit/9d9efd5ebcdfaa2827cb48b77bd9ee5932690134) fix output of html safe strings (@toadkicker)
-- [8eec351](https://github.com/toadkicker/railsstrap/commit/8eec3515ec11fe58891d922cdaf3b8d51a860313) missing comma in bower.json (@toadkicker)
-- [b732aa6](https://github.com/toadkicker/railsstrap/commit/b732aa6bd86f643b6e2850ca58bc66fbb9a45454) merge changelog from master (@toadkicker)
-- [60d97d5](https://github.com/toadkicker/railsstrap/commit/60d97d5504f7512fd7a21be9ca585c04d563aa1d) update changelog for v3.3.1 (@toadkicker)
-- [5576de2](https://github.com/toadkicker/railsstrap/commit/5576de2cb2163925ed295036bb5db31712e23fc9) update changelog for v3.3.1 (@toadkicker)
+## [v4-beta.1](https://github.com/toadkicker/railsstrap/tree/v4-beta.1) (2018-01-28)
+[Full Changelog](https://github.com/toadkicker/railsstrap/compare/v4-alpha.1...v4-beta.1)
 
-### v3.3.1 (2014/11/19 21:03 +00:00)
-- [2e0e030](https://github.com/toadkicker/railsstrap/commit/2e0e03081518b0515977aaa1c02ae57aaa8a739c) Revert "fix warnings with gemspec versions" (@toadkicker)
-- [5b3d5d1](https://github.com/toadkicker/railsstrap/commit/5b3d5d138a29ca1c4a0c3333b6dcd59d6f9e906d) fix warnings with gemspec versions (@toadkicker)
-- [d7b6775](https://github.com/toadkicker/railsstrap/commit/d7b6775f36db485e2558fe1cb20272d6c7be8e96) fix fontawesome to use cdn for fonts (@toadkicker)
-- [a11f9e9](https://github.com/toadkicker/railsstrap/commit/a11f9e93a469f5cba1c289f7c1592ada46e108ac) included fa-font-path example for cdn-ifying fontawesome (@toadkicker)
-- [c6cdc5e](https://github.com/toadkicker/railsstrap/commit/c6cdc5e8a75c32eee73d85979f7e3d87bce9b7a7) updated readme (@toadkicker)
-- [680fa45](https://github.com/toadkicker/railsstrap/commit/680fa4526993557ec1a40e9b21d93b14bba36ffa) simplify font finding statement (@toadkicker)
-- [0fed234](https://github.com/toadkicker/railsstrap/commit/0fed234f5a01731160b66b9acf6b2a7fa6a43d1c) added keywords to bower.json (@toadkicker)
-- [#28](https://github.com/toadkicker/railsstrap/pull/28) Merge pull request #28 from toadkicker/feature/v331 (@toadkicker)
-- [5fe1f66](https://github.com/toadkicker/railsstrap/commit/5fe1f6611132c158f4fc0180262b1f437d407610) update version info in bower.json (@toadkicker)
-- [b1f2b51](https://github.com/toadkicker/railsstrap/commit/b1f2b51b5e031a0e095fd8964affb572f279b631) fix merge conflict with bower.json (@toadkicker)
-- [eb6fd6b](https://github.com/toadkicker/railsstrap/commit/eb6fd6bd2816e053e80d7bdbbd1208859046555d) bump railsstrap version (@toadkicker)
-- [8620d08](https://github.com/toadkicker/railsstrap/commit/8620d08962a060d19a301e0f489de98cf471b4fc) update bower components (@toadkicker)
-- [#26](https://github.com/toadkicker/railsstrap/pull/26) Merge pull request #26 from toadkicker/feature/datepicker (@toadkicker)
-- [8e5a06d](https://github.com/toadkicker/railsstrap/commit/8e5a06d665345b185486af28ff31f6e970e41cd4) completed testing using teststrap (@toadkicker)
-- [3829e01](https://github.com/toadkicker/railsstrap/commit/3829e0139ae52c9d1236ee6884f4f39d4e415085) added comments in manifests to describe including the date/time picker (@toadkicker)
-- [c5d1372](https://github.com/toadkicker/railsstrap/commit/c5d137250655f9c3783b160f5836bb0c2a6cf0d1) added date picker helper (@toadkicker)
-- [#25](https://github.com/toadkicker/railsstrap/pull/25) Merge pull request #25 from toadkicker/support/simplfy_slim_templates (@toadkicker)
-- [a83ab98](https://github.com/toadkicker/railsstrap/commit/a83ab9841791334274a53cc4fac8ad54e1fcbf49) simplify slim templates (@toadkicker)
-- [#24](https://github.com/toadkicker/railsstrap/pull/24) Merge pull request #24 from toadkicker/support/form_generator (@toadkicker)
-- [d5df85f](https://github.com/toadkicker/railsstrap/commit/d5df85fa7977daa8d713e2c941dabd2438c7ce0b) add role attribute to form generation (@toadkicker)
-- [48b1395](https://github.com/toadkicker/railsstrap/commit/48b13953419ceb605646190db777a38601f8277a) Update README.md (@toadkicker)
-- [ef10914](https://github.com/toadkicker/railsstrap/commit/ef109145d0f7b898d3b8191230ae926799d7ca1a) v3.3.0 (@toadkicker)
-- [a4ac798](https://github.com/toadkicker/railsstrap/commit/a4ac7987da68044d2fb8000c40a418b96a53d643) updated changelog (@toadkicker)
+**Implemented enhancements:**
 
-### v3.3.0 (2014/10/30 22:55 +00:00)
-- [#23](https://github.com/toadkicker/railsstrap/pull/23) Merge pull request #23 from toadkicker/feature/v330 (@toadkicker)
-- [a2915c2](https://github.com/toadkicker/railsstrap/commit/a2915c24714d6fdcbab367d9e1649d0ad33dc68e) bump version to 3.3.0 (@toadkicker)
-- [#22](https://github.com/toadkicker/railsstrap/pull/22) Merge pull request #22 from toadkicker/master (@toadkicker)
-- [601c357](https://github.com/toadkicker/railsstrap/commit/601c357ef23fcb42a3b13cf78b4b6cce50614507) post-release changelog (@toadkicker)
+- Use Bootstrap Sass instead of Less one [\#55](https://github.com/toadkicker/railsstrap/issues/55)
+- Allow column\_class property in panel helper to accept short form column names [\#49](https://github.com/toadkicker/railsstrap/issues/49)
+- Refactor TODO list [\#47](https://github.com/toadkicker/railsstrap/issues/47)
+- Structuring helpers around base class/modules [\#44](https://github.com/toadkicker/railsstrap/issues/44)
+- Support flexbox? [\#40](https://github.com/toadkicker/railsstrap/issues/40)
+- CollapseHelper [\#11](https://github.com/toadkicker/railsstrap/issues/11)
+- TabsHelper [\#10](https://github.com/toadkicker/railsstrap/issues/10)
 
-### v3.2.0.3 (2014/10/28 17:06 +00:00)
-- [5e3539a](https://github.com/toadkicker/railsstrap/commit/5e3539ab072336d3f93cd9468e2d60ffa81ea0e7) updated changelog (@toadkicker)
-- [411367d](https://github.com/toadkicker/railsstrap/commit/411367de2468104cdd95a730b106d45043316fe4) Revert "fix semvers" (@toadkicker)
-- [f76bd55](https://github.com/toadkicker/railsstrap/commit/f76bd556ce87a4411816851f245a263b75d70504) fix semvers (@toadkicker)
-- [e824ed7](https://github.com/toadkicker/railsstrap/commit/e824ed7d67264bd114278d9633967395f8b605ae) bump version to 3.2.0.3 (@toadkicker)
-- [60a5fbb](https://github.com/toadkicker/railsstrap/commit/60a5fbb38bd8f3f5e26c50a5480d78e6bc991fec) auto add less rails and rubyracer/rubyrhino depending on ruby version (@toadkicker)
-- [70d3120](https://github.com/toadkicker/railsstrap/commit/70d3120e3ac8deeb3398be35134d90a6cae436c3) update changelog. added node_modules folder to gitignore (@toadkicker)
-- [#21](https://github.com/toadkicker/railsstrap/pull/21) Merge pull request #21 from toadkicker/feature/animations (@toadkicker)
-- [4c11122](https://github.com/toadkicker/railsstrap/commit/4c11122051ef285af83bc6f11efb11e10dbd8298) adds 75+ animations to railsstrap. (@toadkicker)
-- [6b57fdd](https://github.com/toadkicker/railsstrap/commit/6b57fdd6670bf88c954de630da98a198c0931365) handle glyphicons not compiling (@toadkicker)
-- [#20](https://github.com/toadkicker/railsstrap/pull/20) Merge pull request #20 from toadkicker/feature/flash_options (@toadkicker)
-- [45d05b6](https://github.com/toadkicker/railsstrap/commit/45d05b6f27b6700600b88752a48c44a22dff00e0) Merge branch 'develop' of github.com:toadkicker/railsstrap into develop (@toadkicker)
-- [dfcab51](https://github.com/toadkicker/railsstrap/commit/dfcab51d2d723f2a4aaaec07ffec30f976bbf6be) update changelog (@toadkicker)
-- [6100a88](https://github.com/toadkicker/railsstrap/commit/6100a887df0cc547e7c12a585a044549ad58d382) added more configurable flash helper (@toadkicker)
-- [be47d6f](https://github.com/toadkicker/railsstrap/commit/be47d6fb0c71092bdc09cb58d38b98ad200e8657) misspelling in comment (@toadkicker)
-- [ec6b158](https://github.com/toadkicker/railsstrap/commit/ec6b158686e18e35b7a8357830185b7727b6ddba) Update README.md (@toadkicker)
-- [602ec94](https://github.com/toadkicker/railsstrap/commit/602ec94d9c0dcfe3cbfad09ba6963fc46610a2bd) Update README.md (@toadkicker)
-- [#19](https://github.com/toadkicker/railsstrap/pull/19) Merge pull request #19 from toadkicker/support/fix_18 (@toadkicker)
-- [5e3e4f9](https://github.com/toadkicker/railsstrap/commit/5e3e4f9086c178598bc7aae6fb5546a7a0082cdd) adds line in config to handle precompiling fontawesome (@toadkicker)
-- [fd1511c](https://github.com/toadkicker/railsstrap/commit/fd1511c407ea67a071c7210884900aab453ffd29) Update README.md (@toadkicker)
-- [40c4c8b](https://github.com/toadkicker/railsstrap/commit/40c4c8bb12f594cdf69ef77abb5ac7efa8cee398) added changelg (@toadkicker)
+**Fixed bugs:**
 
-### 3.2.0.2 (2014/10/05 08:25 +00:00)
-- [2c2e0e5](https://github.com/toadkicker/railsstrap/commit/2c2e0e55b5893899c83b73323f9ad4d253760a9f) merge develop (@toadkicker)
-- [80b3e13](https://github.com/toadkicker/railsstrap/commit/80b3e13ff6785221100b8fd5b06a0d5bbecaffaf) fixes undef object in /new actions (@toadkicker)
-- [760126c](https://github.com/toadkicker/railsstrap/commit/760126cbc2294671da933f2e7282d7fe9ccdf5f6) set version in dev to next version (@toadkicker)
-- [f73980e](https://github.com/toadkicker/railsstrap/commit/f73980e8176c50bffb4f7e493a9a81da83be9cf5) Merge branch 'develop' of github.com:toadkicker/railsstrap into develop (@toadkicker)
-- [50f13c3](https://github.com/toadkicker/railsstrap/commit/50f13c36f22cefe922ad2202d47c6c0e6e48ba23) add bootstrap badge (@toadkicker)
-- [#14](https://github.com/toadkicker/railsstrap/pull/14) Merge pull request #14 from toadkicker/feature/additions (@toadkicker)
-- [#15](https://github.com/toadkicker/railsstrap/pull/15) Merge pull request #15 from toadkicker/feature/flash_helper_spec (@toadkicker)
-- [3696a96](https://github.com/toadkicker/railsstrap/commit/3696a9695c0d479f32b9e0ee65aa58d36af69b7b) code formatting (@toadkicker)
-- [d1008c0](https://github.com/toadkicker/railsstrap/commit/d1008c04190d882e8e4b76a136c5aa77035f8a34) added flash spec helper (@toadkicker)
-- [6fd1232](https://github.com/toadkicker/railsstrap/commit/6fd1232f23ddc03f360661e72ec5dd3f4f32a0d2) remove this helper since it isn't called anywhere and its duplicated by bootstrap_flash (@toadkicker)
-- [5132a63](https://github.com/toadkicker/railsstrap/commit/5132a636eaa9e4975b5f576427d5bd7b9de84585) coveralls bage url change (@toadkicker)
-- [7a81d27](https://github.com/toadkicker/railsstrap/commit/7a81d2741f09f74b7145cd5d5fb706c67f4793f1) updated contrib notes (@toadkicker)
-- [e36593c](https://github.com/toadkicker/railsstrap/commit/e36593cbfb820f3c7f2279a3ddf8ea9eec5c4ebe) updated static install method paths (@toadkicker)
-- [f7848e1](https://github.com/toadkicker/railsstrap/commit/f7848e1c2ae73b5b32a2a9ddde135c6929b8ae8f) Merge branch 'develop' of github.com:toadkicker/railsstrap into feature/additions (@toadkicker)
-- [2f27437](https://github.com/toadkicker/railsstrap/commit/2f27437363c608ad59f88fbe1ce5fea400bf3c2e) Merge remote-tracking branch 'origin/develop' into develop (@toadkicker)
-- [0f5964d](https://github.com/toadkicker/railsstrap/commit/0f5964d827f9d257ee32d031cc01877a18f3c9e6) added coveralls (@toadkicker)
-- [ed205e9](https://github.com/toadkicker/railsstrap/commit/ed205e9d941c1c770806476c2b6401d5e862483d) added coveralls (@toadkicker)
+- tag\_label support [\#42](https://github.com/toadkicker/railsstrap/issues/42)
 
-### v3.2.0.1 (2014/10/03 19:50 +00:00)
-- [c85aa5e](https://github.com/toadkicker/railsstrap/commit/c85aa5ed68d8c13a1ae867848c4a3ac8cbe8bc07) bump to 3.2.0.1 due to missing .bowerrc in gemspec (@toadkicker)
-- [f6f0505](https://github.com/toadkicker/railsstrap/commit/f6f0505ca14519f5be8f7c3b44a9dde9fff66b94) add flash helper spec (@toadkicker)
-- [0f42407](https://github.com/toadkicker/railsstrap/commit/0f424071791111a628368ec362d3427eb8a1faa9) fix missing .bowerrc file (@toadkicker)
-- [e2cf3f8](https://github.com/toadkicker/railsstrap/commit/e2cf3f8c5e9dbae23a41e8ed02a6694530a7928c) add bootstrap_additions (@toadkicker)
+**Closed issues:**
 
-### v3.2.0 (2014/10/03 14:53 +00:00)
-- [3583cbd](https://github.com/toadkicker/railsstrap/commit/3583cbd2fa2f02d40dde5aad585f3b1fd2f946b1) release 3.2.0 (@toadkicker)
-- [95aab11](https://github.com/toadkicker/railsstrap/commit/95aab118439537445d4601495893802b98f6ad35) updated bower (@toadkicker)
-- [fccb2be](https://github.com/toadkicker/railsstrap/commit/fccb2becc4f28a55954f01ddec729d6d7551908f) fix some paths (@toadkicker)
-- [10a3f24](https://github.com/toadkicker/railsstrap/commit/10a3f24ba112998d1f1f567a7f7e784516497f77) missing tick mark (@toadkicker)
-- [a21516c](https://github.com/toadkicker/railsstrap/commit/a21516c9a5c36ed70ed5ec3f5bb665e00e1f30a1) first cut over with passing tests from twitter-bootstrap-rails code (@toadkicker)
-- [d87cf66](https://github.com/toadkicker/railsstrap/commit/d87cf668b67bbbfaa93412ce35b867b29d9fdbb8) Initial commit (@toadkicker)
+- Glyphicons non digest path results in 404 error on Rails 4 [\#45](https://github.com/toadkicker/railsstrap/issues/45)
+- Panel Helper [\#43](https://github.com/toadkicker/railsstrap/issues/43)
+
+**Merged pull requests:**
+
+- Helpers v4 [\#61](https://github.com/toadkicker/railsstrap/pull/61) ([toadkicker](https://github.com/toadkicker))
+
+## [v4-alpha.1](https://github.com/toadkicker/railsstrap/tree/v4-alpha.1) (2018-01-22)
+[Full Changelog](https://github.com/toadkicker/railsstrap/compare/v3.3.4...v4-alpha.1)
+
+**Implemented enhancements:**
+
+- link\_to helper [\#50](https://github.com/toadkicker/railsstrap/issues/50)
+
+**Closed issues:**
+
+- Gem::Platform::RUBY not helping with jruby? [\#56](https://github.com/toadkicker/railsstrap/issues/56)
+
+**Merged pull requests:**
+
+- Fixed the gemspec to properly detect the use of jruby, with the help … [\#58](https://github.com/toadkicker/railsstrap/pull/58) ([ninkibah](https://github.com/ninkibah))
+- Update README.md [\#54](https://github.com/toadkicker/railsstrap/pull/54) ([toadkicker](https://github.com/toadkicker))
+
+## [v3.3.4](https://github.com/toadkicker/railsstrap/tree/v3.3.4) (2015-04-27)
+[Full Changelog](https://github.com/toadkicker/railsstrap/compare/v3.3.2...v3.3.4)
+
+**Implemented enhancements:**
+
+- ButtonsHelper [\#8](https://github.com/toadkicker/railsstrap/issues/8)
+- ProgressBarHelper [\#6](https://github.com/toadkicker/railsstrap/issues/6)
+
+**Closed issues:**
+
+- FormErrorsHelper failing specs [\#53](https://github.com/toadkicker/railsstrap/issues/53)
+- Less::Error: Cannot call method 'charAt' of undefined [\#46](https://github.com/toadkicker/railsstrap/issues/46)
+- Update to FontAwesome 4.3.0 [\#41](https://github.com/toadkicker/railsstrap/issues/41)
+
+**Merged pull requests:**
+
+- In progress 3.3.4 PR [\#52](https://github.com/toadkicker/railsstrap/pull/52) ([toadkicker](https://github.com/toadkicker))
+- Made Gemfile additions copy&pastable [\#48](https://github.com/toadkicker/railsstrap/pull/48) ([johankok](https://github.com/johankok))
+
+## [v3.3.2](https://github.com/toadkicker/railsstrap/tree/v3.3.2) (2015-01-22)
+[Full Changelog](https://github.com/toadkicker/railsstrap/compare/v3.3.1...v3.3.2)
+
+**Implemented enhancements:**
+
+- PaginationHelper [\#5](https://github.com/toadkicker/railsstrap/issues/5)
+- create AsideHelper [\#2](https://github.com/toadkicker/railsstrap/issues/2)
+
+**Closed issues:**
+
+- Glyphicons missing on production [\#37](https://github.com/toadkicker/railsstrap/issues/37)
+- couldn't find file 'twitter/bootstrap' [\#36](https://github.com/toadkicker/railsstrap/issues/36)
+- GlyphIcon Asset URL [\#35](https://github.com/toadkicker/railsstrap/issues/35)
+- Update readme to include less-rails [\#33](https://github.com/toadkicker/railsstrap/issues/33)
+- Modal helper can't be centered using helper [\#32](https://github.com/toadkicker/railsstrap/issues/32)
+- FontAwesome [\#31](https://github.com/toadkicker/railsstrap/issues/31)
+- 'bootstrap/less/bootstrap.less' wasn't found [\#30](https://github.com/toadkicker/railsstrap/issues/30)
+- Installation tips for moving from twitter-bootstrap-rails [\#29](https://github.com/toadkicker/railsstrap/issues/29)
+
+**Merged pull requests:**
+
+- Ship 3.3.2 [\#39](https://github.com/toadkicker/railsstrap/pull/39) ([toadkicker](https://github.com/toadkicker))
+- Fixes \#35 & \#37 [\#38](https://github.com/toadkicker/railsstrap/pull/38) ([toadkicker](https://github.com/toadkicker))
+- Feature/aside helper [\#34](https://github.com/toadkicker/railsstrap/pull/34) ([toadkicker](https://github.com/toadkicker))
+
+## [v3.3.1](https://github.com/toadkicker/railsstrap/tree/v3.3.1) (2014-11-19)
+[Full Changelog](https://github.com/toadkicker/railsstrap/compare/v3.3.0...v3.3.1)
+
+**Implemented enhancements:**
+
+- TimePickerHelper [\#4](https://github.com/toadkicker/railsstrap/issues/4)
+- DatePickerHelper [\#3](https://github.com/toadkicker/railsstrap/issues/3)
+
+**Closed issues:**
+
+- Update to bootstrap v3.3.1 [\#27](https://github.com/toadkicker/railsstrap/issues/27)
+
+**Merged pull requests:**
+
+- Feature/v331 [\#28](https://github.com/toadkicker/railsstrap/pull/28) ([toadkicker](https://github.com/toadkicker))
+- added date picker helper [\#26](https://github.com/toadkicker/railsstrap/pull/26) ([toadkicker](https://github.com/toadkicker))
+- simplify slim templates [\#25](https://github.com/toadkicker/railsstrap/pull/25) ([toadkicker](https://github.com/toadkicker))
+- add role attribute to form generation [\#24](https://github.com/toadkicker/railsstrap/pull/24) ([toadkicker](https://github.com/toadkicker))
+
+## [v3.3.0](https://github.com/toadkicker/railsstrap/tree/v3.3.0) (2014-10-30)
+[Full Changelog](https://github.com/toadkicker/railsstrap/compare/v3.2.0.3...v3.3.0)
+
+**Merged pull requests:**
+
+- bump version to 3.3.0 [\#23](https://github.com/toadkicker/railsstrap/pull/23) ([toadkicker](https://github.com/toadkicker))
+- Master [\#22](https://github.com/toadkicker/railsstrap/pull/22) ([toadkicker](https://github.com/toadkicker))
+
+## [v3.2.0.3](https://github.com/toadkicker/railsstrap/tree/v3.2.0.3) (2014-10-28)
+[Full Changelog](https://github.com/toadkicker/railsstrap/compare/3.2.0.2...v3.2.0.3)
+
+**Fixed bugs:**
+
+- Font awesome not compile [\#18](https://github.com/toadkicker/railsstrap/issues/18)
+- Hotfix: fix paths in install generator [\#16](https://github.com/toadkicker/railsstrap/issues/16)
+
+**Closed issues:**
+
+- generating wrong input class with gem simple form [\#17](https://github.com/toadkicker/railsstrap/issues/17)
+
+**Merged pull requests:**
+
+- Feature/animations [\#21](https://github.com/toadkicker/railsstrap/pull/21) ([toadkicker](https://github.com/toadkicker))
+- Feature/flash options [\#20](https://github.com/toadkicker/railsstrap/pull/20) ([toadkicker](https://github.com/toadkicker))
+- adds line in config to handle precompiling fontawesome [\#19](https://github.com/toadkicker/railsstrap/pull/19) ([toadkicker](https://github.com/toadkicker))
+
+## [3.2.0.2](https://github.com/toadkicker/railsstrap/tree/3.2.0.2) (2014-10-05)
+[Full Changelog](https://github.com/toadkicker/railsstrap/compare/v3.2.0.1...3.2.0.2)
+
+**Implemented enhancements:**
+
+- Integrate bootstrap-additions [\#13](https://github.com/toadkicker/railsstrap/issues/13)
+
+**Closed issues:**
+
+- FlashBlockHelper needs test coverage [\#1](https://github.com/toadkicker/railsstrap/issues/1)
+
+**Merged pull requests:**
+
+- Feature/flash helper spec [\#15](https://github.com/toadkicker/railsstrap/pull/15) ([toadkicker](https://github.com/toadkicker))
+- Feature/additions [\#14](https://github.com/toadkicker/railsstrap/pull/14) ([toadkicker](https://github.com/toadkicker))
+
+## [v3.2.0.1](https://github.com/toadkicker/railsstrap/tree/v3.2.0.1) (2014-10-03)
+[Full Changelog](https://github.com/toadkicker/railsstrap/compare/v3.2.0...v3.2.0.1)
+
+## [v3.2.0](https://github.com/toadkicker/railsstrap/tree/v3.2.0) (2014-10-03)
+
+
+\* *This Change Log was automatically generated by [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator)*
