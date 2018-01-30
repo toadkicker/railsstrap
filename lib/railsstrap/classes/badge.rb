@@ -18,7 +18,7 @@ module Railsstrap
 
       # @return [Hash<Symbol, String>] the class that Bootstrap requires to
       #   append to an badge box based on its variant.
-      private_class_method
+
       def self.variants
         HashWithIndifferentAccess.new(:'badge-info').tap do |klass|
           variant_types.each do |variant|

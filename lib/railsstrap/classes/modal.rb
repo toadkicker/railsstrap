@@ -45,7 +45,7 @@ module Railsstrap
 
       # @return [Hash<Symbol, String>] the classes that Bootstrap requires to
       #   append to the modal dialog for each possible size.
-      private_class_method
+
       def self.dialog_sizes
         HashWithIndifferentAccess.new.tap do |klass|
           klass[:large]       = :'modal-lg'
@@ -55,7 +55,7 @@ module Railsstrap
         end
       end
 
-      private_class_method
+
       def extract_content_from(*args, &block)
         if block_given?
           super

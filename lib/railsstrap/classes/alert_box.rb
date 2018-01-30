@@ -20,7 +20,7 @@ module Railsstrap
 
       # @return [Hash<Symbol, String>] the class that Bootstrap requires to
       #   append to an alert box based on its variant.
-      private_class_method
+
       def self.variants
         HashWithIndifferentAccess.new(:'alert-info').tap do |klass|
           variant_types.each do |variant|
@@ -34,7 +34,7 @@ module Railsstrap
 
       # @return [Hash<Symbol, String>] the classes that Bootstrap requires to
       #   append to buttons for each possible size.
-      private_class_method
+
       def self.sizes
         HashWithIndifferentAccess.new.tap do |klass|
           klass[:large]       = :'alert-lg'
@@ -46,7 +46,7 @@ module Railsstrap
 
       # @return [Hash<Symbol, String>] the classes that Bootstrap requires to
       #   append to buttons for each possible layout.
-      private_class_method
+
       def self.layouts
         HashWithIndifferentAccess.new.tap do |klass|
           klass[:top] = :'top'

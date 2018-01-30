@@ -46,7 +46,7 @@ module Railsstrap
         end
       end
 
-      private_class_method
+
       def extract_content_from(*args, &block)
         if block_given?
           super

@@ -40,7 +40,7 @@ module Railsstrap
 
       # @return [Hash<Symbol, String>] the classes that Bootstrap requires to
       #   append to buttons for each possible size.
-      private_class_method
+
       def self.sizes
         HashWithIndifferentAccess.new.tap do |klass|
           klass[:extra_small] = :'btn-xs'
@@ -54,7 +54,7 @@ module Railsstrap
 
       # @return [Hash<Symbol, String>] the classes that Bootstrap requires to
       #   append to buttons for each possible layout.
-      private_class_method
+
       def self.layouts
         HashWithIndifferentAccess.new.tap do |klass|
           klass[:block] = :'btn-block'
