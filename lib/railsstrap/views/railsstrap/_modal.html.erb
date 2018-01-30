@@ -3,9 +3,9 @@
   <div class="<%= div[:class] %>">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">
-          <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-        </button>
+        <% if dismissible %>
+          <%= render 'dismiss_button', dismiss: 'modal' %>
+        <% end %>
         <h4 class="modal-title" id="label-<%= div[:id] %>"><%= div[:title] %></h4>
       </div>
       <%= content %>

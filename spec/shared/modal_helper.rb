@@ -14,22 +14,7 @@ end
 
 shared_examples_for 'no modal options' do
   specify 'sets the role and the class to "modal", uses a generated ID and uses "Modal" as the title and caption' do
-    html = <<-EOT.strip_heredoc.strip
-      <button class="btn btn-primary" data-toggle="modal" data-target="#(.+)">Modal<\/button>
-      <div class="modal fade" id="\\1" tabindex="-1" role="dialog" aria-labelledby="label-\\1" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">
-                <span aria-hidden="true">&times;<\/span><span class="sr-only">Close<\/span>
-              <\/button>
-              <h4 class="modal-title" id="label-\\1">Modal<\/h4>
-            <\/div>
-            (<div class=\"modal-body\">)*content(</div>)*
-          <\/div>
-        <\/div>
-      <\/div>
-    EOT
+    html = %r{(div.*class="modal.+").*(id="modal-(.*[0-9])").+(role="dialog")}
     expect(:modal).to generate %r{#{html}}
   end
 end
@@ -100,5 +85,12 @@ shared_examples_for 'the button: :class modal option' do
   specify 'appends the class to the modal button' do
     html = %r{<button class="important btn btn-primary"}
     expect(modal: {button: {class: 'important'}}).to generate html
+  end
+end
+
+shared_examples_for 'the :dismissable modal option' do
+  specify 'renders the dismissable button on the modal button' do
+    html = %r{.*(class="close").*(dismiss="modal")}
+    expect(modal: {dismissible: true, dismiss: :modal}).to generate html
   end
 end

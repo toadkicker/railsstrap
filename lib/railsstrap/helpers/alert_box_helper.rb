@@ -28,7 +28,7 @@ module Railsstrap
     #       end
     def alert_box(*args, &block)
       alert_box = Railsstrap::AlertBox.new(self, *args, &block)
-      alert_box.extract! :variant, :priority, :dismissible, :size
+      alert_box.extract! :variant, :priority, :dismissible, :dismiss, :size
 
       alert_box.append_class! :alert
       alert_box.append_class! alert_box.size_class

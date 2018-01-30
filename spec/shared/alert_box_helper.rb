@@ -40,14 +40,14 @@ shared_examples_for 'the :dismissible alert option' do
   end
 
   specify 'set to true, displays a button to dismiss the alert' do
-    html = %r{<span aria-hidden="true">&times;</span>}
+    html = %r{.*(class="close").*(dismiss="alert")}
     expect(alert_box: {dismissible: true}).to generate html
   end
 end
 
 shared_examples_for 'the :priority alert option' do
   specify 'set, displays a button to dismiss the alert' do
-    html = %r{<span aria-hidden="true">&times;</span>}
+    html = %r{.*(class="close").*(dismiss="alert")}
     expect(alert_box: {priority: :anything}).to generate html
   end
 

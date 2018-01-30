@@ -37,7 +37,7 @@ module Railsstrap
     #       end
     def modal(*args, &block)
       modal = Railsstrap::Modal.new self, *args, &block
-      modal.extract! :button, :size, :body, :title, :id
+      modal.extract! :button, :size, :body, :title, :id, :dismissable, :dismiss
 
       modal.extract_from :button, [:variant, :size, :layout, :caption]
       modal.append_class_to! :button, :btn
