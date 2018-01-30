@@ -13,6 +13,7 @@ module Railsstrap
       # @return [#to_s] the class to assign to the icon based on the name
       #   of the icon.
       def name_class
+        return "fa-#{@options[:name].to_s.gsub '_', '-'}" if %i[fas far fab fal].include? library_class
         "#{library_class}-#{@options[:name].to_s.gsub '_', '-'}"
       end
 
@@ -23,16 +24,15 @@ module Railsstrap
 
       # @return [Hash<Symbol, String>] the classes that Bootstrap requires to
       #   append to icons for each possible vector icon library.
-      private_class_method
       def self.libraries
         HashWithIndifferentAccess.new(nil).tap do |klass|
-          klass[:font_awesome]  = :'fas'
-          klass[:fas]  = :'fas' # font awesome solid
-          klass[:far]  = :'far' # font awesome regular
-          klass[:fal]  = :'fal' # font awesome light
-          klass[:fal]  = :'fab' # font awesome brands
-          klass[:glyphicons]    = :'glyphicon'
-          klass[:'']            = :'far'
+          klass[:font_awesome] = :'fas'
+          klass[:fas] = :'fas' # font awesome solid
+          klass[:far] = :'far' # font awesome regular
+          klass[:fal] = :'fal' # font awesome light
+          klass[:fal] = :'fab' # font awesome brands
+          klass[:glyphicons] = :'glyphicon'
+          klass[:''] = :'far'
         end
       end
     end

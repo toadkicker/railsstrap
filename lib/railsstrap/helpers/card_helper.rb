@@ -39,6 +39,7 @@ module Railsstrap
 
       card.append_class! :card
       card.append_class! card.variant_class
+      card.append_class! card.text_variant_class
       card.prepend_html! card.image_cap
       card.merge_html! card.body
       card.prepend_html! card.header

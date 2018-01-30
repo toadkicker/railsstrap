@@ -19,6 +19,11 @@ module Railsstrap
         Card.variants[@options[:variant]]
       end
 
+      # @return [#to_s] the content-related class to assign to the card.
+      def text_variant_class
+        @options[:text_variant]
+      end
+
       # @return [#to_s] the HTML tag to wrap the card in.
       def tag
         @options.fetch :tag, :div
@@ -50,7 +55,6 @@ module Railsstrap
         end
       end
 
-      private_class_method
       def title
         if @options[:title]
           @app.content_tag :h3, @options[:title], class: 'card-title'
@@ -59,10 +63,9 @@ module Railsstrap
 
       # @return [Hash<Symbol, String>] the class that Bootstrap requires to
       #   append to an card box based on its variant.
-      private_class_method
       def self.variants
-        HashWithIndifferentAccess.new(:'card-default').tap do |klass|
-          variant_types.each { |variant| klass[variant.to_sym] = :"card-#{variant}" }
+        HashWithIndifferentAccess.new(:'bg-default').tap do |klass|
+          variant_types.each { |variant| klass[variant.to_sym] = :"bg-#{variant}" }
         end
       end
 
