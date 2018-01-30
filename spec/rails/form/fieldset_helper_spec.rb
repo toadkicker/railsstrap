@@ -11,7 +11,7 @@ describe 'fieldset' do
   let(:layout) { :whatever }
 
   specify 'adds a <fieldset> that looks like a Bootstrap card' do
-    expect(form).to include 'fieldset class="card card-default">'
+    expect(form).to include 'fieldset class="card bg-default">'
   end
 
   context 'given a title, and a non-inline layout, adds the title in the card header' do

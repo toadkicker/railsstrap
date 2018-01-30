@@ -13,8 +13,8 @@ end
 #--
 
 shared_examples_for 'no card options' do
-  specify 'displays a <div> with class="card card-default"' do
-    html = %r{^<div class="card card-default">(?:|<div class="card-body">)content(?:|</div>)</div>$}
+  specify 'displays a <div> with class="card bg-default"' do
+    html = %r{^<div class="card bg-default">(?:|<div class="card-body">)content(?:|</div>)</div>$}
     expect(:card).to generate html
   end
 end
@@ -22,21 +22,21 @@ end
 shared_examples_for 'extra card options (except :id)' do
   specify 'passes the options to the <div> card' do
     options = {class: 'important', data: {value: 1}}
-    html = %r{^<div class="important card card-default" data-value="1">(?:|<div class="card-body">)content(?:|</div>)</div>$}
+    html = %r{^<div class="important card bg-default" data-value="1">(?:|<div class="card-body">)content(?:|</div>)</div>$}
     expect(card: options).to generate html
   end
 end
 
 shared_examples_for 'the :header card option' do
   specify 'sets the header of the card to the specified value' do
-    html = %r{^<div class="card card-default"><div class="card-header">Heading</div>}
+    html = %r{^<div class="card bg-default"><div class="card-header">Heading</div>}
     expect(card: {header: 'Heading'}).to generate html
   end
 end
 
 shared_examples_for 'the :title card option' do
   specify 'sets the title of the card to the specified value' do
-    html = %r{^<div class="card card-default"><div class="card-header"><h3 class="card-title">Title</h3></div>}
+    html = %r{^<div class="card bg-default"><div class="card-header"><h3 class="card-title">Title</h3></div>}
     expect(card: {title: 'Title'}).to generate html
   end
 end
@@ -55,7 +55,7 @@ end
 
 shared_examples_for 'the :tag card option' do
   specify 'uses the HTML tag instead of <div> to wrap the card' do
-    html =  %r{^<aside class="card card-default">.*</aside>$}m
+    html =  %r{^<aside class="card bg-default">.*</aside>$}m
     expect(card: {tag: :aside}).to generate html
   end
 end
@@ -71,7 +71,7 @@ end
 
 shared_examples_for 'the card wrapped in card_row' do
   specify 'wraps the card <div> in a grid <div> with the :layout class of the card row' do
-    html = %r{^<div class="card-deck"><div class="card card-default">(?:|<div class="card-body">)content(?:|</div>)</div></div>$}
+    html = %r{^<div class="card-deck"><div class="card bg-default">(?:|<div class="card-body">)content(?:|</div>)</div></div>$}
     railsstrap.card_group(layout: :deck) { expect(:card).to generate html }
   end
 end

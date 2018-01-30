@@ -14,12 +14,12 @@ describe 'fields_for' do
 
   describe 'with the :fieldset option' do
     specify 'not set, wraps the fields in a <fieldset> styled like a card' do
-      expect(form).to match %r{.*fieldset.*class="card card-default">.*}
+      expect(form).to match %r{.*fieldset.*class="card bg-default">.*}
     end
 
     describe 'set to true, wraps the fields in a <fieldset> styled like a card' do
       let(:options) { {fieldset: true} }
-      it { expect(form).to match %r{.*fieldset.*class="card card-default">.*} }
+      it { expect(form).to match %r{.*fieldset.*class="card bg-default">.*} }
     end
 
     describe 'set to false, does not wrap the fields in a <fieldset>' do
@@ -54,7 +54,7 @@ describe 'fields_for' do
     let(:block) { Proc.new {|f| f.fields_for :address, user.name, options, &fields_block } }
 
     specify 'and no other options, uses the provided record object' do
-      expect(form).to match %r{.*fieldset.*class="card card-default">.*}
+      expect(form).to match %r{.*fieldset.*class="card bg-default">.*}
     end
 
     context 'and other options, uses the provided record object and options' do
