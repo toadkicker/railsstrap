@@ -1,0 +1,14 @@
+<button class="<%= button[:class] %>" data-toggle="modal" data-target="#<%= div[:id] %>"><%= button[:caption] %></button>
+<div class="modal fade" id="<%= div[:id] %>" tabindex="-1" role="dialog" aria-labelledby="label-<%= div[:id] %>" aria-hidden="true">
+  <div class="<%= div[:class] %>">
+    <div class="modal-content">
+      <div class="modal-header">
+        <% if dismissible %>
+          <%= render 'dismiss_button', dismiss: 'modal' %>
+        <% end %>
+        <h4 class="modal-title" id="label-<%= div[:id] %>"><%= div[:title] %></h4>
+      </div>
+      <%= content %>
+    </div>
+  </div>
+</div>

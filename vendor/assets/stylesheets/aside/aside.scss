@@ -1,0 +1,121 @@
+// asides
+
+// Padding applied to the aside body
+$aside-inner-padding:         1rem !default;
+
+$aside-dialog-margin:         .5rem !default;
+$aside-dialog-margin-y-sm-up: 1.75rem !default;
+
+$aside-title-line-height:           $line-height-base !default;
+
+$aside-content-bg:               $white !default;
+$aside-content-border-color:     rgba($black, .2) !default;
+$aside-content-border-width:     $border-width !default;
+$aside-content-box-shadow-xs:    0 .25rem .5rem rgba($black, .5) !default;
+$aside-content-box-shadow-sm-up: 0 .5rem 1rem rgba($black, .5) !default;
+
+$aside-backdrop-bg:           $black !default;
+$aside-backdrop-opacity:      .5 !default;
+$aside-header-border-color:   $gray-200 !default;
+$aside-footer-border-color:   $aside-header-border-color !default;
+$aside-header-border-width:   $aside-content-border-width !default;
+$aside-footer-border-width:   $aside-header-border-width !default;
+$aside-header-padding:        1rem !default;
+
+$aside-lg:                          800px !default;
+$aside-md:                          500px !default;
+$aside-sm:                          300px !default;
+
+$aside-transition:                  transform .3s ease-out !default;
+
+$zindex-aside-backdrop:             1040 !default;
+$zindex-aside:                      1050 !default;
+
+/*
+ * Aside element
+ */
+.aside {
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  bottom: 0;
+  z-index: $zindex-aside - 1;
+  overflow: auto;
+  background: $white;
+  -webkit-box-shadow: 1px 0 3px $gray-500;
+  -moz-box-shadow: 1px 0 3px $gray-500;
+  box-shadow: 1px 0 3px $gray-500;
+  min-width: $aside-sm;
+  /*sizing*/
+  &.lg {
+    width: $aside-lg;
+  }
+  &.md {
+    width: $aside-md;
+  }
+  &.sm {
+    width: $aside-sm;
+  }
+
+  &:focus {
+    outline: none;
+  }
+  @include media-breakpoint-down(sm) {
+    min-width: 240px;
+  }
+
+  &.left {
+    right: auto;
+    left: -350px;
+    &.show {
+      right: auto;
+      left: 0;
+      visibility: visible;
+      @include animated();
+      @extend .slideInLeft;
+    }
+  }
+  &.right {
+    right: -350px;
+    left: auto;
+    &.show {
+      right: 0;
+      left: auto;
+      visibility: visible;
+      @include animated;
+      @extend .slideInRight;
+    }
+  }
+
+  .aside-dialog {
+    .aside-header {
+      @extend .modal-header;
+      @each $color, $value in $theme-colors {
+        background: $primary;
+        color: $white;
+        &.#{$color} {
+          background: $value;
+          color: color-yiq($value);
+        }
+        .close {
+          padding: 1rem;
+          margin: -1rem -1rem -1rem auto;
+          color: color-yiq($value);
+          font-size: 25px;
+          opacity: 0.8;
+        }
+      }
+    }
+    .aside-body {
+      @extend .modal-body;
+    }
+    .aside-footer {
+      @extend .modal-footer;
+    }
+  }
+
+}
+
+.aside-backdrop {
+  @extend .modal-backdrop;
+}

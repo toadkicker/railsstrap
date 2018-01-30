@@ -1,0 +1,26 @@
+<%= form_for @bar, html: { role: 'form' } do |f| %>
+
+<%= errors_for @bar %>
+
+  <div class="form-group">
+    <%= f.label :widget %>
+    <%= f.text_field :widget, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :sprocket %>
+    <%= f.check_box :sprocket, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :crank %>
+    <%= f.number_field :crank, class: 'form-control' %>
+  </div>
+
+<div class="form-group">
+  <div class="col-lg-offset-2 col-lg-10">
+    <%= f.submit nil, class: 'btn btn-primary' %>
+    <%= link_to t('.cancel', default: t("helpers.links.cancel")),
+    bars_path, class: 'btn btn-default' %>
+  </div>
+</div>
+
+<% end %>

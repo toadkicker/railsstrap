@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  widget: MyString
+  sprocket: false
+  crank: 1
+
+two:
+  widget: MyString
+  sprocket: false
+  crank: 1

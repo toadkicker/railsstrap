@@ -1,6 +1,10 @@
 language: ruby
 rvm:
-  - 1.9.3
-  - 2.0.0
-  - 2.1.1
+  - 2.4.2
 script: bundle exec rake spec
+gemfile:
+  - gemfiles/Gemfile.rails-3.x
+  - gemfiles/Gemfile.rails-4.x
+  - gemfiles/Gemfile.rails-5.x
+env:
+  - ONLY_RAILS=true

@@ -1,0 +1,3 @@
+<%- model_class = resource_name.classify -%>
+<h1><%%=t '.title', default: 'Edit <%= singular_table_name.titleize %>' %></h1>
+<%%= render partial: 'form' %>

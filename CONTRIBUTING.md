@@ -1,3 +1,6 @@
+Railssstrap
+==
+
 railsstrap is a volunteer effort. We encourage you to pitch in.
 
 __*We only accept bug reports and pull requests in GitHub*__. Join the team!
@@ -13,5 +16,15 @@ __*We only accept bug reports and pull requests in GitHub*__. Join the team!
 * We won't accept any feature requests that come without a patch.
 * We use git flow and semantic versions. All pull requests must go to the develop branch or they will be closed.
 * Closed bug reporting issues must contain a link to the commit that fixes them, or be labeled as wont-fix.
+
+Common maintenance tasks
+==
+
+* Updating the front-end dependencies
+  - use 'bower update --save'
+  - run tests
+  - run rake
+  - commit bower.json changes
+  - create pull request
 
 Thanks for the your contributions!

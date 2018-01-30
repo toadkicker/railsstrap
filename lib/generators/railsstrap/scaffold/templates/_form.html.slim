@@ -1,0 +1,15 @@
+- model_name = resource_name.camelize.downcase.gsub('::', '')
+| \%= form_for @%= model_name %&gt;, html: { role: 'form' } do |f| %&gt;
+
+| \%= errors_for @%= model_name %&gt; %&gt;
+- attributes.each do |column|
+  .form-group
+    | \%= f.label :%= column.name %&gt; %&gt;
+    | \%= f.%= column.field_type %&gt; :#{column.name}, class: 'form-control' %&gt;
+.form-group
+  .col-lg-offset-2.col-lg-10
+    | \%= f.submit nil, class: 'btn btn-primary' %&gt;
+    | \%= link_to t('.cancel', default: t("helpers.links.cancel")),
+    | \%= controller_name %&gt;_path, class: 'btn btn-primary' %&gt;
+| \% end %&gt;
+ 

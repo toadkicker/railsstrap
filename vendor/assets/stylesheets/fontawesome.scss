@@ -1,0 +1,11 @@
+$font-awesome-flash-pending: false !default;
+
+@if $font-awesome-flash-pending {
+  body {
+    display: none;
+  }
+
+  .fontawesome-i2svg-active body {
+    display: initial;
+  }
+}
