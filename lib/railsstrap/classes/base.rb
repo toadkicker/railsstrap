@@ -52,10 +52,20 @@ module Railsstrap
       end
 
       # @return [#to_s] the HTML to show a dismissible button.
+      # @options option :dismiss What the button should dismiss. Can be :alert, :modal
       def dismissible_button
         if @options[:dismissible] || @options[:priority]
-          path = '../../views/railsstrap/_dismiss_button.html'
-          File.read File.expand_path(path, __FILE__)
+          path = '../../views/railsstrap/_dismiss_button.html.erb'
+          template = ERB.new(File.read File.expand_path(path, __FILE__))
+          assigns = OpenStruct.new dismiss: dismiss[@options[:dismiss]]
+          render template.result(assigns.instance_eval {binding &nil}).html_safe
+        end
+      end
+
+      def dismiss
+        HashWithIndifferentAccess.new(:alert).tap do |klass|
+          klass[:modal] = 'modal'
+          klass[:alert] = 'alert'
         end
       end
 
