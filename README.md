@@ -65,7 +65,18 @@ All SASS files are available for import in the asset pipeline or webpacker.
 
 Railsstrap comes with over 75 CSS animations. See the wiki or the [vendor/assets/stylesheets/animate](https://github.com/toadkicker/railsstrap/tree/master/vendor/assets/stylesheets/animate) folder for more info.
 
-The `animate` CSS class controls runs an animation for 1 second. Append `slideLeft` for an element to move to the left. Animation classes can be combined for interesting effects.
+The `animated` CSS class controls runs an animation for 0.6 second. Append `slideLeft` for an element to move to the left. Animation classes can be combined for interesting effects.
+
+Import them in your SASS stylesheets using `animate/[ANIMATION_NAME]` and then use the `.[ANIMATION_NAME]` as the class:
+
+```
+@import 'animate/fade/fadeInLeftBig'
+
+.myclass {
+  @extend .animated;
+  @extend .fadeInLeftBig;
+}
+```
 
 ### Icon helper
 Railsstrap includes an `icon` helper defaulted with Font Awesome 4. The icon helper can use any library and icon you want.

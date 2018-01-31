@@ -60,7 +60,14 @@
       <%= card title: 'Sidebar' do %>
         <%= content_tag :div, class: 'card-body' do %>
           <%= nav as: :pills do %>
-            <%= link_to "Link1", "/path1" %>
+            <%= aside pin_to: :left, title: "Show Aside", button: {variant: :info} do %>
+              <%= content_tag :div, class: 'aside-body align-self-stretch' do %>
+                <%= content_tag :em, 'You clicked me!' %>
+              <% end %>
+              <%= content_tag :div, class: 'aside-footer' do %>
+                <button class="btn btn-danger text-white" data-target="<%= div[:id] %>">Coolio</button>
+              <% end %>
+            <% end %>
             <%= link_to "Link2", "/path2" %>
             <%= link_to "Link3", "/path3" %>
           <% end %>
