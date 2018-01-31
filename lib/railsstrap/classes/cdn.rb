@@ -61,11 +61,8 @@ module Railsstrap
 
       # fetches popper js
       def self.popper_js(options = {})
-        opts = {
-          version: '1.13.0',
-          path: 'ajax/libs/popper.js'
-        }.merge(options)
-        cdn_asset opts
+        options.merge!({version: '1.13.0'})
+        "https://cdnjs.cloudflare.com/ajax/libs/popper.js/#{options[:version]}/umd/popper.min.js"
       end
 
       # @return the url of the library from cdnjs.com
