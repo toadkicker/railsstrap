@@ -31,15 +31,16 @@ module Railsstrap
     #   end
     def navbar(options = {}, &block)
       navbar = Railsstrap::Navbar.new(self, options, &block)
-      navbar.extract! :variant, :text_variant, :position, :fluid
+      navbar.extract! :variant, :text_variant, :position, :fluid, :id
 
-      navbar.append_class! :navigation, :navbar
-      navbar.append_class! :navigation, navbar.variant_class
-      navbar.append_class! :navigation, 'navbar-expand-lg'
-      navbar.append_class! :navigation, navbar.text_variant_class
-      navbar.append_class! :navigation, navbar.position_class
-      navbar.append_class! :div, navbar.layout_class
-      navbar.render_tag :nav
+      navbar.append_class_to! :navigation, :navbar
+      navbar.append_class_to! :navigation, navbar.variant_class
+      navbar.append_class_to! :navigation, 'navbar-expand-lg'
+      navbar.append_class_to! :navigation, navbar.text_variant_class
+      navbar.append_class_to! :navigation, navbar.position_class
+      navbar.append_class_to! :div, navbar.layout_class
+
+      navbar.render_partial 'navbar'
     end
   end
 end
