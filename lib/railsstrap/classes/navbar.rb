@@ -36,6 +36,7 @@ module Railsstrap
           variant_types.each do |v|
             klass[v] = :"bg-#{v}"
           end
+          klass[:none] = ""
         end
       end
 

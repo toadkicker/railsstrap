@@ -20,7 +20,6 @@ rails generate scaffold bar sprocket:string quanity:integer (etc..)
 bundle exec rails g railsstrap:install *inserts railsstrap into css/js files in rails, configures assets.rb*
 ```
 
-
 Railsstrap outputs Bootstrap compliant HTML in the standard rails scaffolding tool.
 Layouts use CDN versions of jQuery, Bootstrap, and Font Awesome by default.
 
