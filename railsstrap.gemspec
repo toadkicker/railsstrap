@@ -34,8 +34,8 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'activemodel' # versioned in gemfiles/
   s.add_development_dependency 'bundler', '~> 1.1'
-  s.add_development_dependency 'simplecov', '~> 0.14.1'
-  s.add_development_dependency 'coveralls'
+  s.add_development_dependency 'simplecov', '~> 0.15.1'
+  s.add_development_dependency 'coveralls_reborn', '~> 0.10.0'
   s.add_development_dependency 'mocha'
 
   s.add_development_dependency 'rake'
