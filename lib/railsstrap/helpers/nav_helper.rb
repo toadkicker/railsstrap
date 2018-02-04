@@ -19,16 +19,14 @@ module Railsstrap
     #   end
     def nav(options = {}, &block)
       nav = Railsstrap::Nav.new(self, options, &block)
-      nav.extract! :as, :layout
+      nav.extract! :as, :layout, :tag
 
       nav.append_class! :nav
       nav.append_class! nav.style_class
       nav.append_class! nav.layout_class
       nav.merge! role: :navigation
 
-
-
-      nav.render_tag :nav
+      nav.render_tag nav.tag
     end
   end
 end

@@ -2,7 +2,7 @@ require 'railsstrap/classes/aside'
 
 module Railsstrap
   module Helpers
-    # Displays a Bootstrap-styled aside. Asides inherit from Aside, but
+    # Displays a Bootstrap-styled aside. Asides inherit from Modal, but
     # are pinned to the left or right of the screen.
     # @see https://github.com/toadkicker/railsstrap/wiki/Aside-Helper
     # @return [String] the HTML to display a Bootstrap-styled aside.
@@ -39,7 +39,7 @@ module Railsstrap
 
     def aside(*args, &block)
       aside = Railsstrap::Aside.new self, *args, &block
-      aside.extract! :button, :size, :body, :title, :id
+      aside.extract! :button, :size, :pin_to, :body, :title, :id
 
       aside.extract_from :button, [:variant, :size, :layout, :caption]
       aside.append_class_to! :button, :btn
@@ -47,6 +47,7 @@ module Railsstrap
       aside.append_class_to! :button, aside.button_size_class
       aside.merge! button: {caption: aside.caption}
 
+      aside.append_class_to! :script, aside.pin_to_class
       aside.append_class_to! :div, :'aside-dialog'
       aside.append_class_to! :div, aside.dialog_size_class
       aside.merge! div: {title: aside.title, id: aside.id}

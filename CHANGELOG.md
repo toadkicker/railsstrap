@@ -1,5 +1,13 @@
 # Change Log
 
+## [Unreleased](https://github.com/toadkicker/railsstrap/tree/HEAD)
+
+[Full Changelog](https://github.com/toadkicker/railsstrap/compare/v4-beta.2...HEAD)
+
+**Merged pull requests:**
+
+- v4-beta.2 [\#64](https://github.com/toadkicker/railsstrap/pull/64) ([toadkicker](https://github.com/toadkicker))
+
 ## [v4-beta.2](https://github.com/toadkicker/railsstrap/tree/v4-beta.2) (2018-01-30)
 [Full Changelog](https://github.com/toadkicker/railsstrap/compare/v4-beta.1...v4-beta.2)
 

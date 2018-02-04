@@ -82,7 +82,7 @@ $zindex-aside:                      1050 !default;
       right: 0;
       left: auto;
       visibility: visible;
-      @include animated;
+      @include animated();
       @extend .slideInRight;
     }
   }

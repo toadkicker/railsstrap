@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'railsstrap/classes/button'
 
 module Railsstrap
@@ -12,6 +14,11 @@ module Railsstrap
         end
 
         super
+      end
+
+      # @return [#to_s] appends .left or .right css class to the aside
+      def pin_to_class
+        Aside.pin_to[@options[:pin_to]]
       end
 
       # @return [#to_s] the variant-related class to assign to the aside button.
@@ -52,6 +59,13 @@ module Railsstrap
           klass[:lg] = :'aside-lg'
           klass[:sm] = :'aside-sm'
           klass[:small] = :'aside-sm'
+        end
+      end
+
+      def self.pin_to
+        HashWithIndifferentAccess.new(:'left').tap do |klass|
+          klass[:left] = 'left'
+          klass[:right] = 'right'
         end
       end
 

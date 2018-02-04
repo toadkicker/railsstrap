@@ -18,6 +18,11 @@ module Railsstrap
         Nav.layouts[@options[:layout]]
       end
 
+      # @return [#to_s] choose between using <nav>, <ol>, or <ul> tags
+      def tag
+        @options[:tag] || :nav
+      end
+
       # @return [Hash<Symbol, String>] the classes that Bootstrap requires to
       #   append to navs for each possible style.
 

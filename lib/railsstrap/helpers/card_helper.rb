@@ -28,7 +28,7 @@ module Railsstrap
     #   @param [Hash] options the options for the card (see above).
     #   @yieldreturn [#to_s] the content to display in the card.
     #   @example Display a card with HTML content.
-    #       card title: 'Thanks' do
+    #       card title: 'Thanks', button: {caption: icon('circle-plus', library: :fas), variant: :success} do
     #         content_tag :div, class: 'card-body' do
     #           content_tag :em, 'ou accepted the Terms of service.'
     #         end

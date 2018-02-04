@@ -14,22 +14,7 @@ end
 
 shared_examples_for 'no aside options' do
   specify 'sets the role and the class to "aside", uses a generated ID and uses "Aside" as the title and caption' do
-    html = <<-EOT.strip_heredoc.strip
-      <button class="btn btn-primary" data-toggle="modal" data-target="#(.+)">Aside<\/button>
-      <aside class="aside fade" id="\\1" tabindex="-1" role="dialog" aria-labelledby="label-\\1" aria-hidden="true">
-        <div class="aside-dialog">
-          <div class="aside-content">
-            <div class="aside-header">
-              <button type="button" class="close" data-dismiss="modal">
-                <span aria-hidden="true">&times;<\/span><span class="sr-only">Close<\/span>
-              <\/button>
-              <h4 class="aside-title" id="label-\\1">Aside<\/h4>
-            <\/div>
-            (<div class=\"aside-body\">)*content(</div>)*
-          <\/div>
-        <\/div>
-      <\/aside>
-    EOT
+    html = %r{(button.*data-toggle="modal".*data-target)*(aside)}
     expect(:aside).to generate %r{#{html}}
   end
 end

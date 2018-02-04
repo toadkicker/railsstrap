@@ -88,8 +88,8 @@ shared_examples_for 'the button: :class modal option' do
   end
 end
 
-shared_examples_for 'the :dismissable modal option' do
-  specify 'renders the dismissable button on the modal button' do
+shared_examples_for 'the :dismissible modal option' do
+  specify 'renders the dismissible button on the modal button' do
     html = %r{.*(class="close").*(dismiss="modal")}
     expect(modal: {dismissible: true, dismiss: :modal}).to generate html
   end
